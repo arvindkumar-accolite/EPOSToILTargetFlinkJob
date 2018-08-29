@@ -16,7 +16,7 @@ public class Beneficiary {
 	}
 
 	public List<BeneficiaryDetails> getBeneficiaryDetails() {
-		if(null==beneficiaryDetails) {
+		if (null == beneficiaryDetails) {
 			beneficiaryDetails = new ArrayList<>();
 		}
 		return beneficiaryDetails;
@@ -25,5 +25,5 @@ public class Beneficiary {
 	public void setBeneficiaryDetails(List<BeneficiaryDetails> beneficiaryDetails) {
 		this.beneficiaryDetails = beneficiaryDetails;
 	}
-	
+
 }

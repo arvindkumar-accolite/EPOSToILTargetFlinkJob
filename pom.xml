@@ -54,7 +54,7 @@
 			<artifactId>flink-streaming-core</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-		
+
 		<!-- ESB Services -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
