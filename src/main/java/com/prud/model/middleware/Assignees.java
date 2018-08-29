@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Assignees {
 	private String assigneeId;
-	private List<AssigneeDetails> nbscrtiassigneedetails;
+	private List<AssigneeDetails> assigneeDetails;
 
 	public String getAssigneeId() {
 		return assigneeId;
@@ -15,15 +15,21 @@ public class Assignees {
 		this.assigneeId = assigneeId;
 	}
 
-	public List<AssigneeDetails> getNbscrtiassigneedetails() {
-		if (nbscrtiassigneedetails == null) {
-			nbscrtiassigneedetails = new ArrayList<AssigneeDetails>();
+	/**
+	 * @return the assigneeDetails
+	 */
+	public List<AssigneeDetails> getAssigneeDetails() {
+		if (assigneeDetails == null) {
+			assigneeDetails = new ArrayList<AssigneeDetails>();
 		}
-		return nbscrtiassigneedetails;
+		return this.assigneeDetails;
 	}
 
-	public void setNbscrtiassigneedetails(List<AssigneeDetails> nbscrtiassigneedetails) {
-		this.nbscrtiassigneedetails = nbscrtiassigneedetails;
+	/**
+	 * @param assigneedetails the assigneedetails to set
+	 */
+	public void setAssigneeDetails(List<AssigneeDetails> assigneedetails) {
+		this.assigneeDetails = assigneedetails;
 	}
 
 }

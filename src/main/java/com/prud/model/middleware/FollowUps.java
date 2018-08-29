@@ -6,7 +6,7 @@ import java.util.List;
 public class FollowUps {
 	private String followUpsId;
 	private String zDoctor;
-	private List<FollowUpsDetails> nbscrtifups;
+	private List<FollowUpDetails> followUpDetails;
 
 	public String getFollowUpsId() {
 		return followUpsId;
@@ -24,15 +24,22 @@ public class FollowUps {
 		this.zDoctor = zDoctor;
 	}
 
-	public List<FollowUpsDetails> getNbscrtifups() {
-		if(nbscrtifups==null) {
-			nbscrtifups= new ArrayList<>();
+	/**
+	 * @return the followUpDetails
+	 */
+	public List<FollowUpDetails> getFollowUpDetails() {
+		if (followUpDetails == null) {
+			followUpDetails = new ArrayList<>();
 		}
-		return nbscrtifups;
+		return this.followUpDetails;
 	}
 
-	public void setNbscrtifups(List<FollowUpsDetails> nbscrtifups) {
-		this.nbscrtifups = nbscrtifups;
+	/**
+	 * @param followUpDetails
+	 *            the followUpDetails to set
+	 */
+	public void setFollowUpDetails(List<FollowUpDetails> followUpDetails) {
+		this.followUpDetails = followUpDetails;
 	}
 
 }
