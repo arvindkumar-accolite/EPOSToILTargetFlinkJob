@@ -1,10 +1,11 @@
 package com.prud.model.middleware;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Beneficiary {
 	private String beneficiaryId;
-	private List<BeneficiaryDetails> beneficiaries;
+	private List<BeneficiaryDetails> beneficiaryDetails;
 
 	public String getBeneficiaryId() {
 		return beneficiaryId;
@@ -14,12 +15,15 @@ public class Beneficiary {
 		this.beneficiaryId = beneficiaryId;
 	}
 
-	public List<BeneficiaryDetails> getBeneficiaries() {
-		return beneficiaries;
+	public List<BeneficiaryDetails> getBeneficiaryDetails() {
+		if(null==beneficiaryDetails) {
+			beneficiaryDetails = new ArrayList<>();
+		}
+		return beneficiaryDetails;
 	}
 
-	public void setBeneficiaries(List<BeneficiaryDetails> beneficiaries) {
-		this.beneficiaries = beneficiaries;
+	public void setBeneficiaryDetails(List<BeneficiaryDetails> beneficiaryDetails) {
+		this.beneficiaryDetails = beneficiaryDetails;
 	}
-
+	
 }

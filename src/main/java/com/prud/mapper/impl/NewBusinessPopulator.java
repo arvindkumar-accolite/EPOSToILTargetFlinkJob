@@ -43,16 +43,15 @@ public class NewBusinessPopulator {
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {
 		NewBusinessPopulator nbspop = new NewBusinessPopulator();
 		ObjectMapper mapper = new ObjectMapper();
-		NewBusinessModel nbsModel = nbspop.buildNewBusiness();
+		//NewBusinessModel nbsModel = nbspop.buildNewBusiness();
 		System.out.println("meeee");
 		// Object to JSON in file
-		mapper.writeValue(System.out, nbsModel);
+		//mapper.writeValue(System.out, nbsModel);
 		System.out.println();
 		// Object to JSON in String
-		/*
-		 * String jsonInString = mapper.writeValueAsString(nbsModel);
-		 * System.out.println(jsonInString);
-		 */
+		ApplyCashDetails applyCashDetails = mapper.readValue("{\"applyCashId\":\"s\",\"receiptNo\":\"\"}}",ApplyCashDetails.class);
+		 System.out.println(applyCashDetails.getApplyCashId());
+		 
 	}
 
 	public NewBusinessModel buildNewBusiness() {
@@ -122,7 +121,7 @@ public class NewBusinessPopulator {
 		Beneficiary beneficiary = new Beneficiary();
 		beneficiary.setBeneficiaryId("");
 		BeneficiaryDetails beneficiaryDetail = populateBeneficiaryDetails();
-		beneficiary.getBeneficiaries().add(beneficiaryDetail);
+		beneficiary.getBeneficiaryDetails().add(beneficiaryDetail);
 		return beneficiary;
 	}
 
