@@ -1,6 +1,8 @@
 
 package com.prud.model.middleware;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -34,8 +36,6 @@ public class NewBusinessModel {
 
     @JsonProperty("applyCashDetails")
     private ApplyCashDetails applyCashDetails;
-    @JsonProperty("assigneeDetails")
-    private AssigneeDetails assigneeDetails;
     @JsonProperty("assignees")
     private Assignees assignees;
     @JsonProperty("bankDetails")
@@ -43,11 +43,11 @@ public class NewBusinessModel {
     @JsonProperty("beneficiary")
     private Beneficiary beneficiary;
     @JsonProperty("clientDetails")
-    private ClientDetails clientDetails;
+    private List<ClientDetails> clientDetails;
     @JsonProperty("contractDetails")
     private ContractDetails contractDetails;
     @JsonProperty("coverageDetails")
-    private CoverageDetails coverageDetails;
+    private List<CoverageDetails> coverageDetails;
     @JsonProperty("dispatchDetails")
     private DispatchDetails dispatchDetails;
     @JsonProperty("doctorDetails")
@@ -55,11 +55,11 @@ public class NewBusinessModel {
     @JsonProperty("followUps")
     private FollowUps followUps;
     @JsonProperty("fundDetails")
-    private FundDetails fundDetails;
+    private List<FundDetails> fundDetails;
     @JsonProperty("jointOwnerDetails")
     private JointOwnerDetails jointOwnerDetails;
     @JsonProperty("lifeDetails")
-    private LifeDetails lifeDetails;
+    private List<LifeDetails> lifeDetails;
     @JsonProperty("mandateDetails")
     private MandateDetails mandateDetails;
     @JsonProperty("ownerDetails")
@@ -85,16 +85,6 @@ public class NewBusinessModel {
     @JsonProperty("applyCashDetails")
     public void setApplyCashDetails(ApplyCashDetails applyCashDetails) {
         this.applyCashDetails = applyCashDetails;
-    }
-
-    @JsonProperty("assigneeDetails")
-    public AssigneeDetails getAssigneeDetails() {
-        return assigneeDetails;
-    }
-
-    @JsonProperty("assigneeDetails")
-    public void setAssigneeDetails(AssigneeDetails assigneeDetails) {
-        this.assigneeDetails = assigneeDetails;
     }
 
     @JsonProperty("assignees")
@@ -128,12 +118,12 @@ public class NewBusinessModel {
     }
 
     @JsonProperty("clientDetails")
-    public ClientDetails getClientDetails() {
+    public List<ClientDetails> getClientDetails() {
         return clientDetails;
     }
 
     @JsonProperty("clientDetails")
-    public void setClientDetails(ClientDetails clientDetails) {
+    public void setClientDetails(List<ClientDetails> clientDetails) {
         this.clientDetails = clientDetails;
     }
 
@@ -148,12 +138,12 @@ public class NewBusinessModel {
     }
 
     @JsonProperty("coverageDetails")
-    public CoverageDetails getCoverageDetails() {
+    public List<CoverageDetails> getCoverageDetails() {
         return coverageDetails;
     }
 
     @JsonProperty("coverageDetails")
-    public void setCoverageDetails(CoverageDetails coverageDetails) {
+    public void setCoverageDetails(List<CoverageDetails> coverageDetails) {
         this.coverageDetails = coverageDetails;
     }
 
@@ -188,12 +178,12 @@ public class NewBusinessModel {
     }
 
     @JsonProperty("fundDetails")
-    public FundDetails getFundDetails() {
+    public List<FundDetails> getFundDetails() {
         return fundDetails;
     }
 
     @JsonProperty("fundDetails")
-    public void setFundDetails(FundDetails fundDetails) {
+    public void setFundDetails(List<FundDetails> fundDetails) {
         this.fundDetails = fundDetails;
     }
 
@@ -208,12 +198,12 @@ public class NewBusinessModel {
     }
 
     @JsonProperty("lifeDetails")
-    public LifeDetails getLifeDetails() {
+    public List<LifeDetails> getLifeDetails() {
         return lifeDetails;
     }
 
     @JsonProperty("lifeDetails")
-    public void setLifeDetails(LifeDetails lifeDetails) {
+    public void setLifeDetails(List<LifeDetails> lifeDetails) {
         this.lifeDetails = lifeDetails;
     }
 
