@@ -16,6 +16,7 @@ import com.prud.mapper.impl.OrikaModelMapperImpl;
 import com.prud.model.il.CLICRPIREC;
 import com.prud.model.il.MSPContext;
 import com.prud.model.il.NBSCRTIREC;
+import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT;
 import com.prud.model.il.RequestParameter;
 import com.prud.model.il.RequestParameters;
 import com.prud.model.middleware.ClientDetails;
@@ -32,12 +33,13 @@ public class NewBusinessProposalGenerator {
 	
 	static {
 		newBusinessProposalPropConfig = new Properties();
+		createClientPropConfig = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream("C:\\D\\Prudential\\newWork\\ILSourceProcessFlinkJob1\\target\\config.properties");
+			input = new FileInputStream(Object.class.getResource("/policyproposal-to-newbusinessmapping.properties").getFile());
 			newBusinessProposalPropConfig.load(input);
 			input.close();
-			input = new FileInputStream("C:\\D\\Prudential\\newWork\\ILSourceProcessFlinkJob1\\target\\config.properties");
+			input = new FileInputStream(Object.class.getResource("/policyproposal-to-client-mapping.properties").getFile());
 			createClientPropConfig.load(input);
 			input.close();
 		} catch (Exception e) {
@@ -101,7 +103,7 @@ public class NewBusinessProposalGenerator {
 	public String buildCreateClientRequest(NewBusinessModel newBusinessModel) {
 		ClientDetails clientDetails = newBusinessModel.getClientDetails().get(0);
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
-				CLICRPIREC.class, createClientMappingMap);
+				NBSCRTICLIENT.class, createClientMappingMap);
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId("userId");
 		mspContext.setUserPassword("password");
