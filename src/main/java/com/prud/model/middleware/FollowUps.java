@@ -1,45 +1,58 @@
+
 package com.prud.model.middleware;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "followUpsId",
+    "zDoctor",
+    "followUpsDetails"
+})
 public class FollowUps {
-	private String followUpsId;
-	private String zDoctor;
-	private List<FollowUpDetails> followUpDetails;
 
-	public String getFollowUpsId() {
-		return followUpsId;
-	}
+    @JsonProperty("followUpsId")
+    private String followUpsId;
+    @JsonProperty("zDoctor")
+    private String zDoctor;
+    @JsonProperty("followUpsDetails")
+    private List<FollowUpsDetails> followUpsDetails = null;
+    
+    @JsonProperty("followUpsId")
+    public String getFollowUpsId() {
+        return followUpsId;
+    }
 
-	public void setFollowUpsId(String followUpsId) {
-		this.followUpsId = followUpsId;
-	}
+    @JsonProperty("followUpsId")
+    public void setFollowUpsId(String followUpsId) {
+        this.followUpsId = followUpsId;
+    }
 
-	public String getzDoctor() {
-		return zDoctor;
-	}
+    @JsonProperty("zDoctor")
+    public String getZDoctor() {
+        return zDoctor;
+    }
 
-	public void setzDoctor(String zDoctor) {
-		this.zDoctor = zDoctor;
-	}
+    @JsonProperty("zDoctor")
+    public void setZDoctor(String zDoctor) {
+        this.zDoctor = zDoctor;
+    }
 
-	/**
-	 * @return the followUpDetails
-	 */
-	public List<FollowUpDetails> getFollowUpDetails() {
-		if (followUpDetails == null) {
-			followUpDetails = new ArrayList<>();
-		}
-		return this.followUpDetails;
-	}
+    @JsonProperty("followUpsDetails")
+    public List<FollowUpsDetails> getFollowUpsDetails() {
+    	if(null==followUpsDetails) {
+    		followUpsDetails = new ArrayList<FollowUpsDetails>();
+    	}
+        return followUpsDetails;
+    }
 
-	/**
-	 * @param followUpDetails
-	 *            the followUpDetails to set
-	 */
-	public void setFollowUpDetails(List<FollowUpDetails> followUpDetails) {
-		this.followUpDetails = followUpDetails;
-	}
-
+    @JsonProperty("followUpsDetails")
+    public void setFollowUpsDetails(List<FollowUpsDetails> followUpsDetails) {
+        this.followUpsDetails = followUpsDetails;
+    }
 }

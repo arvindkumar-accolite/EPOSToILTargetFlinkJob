@@ -1,3 +1,4 @@
+
 package com.prud.model.middleware;
 
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,3 +1,4 @@
+
 package com.prud.model.middleware;
 
 import java.util.ArrayList;
@@ -8,23 +9,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "specialterms" })
+@JsonPropertyOrder({ "specialTermsDetails" })
 public class SpecialTerms {
 
-	@JsonProperty("specialterms")
-	private List<SpecialTermDetails> specialterms;
+	@JsonProperty("specialTermsDetails")
+	private List<SpecialTermDetails> specialTermsDetails = null;
 
-	@JsonProperty("specialterms")
-	public List<SpecialTermDetails> getSpecialterms() {
-		if (specialterms == null) {
-			specialterms = new ArrayList<SpecialTermDetails>();
+	@JsonProperty("specialTermsDetails")
+	public List<SpecialTermDetails> getSpecialTermDetails() {
+		if(null==specialTermsDetails) {
+			specialTermsDetails = new ArrayList<>();
 		}
-		return specialterms;
+		return specialTermsDetails;
 	}
 
-	@JsonProperty("specialterms")
-	public void setSpecialterms(List<SpecialTermDetails> specialterms) {
-		this.specialterms = specialterms;
+	@JsonProperty("specialTermsDetails")
+	public void setSpecialTermDetails(List<SpecialTermDetails> specialTermsDetails) {
+		this.specialTermsDetails = specialTermsDetails;
 	}
 
 }

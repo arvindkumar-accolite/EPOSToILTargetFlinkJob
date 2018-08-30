@@ -1,142 +1,211 @@
+
 package com.prud.model.middleware;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "coverageId",
+    "coverageParent",
+    "mortalityClass",
+    "riskCessationDate",
+    "premiumCessationDate",
+    "premiumCessationAge",
+    "premiumCessationTerm",
+    "riskCessationAge",
+    "riskCessationTerm",
+    "sumInsured",
+    "coverageOrRiderInstalmentAmount",
+    "coverageOrRiderTable",
+    "lumpSumContribution",
+    "reserveUnitsAllocationDate",
+    "reserveUnitsIndicator"
+})
 public class CoverageDetails {
-	private String coverageId;
-	private String coverageParent;
-	private String mortalityClass;
-	private BigInteger riskCessationDate;
-	private BigInteger premiumCessationDate;
-	private BigInteger premiumCessationAge;
-	private BigInteger premiumCessationTerm;
-	private BigInteger riskCessationAge;
-	private BigInteger riskCessationTerm;
-	private BigInteger sumInsured;
-	private BigDecimal coverageOrRiderInstalmentAmount;
-	private String coverageOrRiderTable;
-	private BigDecimal lumpSumContribution;
-	private String ReserveUnitsIndicator;
-	private BigInteger ReserveUnitsAllocationDate;
 
-	public String getCoverageId() {
-		return coverageId;
-	}
+    @JsonProperty("coverageId")
+    private String coverageId;
+    @JsonProperty("coverageParent")
+    private String coverageParent;
+    @JsonProperty("mortalityClass")
+    private String mortalityClass;
+    @JsonProperty("riskCessationDate")
+    private BigInteger riskCessationDate;
+    @JsonProperty("premiumCessationDate")
+    private BigInteger premiumCessationDate;
+    @JsonProperty("premiumCessationAge")
+    private BigInteger premiumCessationAge;
+    @JsonProperty("premiumCessationTerm")
+    private BigInteger premiumCessationTerm;
+    @JsonProperty("riskCessationAge")
+    private BigInteger riskCessationAge;
+    @JsonProperty("riskCessationTerm")
+    private BigInteger riskCessationTerm;
+    @JsonProperty("sumInsured")
+    private BigInteger sumInsured;
+    @JsonProperty("coverageOrRiderInstalmentAmount")
+    private BigDecimal coverageOrRiderInstalmentAmount;
+    @JsonProperty("coverageOrRiderTable")
+    private String coverageOrRiderTable;
+    @JsonProperty("lumpSumContribution")
+    private BigDecimal lumpSumContribution;
+    @JsonProperty("reserveUnitsAllocationDate")
+    private BigInteger reserveUnitsAllocationDate;
+    @JsonProperty("reserveUnitsIndicator")
+    private String reserveUnitsIndicator;
+  
+    @JsonProperty("coverageId")
+    public String getCoverageId() {
+        return coverageId;
+    }
 
-	public void setCoverageId(String coverageId) {
-		this.coverageId = coverageId;
-	}
+    @JsonProperty("coverageId")
+    public void setCoverageId(String coverageId) {
+        this.coverageId = coverageId;
+    }
 
-	public String getCoverageParent() {
-		return coverageParent;
-	}
+    @JsonProperty("coverageParent")
+    public String getCoverageParent() {
+        return coverageParent;
+    }
 
-	public void setCoverageParent(String coverageParent) {
-		this.coverageParent = coverageParent;
-	}
+    @JsonProperty("coverageParent")
+    public void setCoverageParent(String coverageParent) {
+        this.coverageParent = coverageParent;
+    }
 
-	public String getMortalityClass() {
-		return mortalityClass;
-	}
+    @JsonProperty("mortalityClass")
+    public String getMortalityClass() {
+        return mortalityClass;
+    }
 
-	public void setMortalityClass(String mortalityClass) {
-		this.mortalityClass = mortalityClass;
-	}
+    @JsonProperty("mortalityClass")
+    public void setMortalityClass(String mortalityClass) {
+        this.mortalityClass = mortalityClass;
+    }
 
-	public BigInteger getRiskCessationDate() {
-		return riskCessationDate;
-	}
+    @JsonProperty("riskCessationDate")
+    public BigInteger getRiskCessationDate() {
+        return riskCessationDate;
+    }
 
-	public void setRiskCessationDate(BigInteger riskCessationDate) {
-		this.riskCessationDate = riskCessationDate;
-	}
+    @JsonProperty("riskCessationDate")
+    public void setRiskCessationDate(BigInteger riskCessationDate) {
+        this.riskCessationDate = riskCessationDate;
+    }
 
-	public BigInteger getPremiumCessationDate() {
-		return premiumCessationDate;
-	}
+    @JsonProperty("premiumCessationDate")
+    public BigInteger getPremiumCessationDate() {
+        return premiumCessationDate;
+    }
 
-	public void setPremiumCessationDate(BigInteger premiumCessationDate) {
-		this.premiumCessationDate = premiumCessationDate;
-	}
+    @JsonProperty("premiumCessationDate")
+    public void setPremiumCessationDate(BigInteger premiumCessationDate) {
+        this.premiumCessationDate = premiumCessationDate;
+    }
 
-	public BigInteger getPremiumCessationAge() {
-		return premiumCessationAge;
-	}
+    @JsonProperty("premiumCessationAge")
+    public BigInteger getPremiumCessationAge() {
+        return premiumCessationAge;
+    }
 
-	public void setPremiumCessationAge(BigInteger premiumCessationAge) {
-		this.premiumCessationAge = premiumCessationAge;
-	}
+    @JsonProperty("premiumCessationAge")
+    public void setPremiumCessationAge(BigInteger premiumCessationAge) {
+        this.premiumCessationAge = premiumCessationAge;
+    }
 
-	public BigInteger getPremiumCessationTerm() {
-		return premiumCessationTerm;
-	}
+    @JsonProperty("premiumCessationTerm")
+    public BigInteger getPremiumCessationTerm() {
+        return premiumCessationTerm;
+    }
 
-	public void setPremiumCessationTerm(BigInteger premiumCessationTerm) {
-		this.premiumCessationTerm = premiumCessationTerm;
-	}
+    @JsonProperty("premiumCessationTerm")
+    public void setPremiumCessationTerm(BigInteger premiumCessationTerm) {
+        this.premiumCessationTerm = premiumCessationTerm;
+    }
 
-	public BigInteger getRiskCessationAge() {
-		return riskCessationAge;
-	}
+    @JsonProperty("riskCessationAge")
+    public BigInteger getRiskCessationAge() {
+        return riskCessationAge;
+    }
 
-	public void setRiskCessationAge(BigInteger riskCessationAge) {
-		this.riskCessationAge = riskCessationAge;
-	}
+    @JsonProperty("riskCessationAge")
+    public void setRiskCessationAge(BigInteger riskCessationAge) {
+        this.riskCessationAge = riskCessationAge;
+    }
 
-	public BigInteger getRiskCessationTerm() {
-		return riskCessationTerm;
-	}
+    @JsonProperty("riskCessationTerm")
+    public BigInteger getRiskCessationTerm() {
+        return riskCessationTerm;
+    }
 
-	public void setRiskCessationTerm(BigInteger riskCessationTerm) {
-		this.riskCessationTerm = riskCessationTerm;
-	}
+    @JsonProperty("riskCessationTerm")
+    public void setRiskCessationTerm(BigInteger riskCessationTerm) {
+        this.riskCessationTerm = riskCessationTerm;
+    }
 
-	public BigInteger getSumInsured() {
-		return sumInsured;
-	}
+    @JsonProperty("sumInsured")
+    public BigInteger getSumInsured() {
+        return sumInsured;
+    }
 
-	public void setSumInsured(BigInteger sumInsured) {
-		this.sumInsured = sumInsured;
-	}
+    @JsonProperty("sumInsured")
+    public void setSumInsured(BigInteger sumInsured) {
+        this.sumInsured = sumInsured;
+    }
 
-	public BigDecimal getCoverageOrRiderInstalmentAmount() {
-		return coverageOrRiderInstalmentAmount;
-	}
+    @JsonProperty("coverageOrRiderInstalmentAmount")
+    public BigDecimal getCoverageOrRiderInstalmentAmount() {
+        return coverageOrRiderInstalmentAmount;
+    }
 
-	public void setCoverageOrRiderInstalmentAmount(BigDecimal coverageOrRiderInstalmentAmount) {
-		this.coverageOrRiderInstalmentAmount = coverageOrRiderInstalmentAmount;
-	}
+    @JsonProperty("coverageOrRiderInstalmentAmount")
+    public void setCoverageOrRiderInstalmentAmount(BigDecimal coverageOrRiderInstalmentAmount) {
+        this.coverageOrRiderInstalmentAmount = coverageOrRiderInstalmentAmount;
+    }
 
-	public String getCoverageOrRiderTable() {
-		return coverageOrRiderTable;
-	}
+    @JsonProperty("coverageOrRiderTable")
+    public String getCoverageOrRiderTable() {
+        return coverageOrRiderTable;
+    }
 
-	public void setCoverageOrRiderTable(String coverageOrRiderTable) {
-		this.coverageOrRiderTable = coverageOrRiderTable;
-	}
+    @JsonProperty("coverageOrRiderTable")
+    public void setCoverageOrRiderTable(String coverageOrRiderTable) {
+        this.coverageOrRiderTable = coverageOrRiderTable;
+    }
 
-	public BigDecimal getLumpSumContribution() {
-		return lumpSumContribution;
-	}
+    @JsonProperty("lumpSumContribution")
+    public BigDecimal getLumpSumContribution() {
+        return lumpSumContribution;
+    }
 
-	public void setLumpSumContribution(BigDecimal lumpSumContribution) {
-		this.lumpSumContribution = lumpSumContribution;
-	}
+    @JsonProperty("lumpSumContribution")
+    public void setLumpSumContribution(BigDecimal lumpSumContribution) {
+        this.lumpSumContribution = lumpSumContribution;
+    }
 
-	public String getReserveUnitsIndicator() {
-		return ReserveUnitsIndicator;
-	}
+    @JsonProperty("reserveUnitsAllocationDate")
+    public BigInteger getReserveUnitsAllocationDate() {
+        return reserveUnitsAllocationDate;
+    }
 
-	public void setReserveUnitsIndicator(String reserveUnitsIndicator) {
-		ReserveUnitsIndicator = reserveUnitsIndicator;
-	}
+    @JsonProperty("reserveUnitsAllocationDate")
+    public void setReserveUnitsAllocationDate(BigInteger reserveUnitsAllocationDate) {
+        this.reserveUnitsAllocationDate = reserveUnitsAllocationDate;
+    }
 
-	public BigInteger getReserveUnitsAllocationDate() {
-		return ReserveUnitsAllocationDate;
-	}
+    @JsonProperty("reserveUnitsIndicator")
+    public String getReserveUnitsIndicator() {
+        return reserveUnitsIndicator;
+    }
 
-	public void setReserveUnitsAllocationDate(BigInteger reserveUnitsAllocationDate) {
-		ReserveUnitsAllocationDate = reserveUnitsAllocationDate;
-	}
+    @JsonProperty("reserveUnitsIndicator")
+    public void setReserveUnitsIndicator(String reserveUnitsIndicator) {
+        this.reserveUnitsIndicator = reserveUnitsIndicator;
+    }
 }

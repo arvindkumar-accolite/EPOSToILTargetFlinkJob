@@ -1,62 +1,94 @@
+
 package com.prud.model.middleware;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "beneficiaryParty",
+    "beneficiaryPercentage",
+    "beneficiaryClientNumber",
+    "beneficiaryType",
+    "clientRelationship",
+    "effectiveDate"
+})
 public class BeneficiaryDetails {
-	private String beneficiaryParty;
-	private BigDecimal beneficiaryPercentage;
-	private String beneficiaryClientNumber;
-	private String beneficiaryType;
-	private String clientRelationship;
-	private BigInteger effectiveDate;
 
-	public String getBeneficiaryParty() {
-		return beneficiaryParty;
-	}
+    @JsonProperty("beneficiaryParty")
+    private String beneficiaryParty;
+    @JsonProperty("beneficiaryPercentage")
+    private BigDecimal beneficiaryPercentage;
+    @JsonProperty("beneficiaryClientNumber")
+    private String beneficiaryClientNumber;
+    @JsonProperty("beneficiaryType")
+    private String beneficiaryType;
+    @JsonProperty("clientRelationship")
+    private String clientRelationship;
+    @JsonProperty("effectiveDate")
+    private BigInteger effectiveDate;
 
-	public void setBeneficiaryParty(String beneficiaryParty) {
-		this.beneficiaryParty = beneficiaryParty;
-	}
+    @JsonProperty("beneficiaryParty")
+    public String getBeneficiaryParty() {
+        return beneficiaryParty;
+    }
 
-	public BigDecimal getBeneficiaryPercentage() {
-		return beneficiaryPercentage;
-	}
+    @JsonProperty("beneficiaryParty")
+    public void setBeneficiaryParty(String beneficiaryParty) {
+        this.beneficiaryParty = beneficiaryParty;
+    }
 
-	public void setBeneficiaryPercentage(BigDecimal beneficiaryPercentage) {
-		this.beneficiaryPercentage = beneficiaryPercentage;
-	}
+    @JsonProperty("beneficiaryPercentage")
+    public BigDecimal getBeneficiaryPercentage() {
+        return beneficiaryPercentage;
+    }
 
-	public String getBeneficiaryClientNumber() {
-		return beneficiaryClientNumber;
-	}
+    @JsonProperty("beneficiaryPercentage")
+    public void setBeneficiaryPercentage(BigDecimal beneficiaryPercentage) {
+        this.beneficiaryPercentage = beneficiaryPercentage;
+    }
 
-	public void setBeneficiaryClientNumber(String beneficiaryClientNumber) {
-		this.beneficiaryClientNumber = beneficiaryClientNumber;
-	}
+    @JsonProperty("beneficiaryClientNumber")
+    public String getBeneficiaryClientNumber() {
+        return beneficiaryClientNumber;
+    }
 
-	public String getBeneficiaryType() {
-		return beneficiaryType;
-	}
+    @JsonProperty("beneficiaryClientNumber")
+    public void setBeneficiaryClientNumber(String beneficiaryClientNumber) {
+        this.beneficiaryClientNumber = beneficiaryClientNumber;
+    }
 
-	public void setBeneficiaryType(String beneficiaryType) {
-		this.beneficiaryType = beneficiaryType;
-	}
+    @JsonProperty("beneficiaryType")
+    public String getBeneficiaryType() {
+        return beneficiaryType;
+    }
 
-	public String getClientRelationship() {
-		return clientRelationship;
-	}
+    @JsonProperty("beneficiaryType")
+    public void setBeneficiaryType(String beneficiaryType) {
+        this.beneficiaryType = beneficiaryType;
+    }
 
-	public void setClientRelationship(String clientRelationship) {
-		this.clientRelationship = clientRelationship;
-	}
+    @JsonProperty("clientRelationship")
+    public String getClientRelationship() {
+        return clientRelationship;
+    }
 
-	public BigInteger getEffectiveDate() {
-		return effectiveDate;
-	}
+    @JsonProperty("clientRelationship")
+    public void setClientRelationship(String clientRelationship) {
+        this.clientRelationship = clientRelationship;
+    }
 
-	public void setEffectiveDate(BigInteger effectiveDate) {
-		this.effectiveDate = effectiveDate;
-	}
+    @JsonProperty("effectiveDate")
+    public BigInteger getEffectiveDate() {
+        return effectiveDate;
+    }
 
+    @JsonProperty("effectiveDate")
+    public void setEffectiveDate(BigInteger effectiveDate) {
+        this.effectiveDate = effectiveDate;
+    }
 }

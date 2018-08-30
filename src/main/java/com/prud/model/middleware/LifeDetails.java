@@ -1,3 +1,4 @@
+
 package com.prud.model.middleware;
 
 import java.math.BigInteger;
@@ -143,5 +144,4 @@ public class LifeDetails {
 	public void setWeight(BigInteger weight) {
 		this.weight = weight;
 	}
-
 }

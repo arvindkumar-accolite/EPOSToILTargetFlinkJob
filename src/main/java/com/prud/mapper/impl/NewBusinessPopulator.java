@@ -19,8 +19,8 @@ import com.prud.model.middleware.ContractDetails;
 import com.prud.model.middleware.CoverageDetails;
 import com.prud.model.middleware.DispatchDetails;
 import com.prud.model.middleware.DoctorDetails;
-import com.prud.model.middleware.FollowUpDetails;
 import com.prud.model.middleware.FollowUps;
+import com.prud.model.middleware.FollowUpsDetails;
 import com.prud.model.middleware.FundDetails;
 import com.prud.model.middleware.JointOwnerDetails;
 import com.prud.model.middleware.LifeDetails;
@@ -31,7 +31,7 @@ import com.prud.model.middleware.PayerDetails;
 import com.prud.model.middleware.PremiumRCTDetails;
 import com.prud.model.middleware.QuestionDetails;
 import com.prud.model.middleware.RiderDetails;
-import com.prud.model.middleware.SflDetails;
+import com.prud.model.middleware.SFLDetails;
 import com.prud.model.middleware.SpecialTermDetails;
 import com.prud.model.middleware.SpecialTerms;
 import com.prud.translator.JsonValueExtractor;
@@ -43,14 +43,14 @@ public class NewBusinessPopulator {
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {
 		NewBusinessPopulator nbspop = new NewBusinessPopulator();
 		ObjectMapper mapper = new ObjectMapper();
-		//NewBusinessModel nbsModel = nbspop.buildNewBusiness();
+		NewBusinessModel nbsModel = nbspop.buildNewBusiness();
 		System.out.println("meeee");
 		// Object to JSON in file
-		//mapper.writeValue(System.out, nbsModel);
+		mapper.writeValue(System.out, nbsModel);
 		System.out.println();
 		// Object to JSON in String
-		ApplyCashDetails applyCashDetails = mapper.readValue("{\"applyCashId\":\"s\",\"receiptNo\":\"\"}}",ApplyCashDetails.class);
-		 System.out.println(applyCashDetails.getApplyCashId());
+		/*ApplyCashDetails applyCashDetails = mapper.readValue("{\"applyCashId\":\"s\",\"receiptNo\":\"\"}}",ApplyCashDetails.class);
+		 System.out.println(applyCashDetails.getApplyCashId());*/
 		 
 	}
 
@@ -76,7 +76,7 @@ public class NewBusinessPopulator {
 		nbsModel.setPremiumRCTDetails(populatePremiumRCTDetails());
 		nbsModel.setQuestionDetails(populateQuestionDetails());
 		nbsModel.setRiderDetails(populateRiderDetails());
-		nbsModel.setSflDetails(populateSflDetails());
+		nbsModel.setSflDetails(populateSFLDetails());
 		nbsModel.setSpecialTerms(populateSpecialTerms());
 		return nbsModel;
 	}
@@ -238,14 +238,14 @@ public class NewBusinessPopulator {
 	private FollowUps populateFollowUps() {
 		FollowUps followUps = new FollowUps();
 		followUps.setFollowUpsId("");
-		followUps.setzDoctor("");
-		FollowUpDetails followUpsDetail = populateFollowUpsDetails();
-		followUps.getFollowUpDetails().add(followUpsDetail);
+		followUps.setZDoctor("");
+		FollowUpsDetails followUpsDetail = populateFollowUpsDetails();
+		followUps.getFollowUpsDetails().add(followUpsDetail);
 		return followUps;
 	}
 
-	private FollowUpDetails populateFollowUpsDetails() {
-		FollowUpDetails followUpsDetail = new FollowUpDetails();
+	private FollowUpsDetails populateFollowUpsDetails() {
+		FollowUpsDetails followUpsDetail = new FollowUpsDetails();
 		followUpsDetail.setFollowUpCode("");
 		followUpsDetail.setFollowUpDate(new BigInteger("1"));
 		followUpsDetail.setFollowUpNumber(new BigInteger("1"));
@@ -258,28 +258,28 @@ public class NewBusinessPopulator {
 
 	private FundDetails populateFundDetails() {
 		FundDetails fundDetails = new FundDetails();
-		fundDetails.setAmount01(new BigInteger("0"));
-		fundDetails.setAmount02(new BigInteger("0"));
-		fundDetails.setAmount03(new BigInteger("0"));
-		fundDetails.setAmount04(new BigInteger("0"));
-		fundDetails.setAmount05(new BigInteger("0"));
-		fundDetails.setAmount06(new BigInteger("0"));
-		fundDetails.setAmount07(new BigInteger("0"));
-		fundDetails.setAmount08(new BigInteger("0"));
-		fundDetails.setAmount09(new BigInteger("0"));
-		fundDetails.setAmount10(new BigInteger("0"));
+		fundDetails.setAmount01(new BigDecimal("0"));
+		fundDetails.setAmount02(new BigDecimal("0"));
+		fundDetails.setAmount03(new BigDecimal("0"));
+		fundDetails.setAmount04(new BigDecimal("0"));
+		fundDetails.setAmount05(new BigDecimal("0"));
+		fundDetails.setAmount06(new BigDecimal("0"));
+		fundDetails.setAmount07(new BigDecimal("0"));
+		fundDetails.setAmount08(new BigDecimal("0"));
+		fundDetails.setAmount09(new BigDecimal("0"));
+		fundDetails.setAmount10(new BigDecimal("0"));
 		fundDetails.setFundId("");
 		fundDetails.setFundParent("");
-		fundDetails.setInterateRate01(new BigInteger("0"));
-		fundDetails.setInterateRate02(new BigInteger("0"));
-		fundDetails.setInterateRate03(new BigInteger("0"));
-		fundDetails.setInterateRate04(new BigInteger("0"));
-		fundDetails.setInterateRate05(new BigInteger("0"));
-		fundDetails.setInterateRate06(new BigInteger("0"));
-		fundDetails.setInterateRate07(new BigInteger("0"));
-		fundDetails.setInterateRate08(new BigInteger("0"));
-		fundDetails.setInterateRate09(new BigInteger("0"));
-		fundDetails.setInterateRate10(new BigInteger("0"));
+		fundDetails.setInterateRate01(new BigDecimal("0"));
+		fundDetails.setInterateRate02(new BigDecimal("0"));
+		fundDetails.setInterateRate03(new BigDecimal("0"));
+		fundDetails.setInterateRate04(new BigDecimal("0"));
+		fundDetails.setInterateRate05(new BigDecimal("0"));
+		fundDetails.setInterateRate06(new BigDecimal("0"));
+		fundDetails.setInterateRate07(new BigDecimal("0"));
+		fundDetails.setInterateRate08(new BigDecimal("0"));
+		fundDetails.setInterateRate09(new BigDecimal("0"));
+		fundDetails.setInterateRate10(new BigDecimal("0"));
 		fundDetails.setPercentageOfAmountIndicator("");
 		fundDetails.setRenewalMonths01(new BigInteger("0"));
 		fundDetails.setRenewalMonths02(new BigInteger("0"));
@@ -376,7 +376,7 @@ public class NewBusinessPopulator {
 		premiumRCTDetails.setBankKey("");
 		premiumRCTDetails.setCheqNumber("");
 		premiumRCTDetails.setCurrencyRate(new BigDecimal("0"));
-		premiumRCTDetails.setDissectionNumber(new BigInteger("0"));
+		premiumRCTDetails.setDissectionNumber(new BigDecimal("0"));
 		premiumRCTDetails.setDocumentAmount(new BigDecimal("0"));
 		premiumRCTDetails.setOriginalCurrency("");
 		premiumRCTDetails.setPaymentType("");
@@ -384,7 +384,7 @@ public class NewBusinessPopulator {
 		premiumRCTDetails.setProtectIndicator("");
 		premiumRCTDetails.setRecievedFromCode("");
 		premiumRCTDetails.setRecievedFromNumber("");
-		premiumRCTDetails.setSflDetails(premiumRCTDetails.getSflDetails());
+		premiumRCTDetails.getSfldetails().add(populateSFLDetails());
 		premiumRCTDetails.setTranDate(new BigInteger("0"));
 		return premiumRCTDetails;
 	}
@@ -412,18 +412,18 @@ public class NewBusinessPopulator {
 		return riderDetails;
 	}
 
-	private SflDetails populateSflDetails() {
-		SflDetails SflDetails = new SflDetails();
-		SflDetails.setAmountInOriginalCurrency(new BigDecimal("0"));
-		SflDetails.setEntity("");
-		SflDetails.setSubAccountCode("");
-		SflDetails.setSubAccountType("");
-		return SflDetails;
+	private SFLDetails populateSFLDetails() {
+		SFLDetails sflDetails = new SFLDetails();
+		sflDetails.setAmountInOriginalCurrency(new BigDecimal("0"));
+		sflDetails.setEntity("");
+		sflDetails.setSubAccountCode("");
+		sflDetails.setSubAccountType("");
+		return sflDetails;
 	}
 
 	private SpecialTerms populateSpecialTerms() {
 		SpecialTerms specialTerms = new SpecialTerms();
-		specialTerms.getSpecialterms().add(populateSpecialTermDetails());
+		specialTerms.getSpecialTermDetails().add(populateSpecialTermDetails());
 		return specialTerms;
 	}
 

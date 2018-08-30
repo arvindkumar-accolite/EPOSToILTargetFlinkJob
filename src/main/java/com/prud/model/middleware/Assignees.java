@@ -1,35 +1,44 @@
+
 package com.prud.model.middleware;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+    "assigneeId",
+    "assigneeDetails"
+})
 public class Assignees {
-	private String assigneeId;
-	private List<AssigneeDetails> assigneeDetails;
 
-	public String getAssigneeId() {
-		return assigneeId;
+    @JsonProperty("assigneeId")
+    private String assigneeId;
+    @JsonProperty("assigneeDetails")
+    private List<AssigneeDetails> assigneeDetails = null;
+
+    @JsonProperty("assigneeDetails")
+    public List<AssigneeDetails> getAssigneeDetails() {
+    	if(null==assigneeDetails) {
+    		assigneeDetails = new ArrayList<AssigneeDetails>();
+    	}
+		return assigneeDetails;
+	}
+    @JsonProperty("assigneeDetails")
+	public void setAssigneeDetails(List<AssigneeDetails> assigneeDetails) {
+		this.assigneeDetails = assigneeDetails;
 	}
 
-	public void setAssigneeId(String assigneeId) {
-		this.assigneeId = assigneeId;
-	}
+	@JsonProperty("assigneeId")
+    public String getAssigneeId() {
+        return assigneeId;
+    }
 
-	/**
-	 * @return the assigneeDetails
-	 */
-	public List<AssigneeDetails> getAssigneeDetails() {
-		if (assigneeDetails == null) {
-			assigneeDetails = new ArrayList<AssigneeDetails>();
-		}
-		return this.assigneeDetails;
-	}
-
-	/**
-	 * @param assigneedetails the assigneedetails to set
-	 */
-	public void setAssigneeDetails(List<AssigneeDetails> assigneedetails) {
-		this.assigneeDetails = assigneedetails;
-	}
-
+    @JsonProperty("assigneeId")
+    public void setAssigneeId(String assigneeId) {
+        this.assigneeId = assigneeId;
+    }
 }

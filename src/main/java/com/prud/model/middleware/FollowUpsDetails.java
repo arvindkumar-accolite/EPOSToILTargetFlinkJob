@@ -1,3 +1,4 @@
+
 package com.prud.model.middleware;
 
 import java.math.BigInteger;
@@ -9,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "followUpCode", "followUpDate", "followUpNumber", "followUpStatus", "lifeNumber",
 		"jointLifeNumber", "followUpType" })
-public class FollowUpDetails {
+public class FollowUpsDetails {
 
 	@JsonProperty("followUpCode")
 	private String followUpCode;
