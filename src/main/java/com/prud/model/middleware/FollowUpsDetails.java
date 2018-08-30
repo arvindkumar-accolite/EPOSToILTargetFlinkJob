@@ -15,7 +15,7 @@ public class FollowUpsDetails {
 	@JsonProperty("followUpCode")
 	private String followUpCode;
 	@JsonProperty("followUpDate")
-	private BigInteger followUpDate;
+	private String followUpDate;
 	@JsonProperty("followUpNumber")
 	private BigInteger followUpNumber;
 	@JsonProperty("followUpStatus")
@@ -38,12 +38,12 @@ public class FollowUpsDetails {
 	}
 
 	@JsonProperty("followUpDate")
-	public BigInteger getFollowUpDate() {
+	public String getFollowUpDate() {
 		return followUpDate;
 	}
 
 	@JsonProperty("followUpDate")
-	public void setFollowUpDate(BigInteger followUpDate) {
+	public void setFollowUpDate(String followUpDate) {
 		this.followUpDate = followUpDate;
 	}
 

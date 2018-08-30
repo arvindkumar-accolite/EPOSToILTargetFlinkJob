@@ -99,7 +99,7 @@ public class NewBusinessProposalGenerator {
 	}
 	
 	public String buildCreateClientRequest(NewBusinessModel newBusinessModel) {
-		ClientDetails clientDetails = newBusinessModel.getClientDetails();
+		ClientDetails clientDetails = newBusinessModel.getClientDetails().get(0);
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
 				CLICRPIREC.class, createClientMappingMap);
 		MSPContext mspContext = new MSPContext();

@@ -87,8 +87,8 @@ public class NewBusinessPopulator {
 	private AssigneeDetails populateAssigneeDetails() {
 		AssigneeDetails assigneeDetails = new AssigneeDetails();
 		assigneeDetails.setAssigneeParty("");
-		assigneeDetails.setCommissionFromDate(new BigInteger("1"));
-		assigneeDetails.setCommissionToDate(new BigInteger("1"));
+		assigneeDetails.setCommissionFromDate("");
+		assigneeDetails.setCommissionToDate("");
 		assigneeDetails.setReasonCode("");
 		return assigneeDetails;
 	}
@@ -128,7 +128,7 @@ public class NewBusinessPopulator {
 		beneficiaryDetail.setBeneficiaryPercentage(new BigDecimal("0"));
 		beneficiaryDetail.setBeneficiaryType("");
 		beneficiaryDetail.setClientRelationship("");
-		beneficiaryDetail.setEffectiveDate(new BigInteger("1"));
+		beneficiaryDetail.setEffectiveDate("");
 		return beneficiaryDetail;
 	}
 
@@ -188,9 +188,9 @@ public class NewBusinessPopulator {
 		contractDetails.setContractNumber("");
 		contractDetails.setContractType("");
 		contractDetails.setMethodOfPayment("");
-		contractDetails.setOriginalCommencementDate(new BigInteger("1"));
+		contractDetails.setOriginalCommencementDate("");
 		contractDetails.setPlanSuffix(new BigInteger("1"));
-		contractDetails.setProposalDate(new BigInteger("1"));
+		contractDetails.setProposalDate("");
 		contractDetails.setRegister("");
 		return contractDetails;
 	}
@@ -204,12 +204,12 @@ public class NewBusinessPopulator {
 		coverageDetails.setLumpSumContribution(new BigDecimal("1"));
 		coverageDetails.setMortalityClass("");
 		coverageDetails.setPremiumCessationAge(new BigInteger("1"));
-		coverageDetails.setPremiumCessationDate(new BigInteger("1"));
+		coverageDetails.setPremiumCessationDate("");
 		coverageDetails.setPremiumCessationTerm(new BigInteger("1"));
-		coverageDetails.setReserveUnitsAllocationDate(new BigInteger("1"));
+		coverageDetails.setReserveUnitsAllocationDate("");
 		coverageDetails.setReserveUnitsIndicator("");
 		coverageDetails.setRiskCessationAge(new BigInteger("1"));
-		coverageDetails.setRiskCessationDate(new BigInteger("1"));
+		coverageDetails.setRiskCessationDate("");
 		coverageDetails.setRiskCessationTerm(new BigInteger("1"));
 		coverageDetails.setSumInsured(new BigInteger("1"));
 		return coverageDetails;
@@ -243,7 +243,7 @@ public class NewBusinessPopulator {
 	private FollowUpsDetails populateFollowUpsDetails() {
 		FollowUpsDetails followUpsDetail = new FollowUpsDetails();
 		followUpsDetail.setFollowUpCode("");
-		followUpsDetail.setFollowUpDate(new BigInteger("1"));
+		followUpsDetail.setFollowUpDate("");
 		followUpsDetail.setFollowUpNumber(new BigInteger("1"));
 		followUpsDetail.setFollowUpStatus("");
 		followUpsDetail.setFollowUpType("");
@@ -321,7 +321,7 @@ public class NewBusinessPopulator {
 	private LifeDetails populateLifeDetails() {
 		LifeDetails lifeDetails = new LifeDetails();
 		lifeDetails.setAnbAge(new BigInteger("0"));
-		lifeDetails.setDateOfBirth(new BigInteger("0"));
+		lifeDetails.setDateOfBirth("");
 		lifeDetails.setHeight(new BigInteger("0"));
 		lifeDetails.setLifeId("");
 		lifeDetails.setLifeParty("");

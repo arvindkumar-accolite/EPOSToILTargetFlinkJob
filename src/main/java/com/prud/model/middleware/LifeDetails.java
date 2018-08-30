@@ -19,7 +19,7 @@ public class LifeDetails {
 	@JsonProperty("anbAge")
 	private BigInteger anbAge;
 	@JsonProperty("dateOfBirth")
-	private BigInteger dateOfBirth;
+	private String dateOfBirth;
 	@JsonProperty("occupationCode")
 	private String occupationCode;
 	@JsonProperty("relationshipToLifeInsured")
@@ -66,12 +66,12 @@ public class LifeDetails {
 	}
 
 	@JsonProperty("dateOfBirth")
-	public BigInteger getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
 	@JsonProperty("dateOfBirth")
-	public void setDateOfBirth(BigInteger dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

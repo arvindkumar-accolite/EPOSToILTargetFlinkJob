@@ -35,9 +35,9 @@ public class CoverageDetails {
     @JsonProperty("mortalityClass")
     private String mortalityClass;
     @JsonProperty("riskCessationDate")
-    private BigInteger riskCessationDate;
+    private String riskCessationDate;
     @JsonProperty("premiumCessationDate")
-    private BigInteger premiumCessationDate;
+    private String premiumCessationDate;
     @JsonProperty("premiumCessationAge")
     private BigInteger premiumCessationAge;
     @JsonProperty("premiumCessationTerm")
@@ -55,7 +55,7 @@ public class CoverageDetails {
     @JsonProperty("lumpSumContribution")
     private BigDecimal lumpSumContribution;
     @JsonProperty("reserveUnitsAllocationDate")
-    private BigInteger reserveUnitsAllocationDate;
+    private String reserveUnitsAllocationDate;
     @JsonProperty("reserveUnitsIndicator")
     private String reserveUnitsIndicator;
   
@@ -90,22 +90,22 @@ public class CoverageDetails {
     }
 
     @JsonProperty("riskCessationDate")
-    public BigInteger getRiskCessationDate() {
+    public String getRiskCessationDate() {
         return riskCessationDate;
     }
 
     @JsonProperty("riskCessationDate")
-    public void setRiskCessationDate(BigInteger riskCessationDate) {
+    public void setRiskCessationDate(String riskCessationDate) {
         this.riskCessationDate = riskCessationDate;
     }
 
     @JsonProperty("premiumCessationDate")
-    public BigInteger getPremiumCessationDate() {
+    public String getPremiumCessationDate() {
         return premiumCessationDate;
     }
 
     @JsonProperty("premiumCessationDate")
-    public void setPremiumCessationDate(BigInteger premiumCessationDate) {
+    public void setPremiumCessationDate(String premiumCessationDate) {
         this.premiumCessationDate = premiumCessationDate;
     }
 
@@ -190,12 +190,12 @@ public class CoverageDetails {
     }
 
     @JsonProperty("reserveUnitsAllocationDate")
-    public BigInteger getReserveUnitsAllocationDate() {
+    public String getReserveUnitsAllocationDate() {
         return reserveUnitsAllocationDate;
     }
 
     @JsonProperty("reserveUnitsAllocationDate")
-    public void setReserveUnitsAllocationDate(BigInteger reserveUnitsAllocationDate) {
+    public void setReserveUnitsAllocationDate(String reserveUnitsAllocationDate) {
         this.reserveUnitsAllocationDate = reserveUnitsAllocationDate;
     }
 

@@ -1,6 +1,9 @@
 package com.prud.service.impl;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -18,15 +21,20 @@ import com.prud.translator.NewBusinessProposalGenerator;
 
 public class ILServiceImpl implements ILService {
 	private NewBusinessProposalGenerator newBusinessProposalGenerator;
-	public static final String REST_SERVICE_URI = "http://localhost:8099/kafka/send/message";
+	public static final String CLIENT_URL = "";
+	public static final String NEW_BUSINESS_URL = "";
 
 	public String serviceRequest(String json) {
 		NewBusinessModel  newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("Envelop " + createClientSoapEnvelop);
-		String clientNumber = invokeILSoapService(createClientSoapEnvelop,"").getAttribute("");
-		
-		invokeILSoapService(createClientSoapEnvelop,"");
+		String clientNumber = invokeILSoapService(createClientSoapEnvelop,CLIENT_URL).getAttribute("CLNTNUM");
+
+		newBusinessModel.getClientDetails().get(0).setClientNumber(clientNumber);
+		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
+		System.out.println("Envelop " + createClientSoapEnvelop);
+		System.out.println(invokeILSoapService(newBusinessSoapEnvelop,NEW_BUSINESS_URL).toString());
+
 		return createClientSoapEnvelop;
 	}
 
@@ -63,6 +71,32 @@ public class ILServiceImpl implements ILService {
 		}
 		return null;
 	}
+	public static void main(String[] args) {
+		try {
+			ILServiceImpl ilServiceImpl = new ILServiceImpl();
+			ilServiceImpl.serviceRequest(readFile("C:\\D\\Prudential\\dev1\\EposToILDemo\\EPOSToILTargetFlinkJob\\src\\main\\resources\\test.txt"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	private static String readFile(String file) throws IOException {
+	    BufferedReader reader = new BufferedReader(new FileReader (file));
+	    String         line = null;
+	    StringBuilder  stringBuilder = new StringBuilder();
+	    String         ls = System.getProperty("line.separator");
 
+	    try {
+	        while((line = reader.readLine()) != null) {
+	            stringBuilder.append(line);
+	            stringBuilder.append(ls);
+	        }
+
+	        return stringBuilder.toString();
+	    } finally {
+	        reader.close();
+	    }
+	}
 
 }

@@ -22,9 +22,9 @@ public class AssigneeDetails {
     @JsonProperty("assigneeParty")
     private String assigneeParty;
     @JsonProperty("commissionFromDate")
-    private BigInteger commissionFromDate;
+    private String commissionFromDate;
     @JsonProperty("commissionToDate")
-    private BigInteger commissionToDate;
+    private String commissionToDate;
     @JsonProperty("reasonCode")
     private String reasonCode;
 
@@ -39,22 +39,22 @@ public class AssigneeDetails {
     }
 
     @JsonProperty("commissionFromDate")
-    public BigInteger getCommissionFromDate() {
+    public String getCommissionFromDate() {
         return commissionFromDate;
     }
 
     @JsonProperty("commissionFromDate")
-    public void setCommissionFromDate(BigInteger commissionFromDate) {
+    public void setCommissionFromDate(String commissionFromDate) {
         this.commissionFromDate = commissionFromDate;
     }
 
     @JsonProperty("commissionToDate")
-    public BigInteger getCommissionToDate() {
+    public String getCommissionToDate() {
         return commissionToDate;
     }
 
     @JsonProperty("commissionToDate")
-    public void setCommissionToDate(BigInteger commissionToDate) {
+    public void setCommissionToDate(String commissionToDate) {
         this.commissionToDate = commissionToDate;
     }
 

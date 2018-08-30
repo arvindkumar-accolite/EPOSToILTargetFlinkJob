@@ -48,7 +48,7 @@ public class ContractDetails {
     @JsonProperty("methodOfPayment")
     private String methodOfPayment;
     @JsonProperty("proposalDate")
-    private BigInteger proposalDate;
+    private String proposalDate;
     @JsonProperty("planSuffix")
     private BigInteger planSuffix;
     @JsonProperty("register")
@@ -56,7 +56,7 @@ public class ContractDetails {
     @JsonProperty("accountType")
     private String accountType;
     @JsonProperty("originalCommencementDate")
-    private BigInteger originalCommencementDate;
+    private String originalCommencementDate;
     
     @JsonProperty("contractHDREntId")
     public String getContractHDREntId() {
@@ -159,12 +159,12 @@ public class ContractDetails {
     }
 
     @JsonProperty("proposalDate")
-    public BigInteger getProposalDate() {
+    public String getProposalDate() {
         return proposalDate;
     }
 
     @JsonProperty("proposalDate")
-    public void setProposalDate(BigInteger proposalDate) {
+    public void setProposalDate(String proposalDate) {
         this.proposalDate = proposalDate;
     }
 
@@ -199,12 +199,12 @@ public class ContractDetails {
     }
 
     @JsonProperty("originalCommencementDate")
-    public BigInteger getOriginalCommencementDate() {
+    public String getOriginalCommencementDate() {
         return originalCommencementDate;
     }
 
     @JsonProperty("originalCommencementDate")
-    public void setOriginalCommencementDate(BigInteger originalCommencementDate) {
+    public void setOriginalCommencementDate(String originalCommencementDate) {
         this.originalCommencementDate = originalCommencementDate;
     }
 }

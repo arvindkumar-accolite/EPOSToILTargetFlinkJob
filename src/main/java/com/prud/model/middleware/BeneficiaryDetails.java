@@ -30,7 +30,7 @@ public class BeneficiaryDetails {
     @JsonProperty("clientRelationship")
     private String clientRelationship;
     @JsonProperty("effectiveDate")
-    private BigInteger effectiveDate;
+    private String effectiveDate;
 
     @JsonProperty("beneficiaryParty")
     public String getBeneficiaryParty() {
@@ -83,12 +83,12 @@ public class BeneficiaryDetails {
     }
 
     @JsonProperty("effectiveDate")
-    public BigInteger getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(BigInteger effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 }
