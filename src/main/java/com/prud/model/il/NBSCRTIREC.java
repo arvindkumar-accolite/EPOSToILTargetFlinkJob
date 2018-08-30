@@ -6074,7 +6074,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTENTID() {
+        public String getCliententid() {
             return cliententid;
         }
 
@@ -6086,7 +6086,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTENTID(String value) {
+        public void setCliententid(String value) {
             this.cliententid = value;
         }
 
@@ -6098,7 +6098,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTPARTY() {
+        public String getClientparty() {
             return clientparty;
         }
 
@@ -6110,7 +6110,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTPARTY(String value) {
+        public void setClientparty(String value) {
             this.clientparty = value;
         }
 
@@ -6122,7 +6122,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLNTNUM() {
+        public String getClientclntnum() {
             return clientclntnum;
         }
 
@@ -6134,7 +6134,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLNTNUM(String value) {
+        public void setClientclntnum(String value) {
             this.clientclntnum = value;
         }
 
@@ -6146,7 +6146,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLNTTYPE() {
+        public String getClientclnttype() {
             return clientclnttype;
         }
 
@@ -6158,7 +6158,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLNTTYPE(String value) {
+        public void setClientclnttype(String value) {
             this.clientclnttype = value;
         }
 
@@ -6170,7 +6170,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTADDRTYPE() {
+        public String getClientaddrtype() {
             return clientaddrtype;
         }
 
@@ -6182,7 +6182,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTADDRTYPE(String value) {
+        public void setClientaddrtype(String value) {
             this.clientaddrtype = value;
         }
 
@@ -6194,7 +6194,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTBIRTHP() {
+        public String getClientbirthp() {
             return clientbirthp;
         }
 
@@ -6206,7 +6206,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTBIRTHP(String value) {
+        public void setClientbirthp(String value) {
             this.clientbirthp = value;
         }
 
@@ -6218,7 +6218,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTADDR01() {
+        public String getClientcltaddr01() {
             return clientcltaddr01;
         }
 
@@ -6230,7 +6230,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTADDR01(String value) {
+        public void setClientcltaddr01(String value) {
             this.clientcltaddr01 = value;
         }
 
@@ -6242,7 +6242,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTADDR02() {
+        public String getClientcltaddr02() {
             return clientcltaddr02;
         }
 
@@ -6254,7 +6254,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTADDR02(String value) {
+        public void setClientcltaddr02(String value) {
             this.clientcltaddr02 = value;
         }
 
@@ -6266,7 +6266,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTADDR03() {
+        public String getClientcltaddr03() {
             return clientcltaddr03;
         }
 
@@ -6278,7 +6278,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTADDR03(String value) {
+        public void setClientcltaddr03(String value) {
             this.clientcltaddr03 = value;
         }
 
@@ -6290,7 +6290,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTADDR04() {
+        public String getClientcltaddr04() {
             return clientcltaddr04;
         }
 
@@ -6302,7 +6302,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTADDR04(String value) {
+        public void setClientcltaddr04(String value) {
             this.clientcltaddr04 = value;
         }
 
@@ -6314,7 +6314,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX }
          *     
          */
-        public NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX getCLIENTCLTDOBX() {
+        public NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX getClientcltdobx() {
             return clientcltdobx;
         }
 
@@ -6326,7 +6326,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX }
          *     
          */
-        public void setCLIENTCLTDOBX(NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX value) {
+        public void setClientcltdobx(NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX value) {
             this.clientcltdobx = value;
         }
 
@@ -6338,7 +6338,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTPCODE() {
+        public String getClientcltpcode() {
             return clientcltpcode;
         }
 
@@ -6350,7 +6350,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTPCODE(String value) {
+        public void setClientcltpcode(String value) {
             this.clientcltpcode = value;
         }
 
@@ -6362,7 +6362,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTPHONE01() {
+        public String getClientcltphone01() {
             return clientcltphone01;
         }
 
@@ -6374,7 +6374,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTPHONE01(String value) {
+        public void setClientcltphone01(String value) {
             this.clientcltphone01 = value;
         }
 
@@ -6386,7 +6386,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTPHONE02() {
+        public String getClientcltphone02() {
             return clientcltphone02;
         }
 
@@ -6398,7 +6398,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTPHONE02(String value) {
+        public void setClientcltphone02(String value) {
             this.clientcltphone02 = value;
         }
 
@@ -6410,7 +6410,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCLTSEX() {
+        public String getClientcltsex() {
             return clientcltsex;
         }
 
@@ -6422,7 +6422,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCLTSEX(String value) {
+        public void setClientcltsex(String value) {
             this.clientcltsex = value;
         }
 
@@ -6434,7 +6434,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCTRYCODE() {
+        public String getClientctrycode() {
             return clientctrycode;
         }
 
@@ -6446,7 +6446,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCTRYCODE(String value) {
+        public void setClientctrycode(String value) {
             this.clientctrycode = value;
         }
 
@@ -6458,7 +6458,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTDIRMAIL() {
+        public String getClientdirmail() {
             return clientdirmail;
         }
 
@@ -6470,7 +6470,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTDIRMAIL(String value) {
+        public void setlientdirmail(String value) {
             this.clientdirmail = value;
         }
 
@@ -6482,7 +6482,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTDOCNO() {
+        public String getClientdocno() {
             return clientdocno;
         }
 
@@ -6494,7 +6494,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTDOCNO(String value) {
+        public void setClientdocno(String value) {
             this.clientdocno = value;
         }
 
@@ -6506,7 +6506,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTEMAIL() {
+        public String getClientemail() {
             return clientemail;
         }
 
@@ -6518,7 +6518,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTEMAIL(String value) {
+        public void setClientemail(String value) {
             this.clientemail = value;
         }
 
@@ -6530,7 +6530,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTETHORIG() {
+        public String getClientethorig() {
             return clientethorig;
         }
 
@@ -6542,7 +6542,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTETHORIG(String value) {
+        public void setClientethorig(String value) {
             this.clientethorig = value;
         }
 
@@ -6554,7 +6554,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTGIVNAME() {
+        public String getClientgivname() {
             return clientgivname;
         }
 
@@ -6566,7 +6566,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTGIVNAME(String value) {
+        public void setClientgivname(String value) {
             this.clientgivname = value;
         }
 
@@ -6578,7 +6578,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTLANGUAGE() {
+        public String getClientlanguage() {
             return clientlanguage;
         }
 
@@ -6590,7 +6590,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTLANGUAGE(String value) {
+        public void setClientlanguage(String value) {
             this.clientlanguage = value;
         }
 
@@ -6602,7 +6602,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTMAILING() {
+        public String getClientmailing() {
             return clientmailing;
         }
 
@@ -6614,7 +6614,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTMAILING(String value) {
+        public void setClientmailing(String value) {
             this.clientmailing = value;
         }
 
@@ -6626,7 +6626,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTMARRYD() {
+        public String getClientmarryd() {
             return clientmarryd;
         }
 
@@ -6638,7 +6638,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTMARRYD(String value) {
+        public void setClientmarryd(String value) {
             this.clientmarryd = value;
         }
 
@@ -6650,7 +6650,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTMIDDL01() {
+        public String getClientmiddl01() {
             return clientmiddl01;
         }
 
@@ -6662,7 +6662,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTMIDDL01(String value) {
+        public void setClientmiddl01(String value) {
             this.clientmiddl01 = value;
         }
 
@@ -6674,7 +6674,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTMIDDL02() {
+        public String getClientmiddl02() {
             return clientmiddl02;
         }
 
@@ -6686,7 +6686,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTMIDDL02(String value) {
+        public void setClientmiddl02(String value) {
             this.clientmiddl02 = value;
         }
 
@@ -6698,7 +6698,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTNATLTY() {
+        public String getClientnatlty() {
             return clientnatlty;
         }
 
@@ -6710,7 +6710,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTNATLTY(String value) {
+        public void setClientnatlty(String value) {
             this.clientnatlty = value;
         }
 
@@ -6722,7 +6722,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTOCCPCODE() {
+        public String getClientoccpcode() {
             return clientoccpcode;
         }
 
@@ -6734,7 +6734,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTOCCPCODE(String value) {
+        public void setClientoccpcode(String value) {
             this.clientoccpcode = value;
         }
 
@@ -6746,7 +6746,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTPREFCOM() {
+        public String getClientprefcom() {
             return clientprefcom;
         }
 
@@ -6758,7 +6758,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTPREFCOM(String value) {
+        public void setClientprefcom(String value) {
             this.clientprefcom = value;
         }
 
@@ -6770,7 +6770,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTSALUTL() {
+        public String getClientsalutl() {
             return clientsalutl;
         }
 
@@ -6782,7 +6782,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTSALUTL(String value) {
+        public void setClientsalutl(String value) {
             this.clientsalutl = value;
         }
 
@@ -6794,7 +6794,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTSECUITYNO() {
+        public String getClientsecuityno() {
             return clientsecuityno;
         }
 
@@ -6806,7 +6806,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTSECUITYNO(String value) {
+        public void setClientsecuityno(String value) {
             this.clientsecuityno = value;
         }
 
@@ -6818,7 +6818,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTSOE() {
+        public String getClientsoe() {
             return clientsoe;
         }
 
@@ -6830,7 +6830,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTSOE(String value) {
+        public void setClientsoe(String value) {
             this.clientsoe = value;
         }
 
@@ -6842,7 +6842,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTSTATCODE() {
+        public String getClientstatcode() {
             return clientstatcode;
         }
 
@@ -6854,7 +6854,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTSTATCODE(String value) {
+        public void setClientstatcode(String value) {
             this.clientstatcode = value;
         }
 
@@ -6866,7 +6866,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTSURNAME() {
+        public String getClientsurname() {
             return clientsurname;
         }
 
@@ -6878,7 +6878,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTSURNAME(String value) {
+        public void setClientsurname(String value) {
             this.clientsurname = value;
         }
 
@@ -6890,7 +6890,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTVIP() {
+        public String getClientvip() {
             return clientvip;
         }
 
@@ -6902,7 +6902,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTVIP(String value) {
+        public void setClientvip(String value) {
             this.clientvip = value;
         }
 
@@ -6914,7 +6914,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTFAO() {
+        public String getClientfao() {
             return clientfao;
         }
 
@@ -6926,7 +6926,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTFAO(String value) {
+        public void setClientfao(String value) {
             this.clientfao = value;
         }
 
@@ -6938,7 +6938,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLIENTCORPNAME() {
+        public String getClientcorpname() {
             return clientcorpname;
         }
 
@@ -6950,7 +6950,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLIENTCORPNAME(String value) {
+        public void setClientcorpname(String value) {
             this.clientcorpname = value;
         }
 
