@@ -32,7 +32,7 @@ public class MandateDetails {
     @JsonProperty("bankKey")
     private String bankKey;
     @JsonProperty("effectiveDate")
-    private BigInteger effectiveDate;
+    private String effectiveDate;
     @JsonProperty("factoringHouse")
     private String factoringHouse;
     @JsonProperty("mandateStatus")
@@ -91,12 +91,12 @@ public class MandateDetails {
     }
 
     @JsonProperty("effectiveDate")
-    public BigInteger getEffectiveDate() {
+    public String getEffectiveDate() {
         return effectiveDate;
     }
 
     @JsonProperty("effectiveDate")
-    public void setEffectiveDate(BigInteger effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
     }
 

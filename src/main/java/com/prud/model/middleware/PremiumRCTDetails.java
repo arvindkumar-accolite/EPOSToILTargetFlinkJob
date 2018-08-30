@@ -2,7 +2,6 @@
 package com.prud.model.middleware;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +44,7 @@ public class PremiumRCTDetails {
 	@JsonProperty("currencyRate")
 	private BigDecimal currencyRate;
 	@JsonProperty("tranDate")
-	private BigInteger tranDate;
+	private String tranDate;
 	@JsonProperty("protectIndicator")
 	private String protectIndicator;
 	@JsonProperty("dissectionNumber")
@@ -194,12 +193,12 @@ public class PremiumRCTDetails {
 	}
 
 	@JsonProperty("tranDate")
-	public BigInteger getTranDate() {
+	public String getTranDate() {
 		return tranDate;
 	}
 
 	@JsonProperty("tranDate")
-	public void setTranDate(BigInteger tranDate) {
+	public void setTranDate(String tranDate) {
 		this.tranDate = tranDate;
 	}
 

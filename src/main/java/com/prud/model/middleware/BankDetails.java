@@ -1,8 +1,6 @@
 
 package com.prud.model.middleware;
 
-import java.math.BigInteger;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -33,7 +31,7 @@ public class BankDetails {
     @JsonProperty("currencyCode")
     private String currencyCode;
     @JsonProperty("datefrom")
-    private BigInteger datefrom;
+    private String datefrom;
     @JsonProperty("factoringHouse")
     private String factoringHouse;
    
@@ -98,12 +96,12 @@ public class BankDetails {
     }
 
     @JsonProperty("datefrom")
-    public BigInteger getDatefrom() {
+    public String getDatefrom() {
         return datefrom;
     }
 
     @JsonProperty("datefrom")
-    public void setDatefrom(BigInteger datefrom) {
+    public void setDatefrom(String datefrom) {
         this.datefrom = datefrom;
     }
 

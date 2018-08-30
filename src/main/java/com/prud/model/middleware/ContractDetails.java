@@ -36,7 +36,7 @@ public class ContractDetails {
     @JsonProperty("agentNumber")
     private String agentNumber;
     @JsonProperty("billingRenewalDate")
-    private BigInteger billingRenewalDate;
+    private String billingRenewalDate;
     @JsonProperty("billingCurrency")
     private String billingCurrency;
     @JsonProperty("billingfrequency")
@@ -99,12 +99,12 @@ public class ContractDetails {
     }
 
     @JsonProperty("billingRenewalDate")
-    public BigInteger getBillingRenewalDate() {
+    public String getBillingRenewalDate() {
         return billingRenewalDate;
     }
 
     @JsonProperty("billingRenewalDate")
-    public void setBillingRenewalDate(BigInteger billingRenewalDate) {
+    public void setBillingRenewalDate(String billingRenewalDate) {
         this.billingRenewalDate = billingRenewalDate;
     }
 
