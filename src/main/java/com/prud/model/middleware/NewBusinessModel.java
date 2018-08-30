@@ -9,10 +9,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "applyCashDetails", "assigneeDetails", "assignees", "bankDetails", "beneficiary", "clientDetails",
+@JsonPropertyOrder({ "applyCashDetails", "assignees", "bankDetails", "beneficiary", "clientDetails",
 		"contractDetails", "coverageDetails", "dispatchDetails", "doctorDetails", "followUps", "fundDetails",
 		"jointOwnerDetails", "lifeDetails", "mandateDetails", "ownerDetails", "payerDetails", "premiumRCTDetails",
-		"questionDetails", "riderDetails", "sflDetails", "specialTerms" })
+		"questionDetails", "riderDetails", "specialTerms" })
 public class NewBusinessModel {
 
 	@JsonProperty("applyCashDetails")
@@ -262,16 +262,6 @@ public class NewBusinessModel {
 	@JsonProperty("riderDetails")
 	public void setRiderDetails(List<RiderDetails> riderDetails) {
 		this.riderDetails = riderDetails;
-	}
-
-	@JsonProperty("sflDetails")
-	public SFLDetails getSflDetails() {
-		return sflDetails;
-	}
-
-	@JsonProperty("sflDetails")
-	public void setSflDetails(SFLDetails sflDetails) {
-		this.sflDetails = sflDetails;
 	}
 
 	@JsonProperty("specialTerms")

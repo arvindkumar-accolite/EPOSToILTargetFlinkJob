@@ -55,26 +55,24 @@ public class NewBusinessPopulator {
 	public NewBusinessModel buildNewBusiness() {
 		NewBusinessModel nbsModel = new NewBusinessModel();
 		nbsModel.setApplyCashDetails(populateApplyCashDetails());
-		nbsModel.setAssigneeDetails(populateAssigneeDetails());
 		nbsModel.setAssignees(populateAssignees());
 		nbsModel.setBankDetails(populateBankDetails());
 		nbsModel.setBeneficiary(populateBeneficiary());
-		nbsModel.setClientDetails(populateClientDetails());
+		nbsModel.getClientDetails().add(populateClientDetails());
 		nbsModel.setContractDetails(populateContractDetails());
-		nbsModel.setCoverageDetails(populateCoverageDetails());
+		nbsModel.getCoverageDetails().add(populateCoverageDetails());
 		nbsModel.setDispatchDetails(populateDispatchDetails());
 		nbsModel.setDoctorDetails(populateDoctorDetails());
 		nbsModel.setFollowUps(populateFollowUps());
-		nbsModel.setFundDetails(populateFundDetails());
+		nbsModel.getFundDetails().add(populateFundDetails());
 		nbsModel.setJointOwnerDetails(populateJointOwnerDetails());
-		nbsModel.setLifeDetails(populateLifeDetails());
+		nbsModel.getLifeDetails().add(populateLifeDetails());
 		nbsModel.setMandateDetails(populateMandateDetails());
 		nbsModel.setOwnerDetails(populateOwnerDetails());
 		nbsModel.setPayerDetails(populatePayerDetails());
 		nbsModel.setPremiumRCTDetails(populatePremiumRCTDetails());
-		nbsModel.setQuestionDetails(populateQuestionDetails());
-		nbsModel.setRiderDetails(populateRiderDetails());
-		nbsModel.setSflDetails(populateSFLDetails());
+		nbsModel.getQuestionDetails().add(populateQuestionDetails());
+		nbsModel.getRiderDetails().add(populateRiderDetails());
 		nbsModel.setSpecialTerms(populateSpecialTerms());
 		return nbsModel;
 	}
@@ -110,7 +108,7 @@ public class NewBusinessPopulator {
 		bankDetails.setBankKey("");
 		bankDetails.setClientSelectionWithBankDetails("");
 		bankDetails.setCurrencyCode("");
-		bankDetails.setDatefrom(new BigInteger("1"));
+		bankDetails.setDatefrom("");
 		bankDetails.setFactoringHouse("");
 		return bankDetails;
 	}
@@ -146,7 +144,7 @@ public class NewBusinessPopulator {
 		clientDetails.setClientType("");
 		clientDetails.setCorporateName("");
 		clientDetails.setCountryCode("");
-		clientDetails.setDateOfBirth(new BigInteger("1"));
+		clientDetails.setDateOfBirth("");
 		clientDetails.setDirectMailIndicator("");
 		clientDetails.setDocumentNumber("");
 		clientDetails.setEmail("");
@@ -183,7 +181,7 @@ public class NewBusinessPopulator {
 		contractDetails.setAgentNumber("");
 		contractDetails.setBillingCurrency("");
 		contractDetails.setBillingfrequency("");
-		contractDetails.setBillingRenewalDate(new BigInteger("1"));
+		contractDetails.setBillingRenewalDate("");
 		contractDetails.setBillingRenewalIndicator(new BigInteger("1"));
 		contractDetails.setContractCurrency("");
 		contractDetails.setContractHDREntId("");
@@ -341,7 +339,7 @@ public class NewBusinessPopulator {
 		mandateDetails.setBankAccountKey("");
 		mandateDetails.setBankKey("");
 		mandateDetails.setClientNumber("");
-		mandateDetails.setEffectiveDate(new BigInteger("0"));
+		mandateDetails.setEffectiveDate("");
 		mandateDetails.setFactoringHouse("");
 		mandateDetails.setMandateId("");
 		mandateDetails.setMandateRefNumber("");
@@ -383,7 +381,7 @@ public class NewBusinessPopulator {
 		premiumRCTDetails.setRecievedFromCode("");
 		premiumRCTDetails.setRecievedFromNumber("");
 		premiumRCTDetails.getSfldetails().add(populateSFLDetails());
-		premiumRCTDetails.setTranDate(new BigInteger("0"));
+		premiumRCTDetails.setTranDate("");
 		return premiumRCTDetails;
 	}
 
