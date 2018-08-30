@@ -11,246 +11,229 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "premiumRCTId",
-    "bankedFlag",
-    "bankCode",
-    "bankDesc01",
-    "bankDesc02",
-    "bankDesc03",
-    "bankKey",
-    "cheqNumber",
-    "documentAmount",
-    "originalCurrency",
-    "paymentType",
-    "recievedFromCode",
-    "recievedFromNumber",
-    "currencyRate",
-    "tranDate",
-    "protectIndicator",
-    "dissectionNumber",
-    "sfldetails"
-})
+@JsonPropertyOrder({ "premiumRCTId", "bankedFlag", "bankCode", "bankDesc01", "bankDesc02", "bankDesc03", "bankKey",
+		"cheqNumber", "documentAmount", "originalCurrency", "paymentType", "recievedFromCode", "recievedFromNumber",
+		"currencyRate", "tranDate", "protectIndicator", "dissectionNumber", "sfldetails" })
 public class PremiumRCTDetails {
 
-    @JsonProperty("premiumRCTId")
-    private String premiumRCTId;
-    @JsonProperty("bankedFlag")
-    private String bankedFlag;
-    @JsonProperty("bankCode")
-    private String bankCode;
-    @JsonProperty("bankDesc01")
-    private String bankDesc01;
-    @JsonProperty("bankDesc02")
-    private String bankDesc02;
-    @JsonProperty("bankDesc03")
-    private String bankDesc03;
-    @JsonProperty("bankKey")
-    private String bankKey;
-    @JsonProperty("cheqNumber")
-    private String cheqNumber;
-    @JsonProperty("documentAmount")
-    private BigDecimal documentAmount;
-    @JsonProperty("originalCurrency")
-    private String originalCurrency;
-    @JsonProperty("paymentType")
-    private String paymentType;
-    @JsonProperty("recievedFromCode")
-    private String recievedFromCode;
-    @JsonProperty("recievedFromNumber")
-    private String recievedFromNumber;
-    @JsonProperty("currencyRate")
-    private BigDecimal currencyRate;
-    @JsonProperty("tranDate")
-    private BigInteger tranDate;
-    @JsonProperty("protectIndicator")
-    private String protectIndicator;
-    @JsonProperty("dissectionNumber")
-    private BigDecimal dissectionNumber;
-    @JsonProperty("sfldetails")
-    private List<SFLDetails> sfldetails = null;
-   
-    @JsonProperty("premiumRCTId")
-    public String getPremiumRCTId() {
-        return premiumRCTId;
-    }
+	@JsonProperty("premiumRCTId")
+	private String premiumRCTId;
+	@JsonProperty("bankedFlag")
+	private String bankedFlag;
+	@JsonProperty("bankCode")
+	private String bankCode;
+	@JsonProperty("bankDesc01")
+	private String bankDesc01;
+	@JsonProperty("bankDesc02")
+	private String bankDesc02;
+	@JsonProperty("bankDesc03")
+	private String bankDesc03;
+	@JsonProperty("bankKey")
+	private String bankKey;
+	@JsonProperty("cheqNumber")
+	private String cheqNumber;
+	@JsonProperty("documentAmount")
+	private BigDecimal documentAmount;
+	@JsonProperty("originalCurrency")
+	private String originalCurrency;
+	@JsonProperty("paymentType")
+	private String paymentType;
+	@JsonProperty("recievedFromCode")
+	private String recievedFromCode;
+	@JsonProperty("recievedFromNumber")
+	private String recievedFromNumber;
+	@JsonProperty("currencyRate")
+	private BigDecimal currencyRate;
+	@JsonProperty("tranDate")
+	private BigInteger tranDate;
+	@JsonProperty("protectIndicator")
+	private String protectIndicator;
+	@JsonProperty("dissectionNumber")
+	private BigDecimal dissectionNumber;
+	@JsonProperty("sfldetails")
+	private List<SFLDetails> sfldetails = null;
 
-    @JsonProperty("premiumRCTId")
-    public void setPremiumRCTId(String premiumRCTId) {
-        this.premiumRCTId = premiumRCTId;
-    }
+	@JsonProperty("premiumRCTId")
+	public String getPremiumRCTId() {
+		return premiumRCTId;
+	}
 
-    @JsonProperty("bankedFlag")
-    public String getBankedFlag() {
-        return bankedFlag;
-    }
+	@JsonProperty("premiumRCTId")
+	public void setPremiumRCTId(String premiumRCTId) {
+		this.premiumRCTId = premiumRCTId;
+	}
 
-    @JsonProperty("bankedFlag")
-    public void setBankedFlag(String bankedFlag) {
-        this.bankedFlag = bankedFlag;
-    }
+	@JsonProperty("bankedFlag")
+	public String getBankedFlag() {
+		return bankedFlag;
+	}
 
-    @JsonProperty("bankCode")
-    public String getBankCode() {
-        return bankCode;
-    }
+	@JsonProperty("bankedFlag")
+	public void setBankedFlag(String bankedFlag) {
+		this.bankedFlag = bankedFlag;
+	}
 
-    @JsonProperty("bankCode")
-    public void setBankCode(String bankCode) {
-        this.bankCode = bankCode;
-    }
+	@JsonProperty("bankCode")
+	public String getBankCode() {
+		return bankCode;
+	}
 
-    @JsonProperty("bankDesc01")
-    public String getBankDesc01() {
-        return bankDesc01;
-    }
+	@JsonProperty("bankCode")
+	public void setBankCode(String bankCode) {
+		this.bankCode = bankCode;
+	}
 
-    @JsonProperty("bankDesc01")
-    public void setBankDesc01(String bankDesc01) {
-        this.bankDesc01 = bankDesc01;
-    }
+	@JsonProperty("bankDesc01")
+	public String getBankDesc01() {
+		return bankDesc01;
+	}
 
-    @JsonProperty("bankDesc02")
-    public String getBankDesc02() {
-        return bankDesc02;
-    }
+	@JsonProperty("bankDesc01")
+	public void setBankDesc01(String bankDesc01) {
+		this.bankDesc01 = bankDesc01;
+	}
 
-    @JsonProperty("bankDesc02")
-    public void setBankDesc02(String bankDesc02) {
-        this.bankDesc02 = bankDesc02;
-    }
+	@JsonProperty("bankDesc02")
+	public String getBankDesc02() {
+		return bankDesc02;
+	}
 
-    @JsonProperty("bankDesc03")
-    public String getBankDesc03() {
-        return bankDesc03;
-    }
+	@JsonProperty("bankDesc02")
+	public void setBankDesc02(String bankDesc02) {
+		this.bankDesc02 = bankDesc02;
+	}
 
-    @JsonProperty("bankDesc03")
-    public void setBankDesc03(String bankDesc03) {
-        this.bankDesc03 = bankDesc03;
-    }
+	@JsonProperty("bankDesc03")
+	public String getBankDesc03() {
+		return bankDesc03;
+	}
 
-    @JsonProperty("bankKey")
-    public String getBankKey() {
-        return bankKey;
-    }
+	@JsonProperty("bankDesc03")
+	public void setBankDesc03(String bankDesc03) {
+		this.bankDesc03 = bankDesc03;
+	}
 
-    @JsonProperty("bankKey")
-    public void setBankKey(String bankKey) {
-        this.bankKey = bankKey;
-    }
+	@JsonProperty("bankKey")
+	public String getBankKey() {
+		return bankKey;
+	}
 
-    @JsonProperty("cheqNumber")
-    public String getCheqNumber() {
-        return cheqNumber;
-    }
+	@JsonProperty("bankKey")
+	public void setBankKey(String bankKey) {
+		this.bankKey = bankKey;
+	}
 
-    @JsonProperty("cheqNumber")
-    public void setCheqNumber(String cheqNumber) {
-        this.cheqNumber = cheqNumber;
-    }
+	@JsonProperty("cheqNumber")
+	public String getCheqNumber() {
+		return cheqNumber;
+	}
 
-    @JsonProperty("documentAmount")
-    public BigDecimal getDocumentAmount() {
-        return documentAmount;
-    }
+	@JsonProperty("cheqNumber")
+	public void setCheqNumber(String cheqNumber) {
+		this.cheqNumber = cheqNumber;
+	}
 
-    @JsonProperty("documentAmount")
-    public void setDocumentAmount(BigDecimal documentAmount) {
-        this.documentAmount = documentAmount;
-    }
+	@JsonProperty("documentAmount")
+	public BigDecimal getDocumentAmount() {
+		return documentAmount;
+	}
 
-    @JsonProperty("originalCurrency")
-    public String getOriginalCurrency() {
-        return originalCurrency;
-    }
+	@JsonProperty("documentAmount")
+	public void setDocumentAmount(BigDecimal documentAmount) {
+		this.documentAmount = documentAmount;
+	}
 
-    @JsonProperty("originalCurrency")
-    public void setOriginalCurrency(String originalCurrency) {
-        this.originalCurrency = originalCurrency;
-    }
+	@JsonProperty("originalCurrency")
+	public String getOriginalCurrency() {
+		return originalCurrency;
+	}
 
-    @JsonProperty("paymentType")
-    public String getPaymentType() {
-        return paymentType;
-    }
+	@JsonProperty("originalCurrency")
+	public void setOriginalCurrency(String originalCurrency) {
+		this.originalCurrency = originalCurrency;
+	}
 
-    @JsonProperty("paymentType")
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
-    }
+	@JsonProperty("paymentType")
+	public String getPaymentType() {
+		return paymentType;
+	}
 
-    @JsonProperty("recievedFromCode")
-    public String getRecievedFromCode() {
-        return recievedFromCode;
-    }
+	@JsonProperty("paymentType")
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
 
-    @JsonProperty("recievedFromCode")
-    public void setRecievedFromCode(String recievedFromCode) {
-        this.recievedFromCode = recievedFromCode;
-    }
+	@JsonProperty("recievedFromCode")
+	public String getRecievedFromCode() {
+		return recievedFromCode;
+	}
 
-    @JsonProperty("recievedFromNumber")
-    public String getRecievedFromNumber() {
-        return recievedFromNumber;
-    }
+	@JsonProperty("recievedFromCode")
+	public void setRecievedFromCode(String recievedFromCode) {
+		this.recievedFromCode = recievedFromCode;
+	}
 
-    @JsonProperty("recievedFromNumber")
-    public void setRecievedFromNumber(String recievedFromNumber) {
-        this.recievedFromNumber = recievedFromNumber;
-    }
+	@JsonProperty("recievedFromNumber")
+	public String getRecievedFromNumber() {
+		return recievedFromNumber;
+	}
 
-    @JsonProperty("currencyRate")
-    public BigDecimal getCurrencyRate() {
-        return currencyRate;
-    }
+	@JsonProperty("recievedFromNumber")
+	public void setRecievedFromNumber(String recievedFromNumber) {
+		this.recievedFromNumber = recievedFromNumber;
+	}
 
-    @JsonProperty("currencyRate")
-    public void setCurrencyRate(BigDecimal currencyRate) {
-        this.currencyRate = currencyRate;
-    }
+	@JsonProperty("currencyRate")
+	public BigDecimal getCurrencyRate() {
+		return currencyRate;
+	}
 
-    @JsonProperty("tranDate")
-    public BigInteger getTranDate() {
-        return tranDate;
-    }
+	@JsonProperty("currencyRate")
+	public void setCurrencyRate(BigDecimal currencyRate) {
+		this.currencyRate = currencyRate;
+	}
 
-    @JsonProperty("tranDate")
-    public void setTranDate(BigInteger tranDate) {
-        this.tranDate = tranDate;
-    }
+	@JsonProperty("tranDate")
+	public BigInteger getTranDate() {
+		return tranDate;
+	}
 
-    @JsonProperty("protectIndicator")
-    public String getProtectIndicator() {
-        return protectIndicator;
-    }
+	@JsonProperty("tranDate")
+	public void setTranDate(BigInteger tranDate) {
+		this.tranDate = tranDate;
+	}
 
-    @JsonProperty("protectIndicator")
-    public void setProtectIndicator(String protectIndicator) {
-        this.protectIndicator = protectIndicator;
-    }
+	@JsonProperty("protectIndicator")
+	public String getProtectIndicator() {
+		return protectIndicator;
+	}
 
-    @JsonProperty("dissectionNumber")
-    public BigDecimal getDissectionNumber() {
-        return dissectionNumber;
-    }
+	@JsonProperty("protectIndicator")
+	public void setProtectIndicator(String protectIndicator) {
+		this.protectIndicator = protectIndicator;
+	}
 
-    @JsonProperty("dissectionNumber")
-    public void setDissectionNumber(BigDecimal dissectionNumber) {
-        this.dissectionNumber = dissectionNumber;
-    }
+	@JsonProperty("dissectionNumber")
+	public BigDecimal getDissectionNumber() {
+		return dissectionNumber;
+	}
 
-    @JsonProperty("sfldetails")
-    public List<SFLDetails> getSfldetails() {
-        return sfldetails;
-    }
+	@JsonProperty("dissectionNumber")
+	public void setDissectionNumber(BigDecimal dissectionNumber) {
+		this.dissectionNumber = dissectionNumber;
+	}
 
-    @JsonProperty("sfldetails")
-    public void setSfldetails(List<SFLDetails> sfldetails) {
-    	if(null==sfldetails) {
-    		sfldetails = new ArrayList<>();
-    	}
-        this.sfldetails = sfldetails;
-    }
+	@JsonProperty("sfldetails")
+	public List<SFLDetails> getSfldetails() {
+		if (null == sfldetails) {
+			sfldetails = new ArrayList<>();
+		}
+		return sfldetails;
+	}
+
+	@JsonProperty("sfldetails")
+	public void setSfldetails(List<SFLDetails> sfldetails) {
+		this.sfldetails = sfldetails;
+	}
 
 }
