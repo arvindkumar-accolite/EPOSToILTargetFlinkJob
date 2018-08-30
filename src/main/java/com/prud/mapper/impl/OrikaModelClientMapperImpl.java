@@ -15,13 +15,13 @@ import ma.glasnost.orika.metadata.ClassMapBuilder;
  * @param <S>
  *            // * //
  */
-public class OrikaModelMapperImpl implements ModelMapper {
+public class OrikaModelClientMapperImpl implements ModelMapper {
 
 	private MapperFacade mapper;
 	MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 	ConverterFactory converterFactory = mapperFactory.getConverterFactory();
 
-	public OrikaModelMapperImpl() {
+	public OrikaModelClientMapperImpl() {
 		converterFactory.registerConverter(IntegrationConstants.CUSTOM_CONVERTER_ID, new ClientDOBCustomConverter());
 	}
 

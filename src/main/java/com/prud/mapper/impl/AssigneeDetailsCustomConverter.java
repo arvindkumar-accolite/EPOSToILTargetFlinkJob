@@ -14,9 +14,11 @@ import com.prud.model.il.NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM;
 import com.prud.model.il.NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO;
 import com.prud.model.middleware.AssigneeDetails;
 
+import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class AssigneeDetailsCustomConverter {
+public class AssigneeDetailsCustomConverter
+		extends CustomConverter<List<AssigneeDetails>, List<NBSCRTIASSIGNEEDETAILS>> {
 
 	public List<NBSCRTIASSIGNEEDETAILS> convert(List<AssigneeDetails> source,
 			Type<? extends List<NBSCRTIASSIGNEEDETAILS>> destinationType) {
@@ -68,5 +70,5 @@ public class AssigneeDetailsCustomConverter {
 		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
-	
+
 }

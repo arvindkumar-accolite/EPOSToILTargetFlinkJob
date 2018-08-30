@@ -12,7 +12,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 import com.prud.constant.IntegrationConstants;
-import com.prud.mapper.impl.OrikaModelMapperImpl;
+import com.prud.mapper.impl.OrikaModelClientMapperImpl;
+import com.prud.mapper.impl.OrikaModelNewBusinessMapperImpl;
 import com.prud.model.il.CLICRPIREC;
 import com.prud.model.il.MSPContext;
 import com.prud.model.il.NBSCRTIREC;
@@ -25,7 +26,8 @@ import com.prud.model.middleware.NewBusinessModel;
 public class NewBusinessProposalGenerator {
 
 	private XSLTransformer xslTransformer = new XSLTransformer();
-	private OrikaModelMapperImpl orikaModelConverter = new OrikaModelMapperImpl();
+	private OrikaModelClientMapperImpl orikaModelConverter = new OrikaModelClientMapperImpl();
+	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl(); 
 	private static Properties newBusinessProposalPropConfig;
 	private static Properties createClientPropConfig;
 	private static Map<String, String> newBusinessProposalMappingMap = new HashMap<>();	
@@ -85,7 +87,7 @@ public class NewBusinessProposalGenerator {
 	}
 
 	public String buildNewBusinessProposalRequest(NewBusinessModel newBusinessModel) {
-		NBSCRTIREC newBusinessCreate = (NBSCRTIREC) orikaModelConverter.map(newBusinessModel,
+		NBSCRTIREC newBusinessCreate = (NBSCRTIREC) orikaModelNewBusinessMapperImpl.map(newBusinessModel,
 				NewBusinessModel.class, NBSCRTIREC.class, newBusinessProposalMappingMap);
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId("userId");
@@ -96,7 +98,7 @@ public class NewBusinessProposalGenerator {
 		reqPara.setValue(IntegrationConstants.CLIENT_CREATE_REQUEST_PARAMETER_VALUE);
 		reqParas.getRequestParameter().add(reqPara);
 		mspContext.setRequestParameters(reqParas);
-		newBusinessCreate.setMSPContext(mspContext);
+		newBusinessCreate.setMspContext(mspContext);
 		String body = jaxbNewBusinessToXML(newBusinessCreate);
 		return generateNBSSoapEnvelop(body);
 	}

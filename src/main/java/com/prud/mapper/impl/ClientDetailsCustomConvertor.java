@@ -9,13 +9,16 @@ import java.util.Date;
 import java.util.List;
 
 import com.prud.constant.IntegrationConstants;
+import com.prud.model.il.CLICRPIREC.CLTDOBX;
 import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT;
 import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX;
 import com.prud.model.middleware.ClientDetails;
 
+import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class ClientDetailsCustomeConvertor {
+public class ClientDetailsCustomConvertor extends CustomConverter<List<ClientDetails>, List<NBSCRTICLIENT>>
+{
 	public CLIENTCLTDOBX convertClientDobDate(String source) {
 		Date date = null;
 		try {

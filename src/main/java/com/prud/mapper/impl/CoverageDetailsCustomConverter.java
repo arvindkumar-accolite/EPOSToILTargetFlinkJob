@@ -15,9 +15,10 @@ import com.prud.model.il.NBSCRTIREC.NBSCRTICOVERAGEDETAILS.COVRRCESDTE;
 import com.prud.model.il.NBSCRTIREC.NBSCRTICOVERAGEDETAILS.COVRRUNDTE;
 import com.prud.model.middleware.CoverageDetails;
 
+import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class CoverageDetailsCustomConverter {
+public class CoverageDetailsCustomConverter extends CustomConverter<List<CoverageDetails>, List<NBSCRTICOVERAGEDETAILS>>{
 
 	public List<NBSCRTICOVERAGEDETAILS> convert(List<CoverageDetails> source,
 			Type<? extends List<NBSCRTICOVERAGEDETAILS>> destinationType) {
@@ -30,9 +31,9 @@ public class CoverageDetailsCustomConverter {
 			targetCoverageDetails.setCOVERAGEENTID(coverageDetails.getCoverageId());
 			targetCoverageDetails.setCOVERAGEPARENT(coverageDetails.getCoverageParent());
 			targetCoverageDetails.setCOVRCRTABLE(coverageDetails.getCoverageOrRiderTable());
-			targetCoverageDetails.setCOVRINSTPRM(coverageDetails.getCoverageOrRiderInstalmentAmount());
+			targetCoverageDetails.setCovrinstprm(coverageDetails.getCoverageOrRiderInstalmentAmount());
 			targetCoverageDetails.setCOVRLMPCNT(coverageDetails.getLumpSumContribution());
-			targetCoverageDetails.setCOVRMORTCLS(coverageDetails.getMortalityClass());
+			targetCoverageDetails.setCovrmortcls(coverageDetails.getMortalityClass());
 			targetCoverageDetails.setCOVRPCESDTE(convertCOVRPCESDate(coverageDetails.getPremiumCessationDate()));
 			targetCoverageDetails.setCOVRPCESSAGE(coverageDetails.getPremiumCessationAge());
 			targetCoverageDetails.setCOVRPCESSTRM(coverageDetails.getPremiumCessationTerm());
@@ -41,7 +42,7 @@ public class CoverageDetailsCustomConverter {
 			targetCoverageDetails.setCOVRRCESSTRM(coverageDetails.getRiskCessationTerm());
 			targetCoverageDetails.setCOVRRSUNIN(coverageDetails.getReserveUnitsIndicator());
 			targetCoverageDetails.setCOVRRUNDTE(convertCOVRRUNDate(coverageDetails.getReserveUnitsAllocationDate()));
-			targetCoverageDetails.setCOVRSUMIN(coverageDetails.getSumInsured());
+			targetCoverageDetails.setCovrsumin(coverageDetails.getSumInsured());
 			targetCovDetails.add(targetCoverageDetails);
 		}
 		return targetCovDetails;

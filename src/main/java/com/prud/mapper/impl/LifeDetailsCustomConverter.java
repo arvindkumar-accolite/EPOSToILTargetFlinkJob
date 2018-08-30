@@ -9,17 +9,17 @@ import java.util.Date;
 import java.util.List;
 
 import com.prud.constant.IntegrationConstants;
-import com.prud.model.il.NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS;
 import com.prud.model.il.NBSCRTIREC.NBSCRTILIVES;
 import com.prud.model.il.NBSCRTIREC.NBSCRTILIVES.DOB;
 import com.prud.model.middleware.LifeDetails;
 
+import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class LifeDetailsCustomConverter {
+public class LifeDetailsCustomConverter extends CustomConverter<List<LifeDetails>, List<NBSCRTILIVES>>{
 
 	public List<NBSCRTILIVES> convert(List<LifeDetails> source,
-			Type<? extends List<NBSCRTIASSIGNEEDETAILS>> destinationType) {
+			Type<? extends List<NBSCRTILIVES>> destinationType) {
 		if (null == source) {
 			return null;
 		}

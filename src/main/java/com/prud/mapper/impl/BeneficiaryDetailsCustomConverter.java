@@ -13,9 +13,10 @@ import com.prud.model.il.NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS;
 import com.prud.model.il.NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE;
 import com.prud.model.middleware.BeneficiaryDetails;
 
+import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class BeneficiaryDetailsCustomConverter {
+public class BeneficiaryDetailsCustomConverter extends CustomConverter<List<BeneficiaryDetails>, List<NBSCRTIBENDETAILS>>{
 
 	public List<NBSCRTIBENDETAILS> convert(List<BeneficiaryDetails> source,
 			Type<? extends List<NBSCRTIBENDETAILS>> destinationType) {
@@ -26,7 +27,7 @@ public class BeneficiaryDetailsCustomConverter {
 		for (BeneficiaryDetails beneficiaryDetails : source) {
 			NBSCRTIBENDETAILS targetBeneficiaryDetails = new NBSCRTIBENDETAILS();
 			targetBeneficiaryDetails.setBENEFICIARYPARTY(beneficiaryDetails.getBeneficiaryParty());
-			targetBeneficiaryDetails.setBNYPC(beneficiaryDetails.getBeneficiaryPercentage());
+			targetBeneficiaryDetails.setBnypc(beneficiaryDetails.getBeneficiaryPercentage());
 			targetBeneficiaryDetails.setBNYSEL(beneficiaryDetails.getBeneficiaryClientNumber());
 			targetBeneficiaryDetails.setBNYTYPE(beneficiaryDetails.getBeneficiaryType());
 			targetBeneficiaryDetails.setCLTRELN(beneficiaryDetails.getClientRelationship());

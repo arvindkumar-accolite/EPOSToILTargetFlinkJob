@@ -12,7 +12,7 @@ import com.prud.model.il.NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM;
 import ma.glasnost.orika.CustomConverter;
 import ma.glasnost.orika.metadata.Type;
 
-public class DateFromCustomConverter extends CustomConverter<String, DATEFROM> {
+public class BankDetailsDateFromCustomConverter extends CustomConverter<String, DATEFROM> {
 
 	public DATEFROM convert(String source, Type<? extends DATEFROM> destinationType) {
 		Date date = null;

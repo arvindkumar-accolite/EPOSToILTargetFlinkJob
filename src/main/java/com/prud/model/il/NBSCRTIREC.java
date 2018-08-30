@@ -2565,6 +2565,7 @@ public class NBSCRTIREC {
     @XmlElement(name = "NBSCRTI_DOCTOR", required = true)
     protected List<NBSCRTIREC.NBSCRTIDOCTOR> nbscrtidoctor;
 
+    
     /**
      * Gets the value of the mspContext property.
      * 
@@ -2573,592 +2574,376 @@ public class NBSCRTIREC {
      *     {@link MSPContext }
      *     
      */
-    public MSPContext getMSPContext() {
-        return mspContext;
-    }
-
+    
     /**
-     * Sets the value of the mspContext property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link MSPContext }
-     *     
-     */
-    public void setMSPContext(MSPContext value) {
-        this.mspContext = value;
-    }
-
-    /**
-     * Gets the value of the nbscrticontracthdrdetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS getNBSCRTICONTRACTHDRDETAILS() {
-        return nbscrticontracthdrdetails;
-    }
-
-    /**
-     * Sets the value of the nbscrticontracthdrdetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS }
-     *     
-     */
-    public void setNBSCRTICONTRACTHDRDETAILS(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS value) {
-        this.nbscrticontracthdrdetails = value;
-    }
-
-    /**
-     * Gets the value of the datime property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.DATIME }
-     *     
-     */
-    public NBSCRTIREC.DATIME getDATIME() {
-        return datime;
-    }
-
-    /**
-     * Sets the value of the datime property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.DATIME }
-     *     
-     */
-    public void setDATIME(NBSCRTIREC.DATIME value) {
-        this.datime = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtiowner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIOWNER }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIOWNER getNBSCRTIOWNER() {
-        return nbscrtiowner;
-    }
-
-    /**
-     * Sets the value of the nbscrtiowner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIOWNER }
-     *     
-     */
-    public void setNBSCRTIOWNER(NBSCRTIREC.NBSCRTIOWNER value) {
-        this.nbscrtiowner = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtilives property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtilives property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTILIVES().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTILIVES }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTILIVES> getNBSCRTILIVES() {
-        if (nbscrtilives == null) {
-            nbscrtilives = new ArrayList<NBSCRTIREC.NBSCRTILIVES>();
-        }
-        return this.nbscrtilives;
-    }
-
-    /**
-     * Gets the value of the nbscrtijointlives property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtijointlives property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTIJOINTLIVES().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTIJOINTLIVES }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTIJOINTLIVES> getNBSCRTIJOINTLIVES() {
-        if (nbscrtijointlives == null) {
-            nbscrtijointlives = new ArrayList<NBSCRTIREC.NBSCRTIJOINTLIVES>();
-        }
-        return this.nbscrtijointlives;
-    }
-
-    /**
-     * Gets the value of the nbscrtijointowner property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIJOINTOWNER }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIJOINTOWNER getNBSCRTIJOINTOWNER() {
-        return nbscrtijointowner;
-    }
-
-    /**
-     * Sets the value of the nbscrtijointowner property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIJOINTOWNER }
-     *     
-     */
-    public void setNBSCRTIJOINTOWNER(NBSCRTIREC.NBSCRTIJOINTOWNER value) {
-        this.nbscrtijointowner = value;
-    }
-
-    /**
-     * Gets the value of the nbscrticoveragedetails property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrticoveragedetails property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTICOVERAGEDETAILS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTICOVERAGEDETAILS }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTICOVERAGEDETAILS> getNBSCRTICOVERAGEDETAILS() {
-        if (nbscrticoveragedetails == null) {
-            nbscrticoveragedetails = new ArrayList<NBSCRTIREC.NBSCRTICOVERAGEDETAILS>();
-        }
-        return this.nbscrticoveragedetails;
-    }
-
-    /**
-     * Gets the value of the nbscrtiriderdetails property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtiriderdetails property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTIRIDERDETAILS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTIRIDERDETAILS }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTIRIDERDETAILS> getNBSCRTIRIDERDETAILS() {
-        if (nbscrtiriderdetails == null) {
-            nbscrtiriderdetails = new ArrayList<NBSCRTIREC.NBSCRTIRIDERDETAILS>();
-        }
-        return this.nbscrtiriderdetails;
-    }
-
-    /**
-     * Gets the value of the beneficiary property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.BENEFICIARY }
-     *     
-     */
-    public NBSCRTIREC.BENEFICIARY getBENEFICIARY() {
-        return beneficiary;
-    }
-
-    /**
-     * Sets the value of the beneficiary property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.BENEFICIARY }
-     *     
-     */
-    public void setBENEFICIARY(NBSCRTIREC.BENEFICIARY value) {
-        this.beneficiary = value;
-    }
-
-    /**
-     * Gets the value of the followups property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.FOLLOWUPS }
-     *     
-     */
-    public NBSCRTIREC.FOLLOWUPS getFOLLOWUPS() {
-        return followups;
-    }
-
-    /**
-     * Sets the value of the followups property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.FOLLOWUPS }
-     *     
-     */
-    public void setFOLLOWUPS(NBSCRTIREC.FOLLOWUPS value) {
-        this.followups = value;
-    }
-
-    /**
-     * Gets the value of the assignees property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.ASSIGNEES }
-     *     
-     */
-    public NBSCRTIREC.ASSIGNEES getASSIGNEES() {
-        return assignees;
-    }
-
-    /**
-     * Sets the value of the assignees property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.ASSIGNEES }
-     *     
-     */
-    public void setASSIGNEES(NBSCRTIREC.ASSIGNEES value) {
-        this.assignees = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtidespatchdetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIDESPATCHDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIDESPATCHDETAILS getNBSCRTIDESPATCHDETAILS() {
-        return nbscrtidespatchdetails;
-    }
-
-    /**
-     * Sets the value of the nbscrtidespatchdetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIDESPATCHDETAILS }
-     *     
-     */
-    public void setNBSCRTIDESPATCHDETAILS(NBSCRTIREC.NBSCRTIDESPATCHDETAILS value) {
-        this.nbscrtidespatchdetails = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtipayerdetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIPAYERDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIPAYERDETAILS getNBSCRTIPAYERDETAILS() {
-        return nbscrtipayerdetails;
-    }
-
-    /**
-     * Sets the value of the nbscrtipayerdetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIPAYERDETAILS }
-     *     
-     */
-    public void setNBSCRTIPAYERDETAILS(NBSCRTIREC.NBSCRTIPAYERDETAILS value) {
-        this.nbscrtipayerdetails = value;
-    }
-
-    /**
-     * Gets the value of the specialterms property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.SPECIALTERMS }
-     *     
-     */
-    public NBSCRTIREC.SPECIALTERMS getSPECIALTERMS() {
-        return specialterms;
-    }
-
-    /**
-     * Sets the value of the specialterms property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.SPECIALTERMS }
-     *     
-     */
-    public void setSPECIALTERMS(NBSCRTIREC.SPECIALTERMS value) {
-        this.specialterms = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtifunddetails property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtifunddetails property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTIFUNDDETAILS().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTIFUNDDETAILS }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTIFUNDDETAILS> getNBSCRTIFUNDDETAILS() {
-        if (nbscrtifunddetails == null) {
-            nbscrtifunddetails = new ArrayList<NBSCRTIREC.NBSCRTIFUNDDETAILS>();
-        }
-        return this.nbscrtifunddetails;
-    }
-
-    /**
-     * Gets the value of the nbscrticlient property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrticlient property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTICLIENT().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTICLIENT }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTICLIENT> getNBSCRTICLIENT() {
-        if (nbscrticlient == null) {
-            nbscrticlient = new ArrayList<NBSCRTIREC.NBSCRTICLIENT>();
-        }
-        return this.nbscrticlient;
-    }
-
-    /**
-     * Gets the value of the nbscrtibankdetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIBANKDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIBANKDETAILS getNBSCRTIBANKDETAILS() {
-        return nbscrtibankdetails;
-    }
-
-    /**
-     * Sets the value of the nbscrtibankdetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIBANKDETAILS }
-     *     
-     */
-    public void setNBSCRTIBANKDETAILS(NBSCRTIREC.NBSCRTIBANKDETAILS value) {
-        this.nbscrtibankdetails = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtimandatedetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIMANDATEDETAILS getNBSCRTIMANDATEDETAILS() {
-        return nbscrtimandatedetails;
-    }
-
-    /**
-     * Sets the value of the nbscrtimandatedetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS }
-     *     
-     */
-    public void setNBSCRTIMANDATEDETAILS(NBSCRTIREC.NBSCRTIMANDATEDETAILS value) {
-        this.nbscrtimandatedetails = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtipremiumrctdetails property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS getNBSCRTIPREMIUMRCTDETAILS() {
-        return nbscrtipremiumrctdetails;
-    }
-
-    /**
-     * Sets the value of the nbscrtipremiumrctdetails property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS }
-     *     
-     */
-    public void setNBSCRTIPREMIUMRCTDETAILS(NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS value) {
-        this.nbscrtipremiumrctdetails = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtiapplycash property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NBSCRTIREC.NBSCRTIAPPLYCASH }
-     *     
-     */
-    public NBSCRTIREC.NBSCRTIAPPLYCASH getNBSCRTIAPPLYCASH() {
-        return nbscrtiapplycash;
-    }
-
-    /**
-     * Sets the value of the nbscrtiapplycash property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NBSCRTIREC.NBSCRTIAPPLYCASH }
-     *     
-     */
-    public void setNBSCRTIAPPLYCASH(NBSCRTIREC.NBSCRTIAPPLYCASH value) {
-        this.nbscrtiapplycash = value;
-    }
-
-    /**
-     * Gets the value of the nbscrtiquestion property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtiquestion property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTIQUESTION().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTIQUESTION }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTIQUESTION> getNBSCRTIQUESTION() {
-        if (nbscrtiquestion == null) {
-            nbscrtiquestion = new ArrayList<NBSCRTIREC.NBSCRTIQUESTION>();
-        }
-        return this.nbscrtiquestion;
-    }
-
-    /**
-     * Gets the value of the nbscrtidoctor property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nbscrtidoctor property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getNBSCRTIDOCTOR().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link NBSCRTIREC.NBSCRTIDOCTOR }
-     * 
-     * 
-     */
-    public List<NBSCRTIREC.NBSCRTIDOCTOR> getNBSCRTIDOCTOR() {
-        if (nbscrtidoctor == null) {
-            nbscrtidoctor = new ArrayList<NBSCRTIREC.NBSCRTIDOCTOR>();
-        }
-        return this.nbscrtidoctor;
-    }
+	 * @return the mspContext
+	 */
+	public MSPContext getMspContext() {
+		return mspContext;
+	}
 
 
-    /**
+	/**
+	 * @param mspContext the mspContext to set
+	 */
+	public void setMspContext(MSPContext mspContext) {
+		this.mspContext = mspContext;
+	}
+
+
+	/**
+	 * @return the nbscrticontracthdrdetails
+	 */
+	public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS getNbscrticontracthdrdetails() {
+		return nbscrticontracthdrdetails;
+	}
+
+
+	/**
+	 * @param nbscrticontracthdrdetails the nbscrticontracthdrdetails to set
+	 */
+	public void setNbscrticontracthdrdetails(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS nbscrticontracthdrdetails) {
+		this.nbscrticontracthdrdetails = nbscrticontracthdrdetails;
+	}
+
+
+	/**
+	 * @return the datime
+	 */
+	public NBSCRTIREC.DATIME getDatime() {
+		return datime;
+	}
+
+
+	/**
+	 * @param datime the datime to set
+	 */
+	public void setDatime(NBSCRTIREC.DATIME datime) {
+		this.datime = datime;
+	}
+
+
+	/**
+	 * @return the nbscrtiowner
+	 */
+	public NBSCRTIREC.NBSCRTIOWNER getNbscrtiowner() {
+		return nbscrtiowner;
+	}
+
+
+	/**
+	 * @param nbscrtiowner the nbscrtiowner to set
+	 */
+	public void setNbscrtiowner(NBSCRTIREC.NBSCRTIOWNER nbscrtiowner) {
+		this.nbscrtiowner = nbscrtiowner;
+	}
+
+
+	/**
+	 * @return the nbscrtilives
+	 */
+	public List<NBSCRTIREC.NBSCRTILIVES> getNbscrtilives() {
+		return nbscrtilives;
+	}
+
+
+	/**
+	 * @param nbscrtilives the nbscrtilives to set
+	 */
+	public void setNbscrtilives(List<NBSCRTIREC.NBSCRTILIVES> nbscrtilives) {
+		this.nbscrtilives = nbscrtilives;
+	}
+
+
+	/**
+	 * @return the nbscrtijointlives
+	 */
+	public List<NBSCRTIREC.NBSCRTIJOINTLIVES> getNbscrtijointlives() {
+		return nbscrtijointlives;
+	}
+
+
+	/**
+	 * @param nbscrtijointlives the nbscrtijointlives to set
+	 */
+	public void setNbscrtijointlives(List<NBSCRTIREC.NBSCRTIJOINTLIVES> nbscrtijointlives) {
+		this.nbscrtijointlives = nbscrtijointlives;
+	}
+
+
+	/**
+	 * @return the nbscrtijointowner
+	 */
+	public NBSCRTIREC.NBSCRTIJOINTOWNER getNbscrtijointowner() {
+		return nbscrtijointowner;
+	}
+
+
+	/**
+	 * @param nbscrtijointowner the nbscrtijointowner to set
+	 */
+	public void setNbscrtijointowner(NBSCRTIREC.NBSCRTIJOINTOWNER nbscrtijointowner) {
+		this.nbscrtijointowner = nbscrtijointowner;
+	}
+
+
+	/**
+	 * @return the nbscrticoveragedetails
+	 */
+	public List<NBSCRTIREC.NBSCRTICOVERAGEDETAILS> getNbscrticoveragedetails() {
+		return nbscrticoveragedetails;
+	}
+
+
+	/**
+	 * @param nbscrticoveragedetails the nbscrticoveragedetails to set
+	 */
+	public void setNbscrticoveragedetails(List<NBSCRTIREC.NBSCRTICOVERAGEDETAILS> nbscrticoveragedetails) {
+		this.nbscrticoveragedetails = nbscrticoveragedetails;
+	}
+
+
+	/**
+	 * @return the nbscrtiriderdetails
+	 */
+	public List<NBSCRTIREC.NBSCRTIRIDERDETAILS> getNbscrtiriderdetails() {
+		return nbscrtiriderdetails;
+	}
+
+
+	/**
+	 * @param nbscrtiriderdetails the nbscrtiriderdetails to set
+	 */
+	public void setNbscrtiriderdetails(List<NBSCRTIREC.NBSCRTIRIDERDETAILS> nbscrtiriderdetails) {
+		this.nbscrtiriderdetails = nbscrtiriderdetails;
+	}
+
+
+	/**
+	 * @return the beneficiary
+	 */
+	public NBSCRTIREC.BENEFICIARY getBeneficiary() {
+		return beneficiary;
+	}
+
+
+	/**
+	 * @param beneficiary the beneficiary to set
+	 */
+	public void setBeneficiary(NBSCRTIREC.BENEFICIARY beneficiary) {
+		this.beneficiary = beneficiary;
+	}
+
+
+	/**
+	 * @return the followups
+	 */
+	public NBSCRTIREC.FOLLOWUPS getFollowups() {
+		return followups;
+	}
+
+
+	/**
+	 * @param followups the followups to set
+	 */
+	public void setFollowups(NBSCRTIREC.FOLLOWUPS followups) {
+		this.followups = followups;
+	}
+
+
+	/**
+	 * @return the assignees
+	 */
+	public NBSCRTIREC.ASSIGNEES getAssignees() {
+		return assignees;
+	}
+
+
+	/**
+	 * @param assignees the assignees to set
+	 */
+	public void setAssignees(NBSCRTIREC.ASSIGNEES assignees) {
+		this.assignees = assignees;
+	}
+
+
+	/**
+	 * @return the nbscrtidespatchdetails
+	 */
+	public NBSCRTIREC.NBSCRTIDESPATCHDETAILS getNbscrtidespatchdetails() {
+		return nbscrtidespatchdetails;
+	}
+
+
+	/**
+	 * @param nbscrtidespatchdetails the nbscrtidespatchdetails to set
+	 */
+	public void setNbscrtidespatchdetails(NBSCRTIREC.NBSCRTIDESPATCHDETAILS nbscrtidespatchdetails) {
+		this.nbscrtidespatchdetails = nbscrtidespatchdetails;
+	}
+
+
+	/**
+	 * @return the nbscrtipayerdetails
+	 */
+	public NBSCRTIREC.NBSCRTIPAYERDETAILS getNbscrtipayerdetails() {
+		return nbscrtipayerdetails;
+	}
+
+
+	/**
+	 * @param nbscrtipayerdetails the nbscrtipayerdetails to set
+	 */
+	public void setNbscrtipayerdetails(NBSCRTIREC.NBSCRTIPAYERDETAILS nbscrtipayerdetails) {
+		this.nbscrtipayerdetails = nbscrtipayerdetails;
+	}
+
+
+	/**
+	 * @return the specialterms
+	 */
+	public NBSCRTIREC.SPECIALTERMS getSpecialterms() {
+		return specialterms;
+	}
+
+
+	/**
+	 * @param specialterms the specialterms to set
+	 */
+	public void setSpecialterms(NBSCRTIREC.SPECIALTERMS specialterms) {
+		this.specialterms = specialterms;
+	}
+
+
+	/**
+	 * @return the nbscrtifunddetails
+	 */
+	public List<NBSCRTIREC.NBSCRTIFUNDDETAILS> getNbscrtifunddetails() {
+		return nbscrtifunddetails;
+	}
+
+
+	/**
+	 * @param nbscrtifunddetails the nbscrtifunddetails to set
+	 */
+	public void setNbscrtifunddetails(List<NBSCRTIREC.NBSCRTIFUNDDETAILS> nbscrtifunddetails) {
+		this.nbscrtifunddetails = nbscrtifunddetails;
+	}
+
+
+	/**
+	 * @return the nbscrticlient
+	 */
+	public List<NBSCRTIREC.NBSCRTICLIENT> getNbscrticlient() {
+		return nbscrticlient;
+	}
+
+
+	/**
+	 * @param nbscrticlient the nbscrticlient to set
+	 */
+	public void setNbscrticlient(List<NBSCRTIREC.NBSCRTICLIENT> nbscrticlient) {
+		this.nbscrticlient = nbscrticlient;
+	}
+
+
+	/**
+	 * @return the nbscrtibankdetails
+	 */
+	public NBSCRTIREC.NBSCRTIBANKDETAILS getNbscrtibankdetails() {
+		return nbscrtibankdetails;
+	}
+
+
+	/**
+	 * @param nbscrtibankdetails the nbscrtibankdetails to set
+	 */
+	public void setNbscrtibankdetails(NBSCRTIREC.NBSCRTIBANKDETAILS nbscrtibankdetails) {
+		this.nbscrtibankdetails = nbscrtibankdetails;
+	}
+
+
+	/**
+	 * @return the nbscrtimandatedetails
+	 */
+	public NBSCRTIREC.NBSCRTIMANDATEDETAILS getNbscrtimandatedetails() {
+		return nbscrtimandatedetails;
+	}
+
+
+	/**
+	 * @param nbscrtimandatedetails the nbscrtimandatedetails to set
+	 */
+	public void setNbscrtimandatedetails(NBSCRTIREC.NBSCRTIMANDATEDETAILS nbscrtimandatedetails) {
+		this.nbscrtimandatedetails = nbscrtimandatedetails;
+	}
+
+
+	/**
+	 * @return the nbscrtipremiumrctdetails
+	 */
+	public NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS getNbscrtipremiumrctdetails() {
+		return nbscrtipremiumrctdetails;
+	}
+
+
+	/**
+	 * @param nbscrtipremiumrctdetails the nbscrtipremiumrctdetails to set
+	 */
+	public void setNbscrtipremiumrctdetails(NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS nbscrtipremiumrctdetails) {
+		this.nbscrtipremiumrctdetails = nbscrtipremiumrctdetails;
+	}
+
+
+	/**
+	 * @return the nbscrtiapplycash
+	 */
+	public NBSCRTIREC.NBSCRTIAPPLYCASH getNbscrtiapplycash() {
+		return nbscrtiapplycash;
+	}
+
+
+	/**
+	 * @param nbscrtiapplycash the nbscrtiapplycash to set
+	 */
+	public void setNbscrtiapplycash(NBSCRTIREC.NBSCRTIAPPLYCASH nbscrtiapplycash) {
+		this.nbscrtiapplycash = nbscrtiapplycash;
+	}
+
+
+	/**
+	 * @return the nbscrtiquestion
+	 */
+	public List<NBSCRTIREC.NBSCRTIQUESTION> getNbscrtiquestion() {
+		return nbscrtiquestion;
+	}
+
+
+	/**
+	 * @param nbscrtiquestion the nbscrtiquestion to set
+	 */
+	public void setNbscrtiquestion(List<NBSCRTIREC.NBSCRTIQUESTION> nbscrtiquestion) {
+		this.nbscrtiquestion = nbscrtiquestion;
+	}
+
+
+	/**
+	 * @return the nbscrtidoctor
+	 */
+	public List<NBSCRTIREC.NBSCRTIDOCTOR> getNbscrtidoctor() {
+		return nbscrtidoctor;
+	}
+
+
+	/**
+	 * @param nbscrtidoctor the nbscrtidoctor to set
+	 */
+	public void setNbscrtidoctor(List<NBSCRTIREC.NBSCRTIDOCTOR> nbscrtidoctor) {
+		this.nbscrtidoctor = nbscrtidoctor;
+	}
+
+
+	/**
      * <p>Java class for anonymous complex type.
      * 
      * <p>The following schema fragment specifies the expected content contained within this class.
@@ -3287,61 +3072,40 @@ public class NBSCRTIREC {
         @XmlElement(name = "NBSCRTI_ASSIGNEE_DETAILS", required = true)
         protected List<NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS> nbscrtiassigneedetails;
 
-        /**
-         * Gets the value of the assigneeentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getASSIGNEEENTID() {
-            return assigneeentid;
-        }
 
         /**
-         * Sets the value of the assigneeentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setASSIGNEEENTID(String value) {
-            this.assigneeentid = value;
-        }
-
-        /**
-         * Gets the value of the nbscrtiassigneedetails property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the nbscrtiassigneedetails property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getNBSCRTIASSIGNEEDETAILS().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS }
-         * 
-         * 
-         */
-        public List<NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS> getNBSCRTIASSIGNEEDETAILS() {
-            if (nbscrtiassigneedetails == null) {
-                nbscrtiassigneedetails = new ArrayList<NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS>();
-            }
-            return this.nbscrtiassigneedetails;
-        }
+		 * @return the assigneeentid
+		 */
+		public String getAssigneeentid() {
+			return assigneeentid;
+		}
 
 
-        /**
+		/**
+		 * @param assigneeentid the assigneeentid to set
+		 */
+		public void setAssigneeentid(String assigneeentid) {
+			this.assigneeentid = assigneeentid;
+		}
+
+
+		/**
+		 * @return the nbscrtiassigneedetails
+		 */
+		public List<NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS> getNbscrtiassigneedetails() {
+			return nbscrtiassigneedetails;
+		}
+
+
+		/**
+		 * @param nbscrtiassigneedetails the nbscrtiassigneedetails to set
+		 */
+		public void setNbscrtiassigneedetails(List<NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS> nbscrtiassigneedetails) {
+			this.nbscrtiassigneedetails = nbscrtiassigneedetails;
+		}
+
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
@@ -3459,104 +3223,72 @@ public class NBSCRTIREC {
             @XmlElement(name = "REASONCD", required = true)
             protected String reasoncd;
 
+            
             /**
-             * Gets the value of the assigneeparty property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getASSIGNEEPARTY() {
-                return assigneeparty;
-            }
-
-            /**
-             * Sets the value of the assigneeparty property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setASSIGNEEPARTY(String value) {
-                this.assigneeparty = value;
-            }
-
-            /**
-             * Gets the value of the commfrom property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM }
-             *     
-             */
-            public NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM getCOMMFROM() {
-                return commfrom;
-            }
-
-            /**
-             * Sets the value of the commfrom property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM }
-             *     
-             */
-            public void setCOMMFROM(NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM value) {
-                this.commfrom = value;
-            }
-
-            /**
-             * Gets the value of the commto property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO }
-             *     
-             */
-            public NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO getCOMMTO() {
-                return commto;
-            }
-
-            /**
-             * Sets the value of the commto property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO }
-             *     
-             */
-            public void setCOMMTO(NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO value) {
-                this.commto = value;
-            }
-
-            /**
-             * Gets the value of the reasoncd property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getREASONCD() {
-                return reasoncd;
-            }
-
-            /**
-             * Sets the value of the reasoncd property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setREASONCD(String value) {
-                this.reasoncd = value;
-            }
+			 * @return the assigneeparty
+			 */
+			public String getAssigneeparty() {
+				return assigneeparty;
+			}
 
 
-            /**
+			/**
+			 * @param assigneeparty the assigneeparty to set
+			 */
+			public void setAssigneeparty(String assigneeparty) {
+				this.assigneeparty = assigneeparty;
+			}
+
+
+			/**
+			 * @return the commfrom
+			 */
+			public NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM getCommfrom() {
+				return commfrom;
+			}
+
+
+			/**
+			 * @param commfrom the commfrom to set
+			 */
+			public void setCommfrom(NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMFROM commfrom) {
+				this.commfrom = commfrom;
+			}
+
+
+			/**
+			 * @return the commto
+			 */
+			public NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO getCommto() {
+				return commto;
+			}
+
+
+			/**
+			 * @param commto the commto to set
+			 */
+			public void setCommto(NBSCRTIREC.ASSIGNEES.NBSCRTIASSIGNEEDETAILS.COMMTO commto) {
+				this.commto = commto;
+			}
+
+
+			/**
+			 * @return the reasoncd
+			 */
+			public String getReasoncd() {
+				return reasoncd;
+			}
+
+
+			/**
+			 * @param reasoncd the reasoncd to set
+			 */
+			public void setReasoncd(String reasoncd) {
+				this.reasoncd = reasoncd;
+			}
+
+
+			/**
              * <p>Java class for anonymous complex type.
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
@@ -3612,79 +3344,44 @@ public class NBSCRTIREC {
                 protected BigInteger mm;
                 @XmlElement(name = "DD", required = true)
                 protected BigInteger dd;
+				/**
+				 * @return the ccyy
+				 */
+				public BigInteger getCcyy() {
+					return ccyy;
+				}
+				/**
+				 * @param ccyy the ccyy to set
+				 */
+				public void setCcyy(BigInteger ccyy) {
+					this.ccyy = ccyy;
+				}
+				/**
+				 * @return the mm
+				 */
+				public BigInteger getMm() {
+					return mm;
+				}
+				/**
+				 * @param mm the mm to set
+				 */
+				public void setMm(BigInteger mm) {
+					this.mm = mm;
+				}
+				/**
+				 * @return the dd
+				 */
+				public BigInteger getDd() {
+					return dd;
+				}
+				/**
+				 * @param dd the dd to set
+				 */
+				public void setDd(BigInteger dd) {
+					this.dd = dd;
+				}
 
-                /**
-                 * Gets the value of the ccyy property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getCCYY() {
-                    return ccyy;
-                }
-
-                /**
-                 * Sets the value of the ccyy property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setCCYY(BigInteger value) {
-                    this.ccyy = value;
-                }
-
-                /**
-                 * Gets the value of the mm property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getMM() {
-                    return mm;
-                }
-
-                /**
-                 * Sets the value of the mm property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setMM(BigInteger value) {
-                    this.mm = value;
-                }
-
-                /**
-                 * Gets the value of the dd property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getDD() {
-                    return dd;
-                }
-
-                /**
-                 * Sets the value of the dd property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setDD(BigInteger value) {
-                    this.dd = value;
-                }
-
+               
             }
 
 
@@ -3744,78 +3441,42 @@ public class NBSCRTIREC {
                 protected BigInteger mm;
                 @XmlElement(name = "DD", required = true)
                 protected BigInteger dd;
-
-                /**
-                 * Gets the value of the ccyy property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getCCYY() {
-                    return ccyy;
-                }
-
-                /**
-                 * Sets the value of the ccyy property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setCCYY(BigInteger value) {
-                    this.ccyy = value;
-                }
-
-                /**
-                 * Gets the value of the mm property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getMM() {
-                    return mm;
-                }
-
-                /**
-                 * Sets the value of the mm property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setMM(BigInteger value) {
-                    this.mm = value;
-                }
-
-                /**
-                 * Gets the value of the dd property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getDD() {
-                    return dd;
-                }
-
-                /**
-                 * Sets the value of the dd property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setDD(BigInteger value) {
-                    this.dd = value;
-                }
+				/**
+				 * @return the ccyy
+				 */
+				public BigInteger getCcyy() {
+					return ccyy;
+				}
+				/**
+				 * @param ccyy the ccyy to set
+				 */
+				public void setCcyy(BigInteger ccyy) {
+					this.ccyy = ccyy;
+				}
+				/**
+				 * @return the mm
+				 */
+				public BigInteger getMm() {
+					return mm;
+				}
+				/**
+				 * @param mm the mm to set
+				 */
+				public void setMm(BigInteger mm) {
+					this.mm = mm;
+				}
+				/**
+				 * @return the dd
+				 */
+				public BigInteger getDd() {
+					return dd;
+				}
+				/**
+				 * @param dd the dd to set
+				 */
+				public void setDd(BigInteger dd) {
+					this.dd = dd;
+				}
 
             }
 
@@ -3942,61 +3603,40 @@ public class NBSCRTIREC {
         @XmlElement(name = "NBSCRTI_BEN_DETAILS", required = true)
         protected List<NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS> nbscrtibendetails;
 
+      
         /**
-         * Gets the value of the beneficiaryentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBENEFICIARYENTID() {
-            return beneficiaryentid;
-        }
-
-        /**
-         * Sets the value of the beneficiaryentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBENEFICIARYENTID(String value) {
-            this.beneficiaryentid = value;
-        }
-
-        /**
-         * Gets the value of the nbscrtibendetails property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the nbscrtibendetails property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getNBSCRTIBENDETAILS().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS }
-         * 
-         * 
-         */
-        public List<NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS> getNBSCRTIBENDETAILS() {
-            if (nbscrtibendetails == null) {
-                nbscrtibendetails = new ArrayList<NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS>();
-            }
-            return this.nbscrtibendetails;
-        }
+		 * @return the beneficiaryentid
+		 */
+		public String getBeneficiaryentid() {
+			return beneficiaryentid;
+		}
 
 
-        /**
+		/**
+		 * @param beneficiaryentid the beneficiaryentid to set
+		 */
+		public void setBeneficiaryentid(String beneficiaryentid) {
+			this.beneficiaryentid = beneficiaryentid;
+		}
+
+
+		/**
+		 * @return the nbscrtibendetails
+		 */
+		public List<NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS> getNbscrtibendetails() {
+			return nbscrtibendetails;
+		}
+
+
+		/**
+		 * @param nbscrtibendetails the nbscrtibendetails to set
+		 */
+		public void setNbscrtibendetails(List<NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS> nbscrtibendetails) {
+			this.nbscrtibendetails = nbscrtibendetails;
+		}
+
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
@@ -4109,152 +3749,104 @@ public class NBSCRTIREC {
             @XmlElement(name = "EFFDATE", required = true)
             protected NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE effdate;
 
+            
             /**
-             * Gets the value of the beneficiaryparty property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getBENEFICIARYPARTY() {
-                return beneficiaryparty;
-            }
-
-            /**
-             * Sets the value of the beneficiaryparty property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setBENEFICIARYPARTY(String value) {
-                this.beneficiaryparty = value;
-            }
-
-            /**
-             * Gets the value of the bnypc property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigDecimal }
-             *     
-             */
-            public BigDecimal getBNYPC() {
-                return bnypc;
-            }
-
-            /**
-             * Sets the value of the bnypc property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigDecimal }
-             *     
-             */
-            public void setBNYPC(BigDecimal value) {
-                this.bnypc = value;
-            }
-
-            /**
-             * Gets the value of the bnysel property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getBNYSEL() {
-                return bnysel;
-            }
-
-            /**
-             * Sets the value of the bnysel property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setBNYSEL(String value) {
-                this.bnysel = value;
-            }
-
-            /**
-             * Gets the value of the bnytype property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getBNYTYPE() {
-                return bnytype;
-            }
-
-            /**
-             * Sets the value of the bnytype property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setBNYTYPE(String value) {
-                this.bnytype = value;
-            }
-
-            /**
-             * Gets the value of the cltreln property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getCLTRELN() {
-                return cltreln;
-            }
-
-            /**
-             * Sets the value of the cltreln property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setCLTRELN(String value) {
-                this.cltreln = value;
-            }
-
-            /**
-             * Gets the value of the effdate property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE }
-             *     
-             */
-            public NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE getEFFDATE() {
-                return effdate;
-            }
-
-            /**
-             * Sets the value of the effdate property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE }
-             *     
-             */
-            public void setEFFDATE(NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE value) {
-                this.effdate = value;
-            }
+			 * @return the beneficiaryparty
+			 */
+			public String getBeneficiaryparty() {
+				return beneficiaryparty;
+			}
 
 
-            /**
+			/**
+			 * @param beneficiaryparty the beneficiaryparty to set
+			 */
+			public void setBeneficiaryparty(String beneficiaryparty) {
+				this.beneficiaryparty = beneficiaryparty;
+			}
+
+
+			/**
+			 * @return the bnypc
+			 */
+			public BigDecimal getBnypc() {
+				return bnypc;
+			}
+
+
+			/**
+			 * @param bnypc the bnypc to set
+			 */
+			public void setBnypc(BigDecimal bnypc) {
+				this.bnypc = bnypc;
+			}
+
+
+			/**
+			 * @return the bnysel
+			 */
+			public String getBnysel() {
+				return bnysel;
+			}
+
+
+			/**
+			 * @param bnysel the bnysel to set
+			 */
+			public void setBnysel(String bnysel) {
+				this.bnysel = bnysel;
+			}
+
+
+			/**
+			 * @return the bnytype
+			 */
+			public String getBnytype() {
+				return bnytype;
+			}
+
+
+			/**
+			 * @param bnytype the bnytype to set
+			 */
+			public void setBnytype(String bnytype) {
+				this.bnytype = bnytype;
+			}
+
+
+			/**
+			 * @return the cltreln
+			 */
+			public String getCltreln() {
+				return cltreln;
+			}
+
+
+			/**
+			 * @param cltreln the cltreln to set
+			 */
+			public void setCltreln(String cltreln) {
+				this.cltreln = cltreln;
+			}
+
+
+			/**
+			 * @return the effdate
+			 */
+			public NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE getEffdate() {
+				return effdate;
+			}
+
+
+			/**
+			 * @param effdate the effdate to set
+			 */
+			public void setEffdate(NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE effdate) {
+				this.effdate = effdate;
+			}
+
+
+			/**
              * <p>Java class for anonymous complex type.
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
@@ -4424,29 +4016,19 @@ public class NBSCRTIREC {
         @XmlElement(name = "DATIME", required = true)
         protected String datime;
 
-        /**
-         * Gets the value of the datime property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDATIME() {
-            return datime;
-        }
+		/**
+		 * @return the datime
+		 */
+		public String getDatime() {
+			return datime;
+		}
 
-        /**
-         * Sets the value of the datime property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDATIME(String value) {
-            this.datime = value;
-        }
+		/**
+		 * @param datime the datime to set
+		 */
+		public void setDatime(String datime) {
+			this.datime = datime;
+		}
 
     }
 
@@ -4586,55 +4168,57 @@ public class NBSCRTIREC {
         @XmlElement(name = "NBSCRTI_FUPS", required = true)
         protected List<NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS> nbscrtifups;
 
-        /**
-         * Gets the value of the followupsentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getFOLLOWUPSENTID() {
-            return followupsentid;
-        }
+      
 
         /**
-         * Sets the value of the followupsentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setFOLLOWUPSENTID(String value) {
-            this.followupsentid = value;
-        }
+		 * @return the followupsentid
+		 */
+		public String getFollowupsentid() {
+			return followupsentid;
+		}
 
-        /**
-         * Gets the value of the zdoctor property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getZDOCTOR() {
-            return zdoctor;
-        }
 
-        /**
-         * Sets the value of the zdoctor property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setZDOCTOR(String value) {
-            this.zdoctor = value;
-        }
+		/**
+		 * @param followupsentid the followupsentid to set
+		 */
+		public void setFollowupsentid(String followupsentid) {
+			this.followupsentid = followupsentid;
+		}
 
-        /**
+
+		/**
+		 * @return the zdoctor
+		 */
+		public String getZdoctor() {
+			return zdoctor;
+		}
+
+
+		/**
+		 * @param zdoctor the zdoctor to set
+		 */
+		public void setZdoctor(String zdoctor) {
+			this.zdoctor = zdoctor;
+		}
+
+
+		/**
+		 * @return the nbscrtifups
+		 */
+		public List<NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS> getNbscrtifups() {
+			return nbscrtifups;
+		}
+
+
+		/**
+		 * @param nbscrtifups the nbscrtifups to set
+		 */
+		public void setNbscrtifups(List<NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS> nbscrtifups) {
+			this.nbscrtifups = nbscrtifups;
+		}
+
+
+		/**
          * Gets the value of the nbscrtifups property.
          * 
          * <p>
@@ -4787,176 +4371,150 @@ public class NBSCRTIREC {
             @XmlElement(name = "FUPTYPE", required = true)
             protected String fuptype;
 
-            /**
-             * Gets the value of the fupcde property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getFUPCDE() {
-                return fupcde;
-            }
-
-            /**
-             * Sets the value of the fupcde property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setFUPCDE(String value) {
-                this.fupcde = value;
-            }
-
-            /**
-             * Gets the value of the fupdt property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT }
-             *     
-             */
-            public NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT getFUPDT() {
-                return fupdt;
-            }
-
-            /**
-             * Sets the value of the fupdt property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT }
-             *     
-             */
-            public void setFUPDT(NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT value) {
-                this.fupdt = value;
-            }
-
-            /**
-             * Gets the value of the fupno property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getFUPNO() {
-                return fupno;
-            }
-
-            /**
-             * Sets the value of the fupno property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setFUPNO(BigInteger value) {
-                this.fupno = value;
-            }
-
-            /**
-             * Gets the value of the fupsts property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getFUPSTS() {
-                return fupsts;
-            }
-
-            /**
-             * Sets the value of the fupsts property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setFUPSTS(String value) {
-                this.fupsts = value;
-            }
-
-            /**
-             * Gets the value of the lifeno property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getLIFENO() {
-                return lifeno;
-            }
-
-            /**
-             * Sets the value of the lifeno property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setLIFENO(BigInteger value) {
-                this.lifeno = value;
-            }
-
-            /**
-             * Gets the value of the jlifeno property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getJLIFENO() {
-                return jlifeno;
-            }
-
-            /**
-             * Sets the value of the jlifeno property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setJLIFENO(BigInteger value) {
-                this.jlifeno = value;
-            }
-
-            /**
-             * Gets the value of the fuptype property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
-             */
-            public String getFUPTYPE() {
-                return fuptype;
-            }
-
-            /**
-             * Sets the value of the fuptype property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
-             */
-            public void setFUPTYPE(String value) {
-                this.fuptype = value;
-            }
+            
 
 
             /**
+			 * @return the fupcde
+			 */
+			public String getFupcde() {
+				return fupcde;
+			}
+
+
+
+
+			/**
+			 * @param fupcde the fupcde to set
+			 */
+			public void setFupcde(String fupcde) {
+				this.fupcde = fupcde;
+			}
+
+
+
+
+			/**
+			 * @return the fupdt
+			 */
+			public NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT getFupdt() {
+				return fupdt;
+			}
+
+
+
+
+			/**
+			 * @param fupdt the fupdt to set
+			 */
+			public void setFupdt(NBSCRTIREC.FOLLOWUPS.NBSCRTIFUPS.FUPDT fupdt) {
+				this.fupdt = fupdt;
+			}
+
+
+
+
+			/**
+			 * @return the fupno
+			 */
+			public BigInteger getFupno() {
+				return fupno;
+			}
+
+
+
+
+			/**
+			 * @param fupno the fupno to set
+			 */
+			public void setFupno(BigInteger fupno) {
+				this.fupno = fupno;
+			}
+
+
+
+
+			/**
+			 * @return the fupsts
+			 */
+			public String getFupsts() {
+				return fupsts;
+			}
+
+
+
+
+			/**
+			 * @param fupsts the fupsts to set
+			 */
+			public void setFupsts(String fupsts) {
+				this.fupsts = fupsts;
+			}
+
+
+
+
+			/**
+			 * @return the lifeno
+			 */
+			public BigInteger getLifeno() {
+				return lifeno;
+			}
+
+
+
+
+			/**
+			 * @param lifeno the lifeno to set
+			 */
+			public void setLifeno(BigInteger lifeno) {
+				this.lifeno = lifeno;
+			}
+
+
+
+
+			/**
+			 * @return the jlifeno
+			 */
+			public BigInteger getJlifeno() {
+				return jlifeno;
+			}
+
+
+
+
+			/**
+			 * @param jlifeno the jlifeno to set
+			 */
+			public void setJlifeno(BigInteger jlifeno) {
+				this.jlifeno = jlifeno;
+			}
+
+
+
+
+			/**
+			 * @return the fuptype
+			 */
+			public String getFuptype() {
+				return fuptype;
+			}
+
+
+
+
+			/**
+			 * @param fuptype the fuptype to set
+			 */
+			public void setFuptype(String fuptype) {
+				this.fuptype = fuptype;
+			}
+
+
+
+
+			/**
              * <p>Java class for anonymous complex type.
              * 
              * <p>The following schema fragment specifies the expected content contained within this class.
@@ -5012,6 +4570,42 @@ public class NBSCRTIREC {
                 protected BigInteger mm;
                 @XmlElement(name = "DD", required = true)
                 protected BigInteger dd;
+				/**
+				 * @return the ccyy
+				 */
+				public BigInteger getCcyy() {
+					return ccyy;
+				}
+				/**
+				 * @param ccyy the ccyy to set
+				 */
+				public void setCcyy(BigInteger ccyy) {
+					this.ccyy = ccyy;
+				}
+				/**
+				 * @return the mm
+				 */
+				public BigInteger getMm() {
+					return mm;
+				}
+				/**
+				 * @param mm the mm to set
+				 */
+				public void setMm(BigInteger mm) {
+					this.mm = mm;
+				}
+				/**
+				 * @return the dd
+				 */
+				public BigInteger getDd() {
+					return dd;
+				}
+				/**
+				 * @param dd the dd to set
+				 */
+				public void setDd(BigInteger dd) {
+					this.dd = dd;
+				}
 
                 /**
                  * Gets the value of the ccyy property.
@@ -5021,70 +4615,7 @@ public class NBSCRTIREC {
                  *     {@link BigInteger }
                  *     
                  */
-                public BigInteger getCCYY() {
-                    return ccyy;
-                }
-
-                /**
-                 * Sets the value of the ccyy property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setCCYY(BigInteger value) {
-                    this.ccyy = value;
-                }
-
-                /**
-                 * Gets the value of the mm property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getMM() {
-                    return mm;
-                }
-
-                /**
-                 * Sets the value of the mm property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setMM(BigInteger value) {
-                    this.mm = value;
-                }
-
-                /**
-                 * Gets the value of the dd property.
-                 * 
-                 * @return
-                 *     possible object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public BigInteger getDD() {
-                    return dd;
-                }
-
-                /**
-                 * Sets the value of the dd property.
-                 * 
-                 * @param value
-                 *     allowed object is
-                 *     {@link BigInteger }
-                 *     
-                 */
-                public void setDD(BigInteger value) {
-                    this.dd = value;
-                }
-
+                
             }
 
         }
@@ -5135,54 +4666,32 @@ public class NBSCRTIREC {
         protected String applycashentid;
         @XmlElement(name = "RECEIPTNO", required = true)
         protected String receiptno;
+		/**
+		 * @return the applycashentid
+		 */
+		public String getApplycashentid() {
+			return applycashentid;
+		}
+		/**
+		 * @param applycashentid the applycashentid to set
+		 */
+		public void setApplycashentid(String applycashentid) {
+			this.applycashentid = applycashentid;
+		}
+		/**
+		 * @return the receiptno
+		 */
+		public String getReceiptno() {
+			return receiptno;
+		}
+		/**
+		 * @param receiptno the receiptno to set
+		 */
+		public void setReceiptno(String receiptno) {
+			this.receiptno = receiptno;
+		}
 
-        /**
-         * Gets the value of the applycashentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getAPPLYCASHENTID() {
-            return applycashentid;
-        }
-
-        /**
-         * Sets the value of the applycashentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setAPPLYCASHENTID(String value) {
-            this.applycashentid = value;
-        }
-
-        /**
-         * Gets the value of the receiptno property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getRECEIPTNO() {
-            return receiptno;
-        }
-
-        /**
-         * Sets the value of the receiptno property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setRECEIPTNO(String value) {
-            this.receiptno = value;
-        }
+        
 
     }
 
@@ -5326,192 +4835,122 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getBANKACCENTID() {
-            return bankaccentid;
-        }
-
-        /**
-         * Sets the value of the bankaccentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKACCENTID(String value) {
-            this.bankaccentid = value;
-        }
-
-        /**
-         * Gets the value of the cbnksel property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCBNKSEL() {
-            return cbnksel;
-        }
-
-        /**
-         * Sets the value of the cbnksel property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCBNKSEL(String value) {
-            this.cbnksel = value;
-        }
-
-        /**
-         * Gets the value of the bankaccdsc property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKACCDSC() {
-            return bankaccdsc;
-        }
-
-        /**
-         * Sets the value of the bankaccdsc property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKACCDSC(String value) {
-            this.bankaccdsc = value;
-        }
-
-        /**
-         * Gets the value of the bankacount property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKACOUNT() {
-            return bankacount;
-        }
-
-        /**
-         * Sets the value of the bankacount property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKACOUNT(String value) {
-            this.bankacount = value;
-        }
-
-        /**
-         * Gets the value of the bankkey property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKKEY() {
-            return bankkey;
-        }
-
-        /**
-         * Sets the value of the bankkey property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKKEY(String value) {
-            this.bankkey = value;
-        }
-
-        /**
-         * Gets the value of the currcode property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCURRCODE() {
-            return currcode;
-        }
-
-        /**
-         * Sets the value of the currcode property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCURRCODE(String value) {
-            this.currcode = value;
-        }
-
-        /**
-         * Gets the value of the datefrom property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM }
-         *     
-         */
-        public NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM getDATEFROM() {
-            return datefrom;
-        }
-
-        /**
-         * Sets the value of the datefrom property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM }
-         *     
-         */
-        public void setDATEFROM(NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM value) {
-            this.datefrom = value;
-        }
-
-        /**
-         * Gets the value of the facthous property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getFACTHOUS() {
-            return facthous;
-        }
-
-        /**
-         * Sets the value of the facthous property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setFACTHOUS(String value) {
-            this.facthous = value;
-        }
+        
 
 
         /**
+		 * @return the bankaccentid
+		 */
+		public String getBankaccentid() {
+			return bankaccentid;
+		}
+
+		/**
+		 * @param bankaccentid the bankaccentid to set
+		 */
+		public void setBankaccentid(String bankaccentid) {
+			this.bankaccentid = bankaccentid;
+		}
+
+		/**
+		 * @return the cbnksel
+		 */
+		public String getCbnksel() {
+			return cbnksel;
+		}
+
+		/**
+		 * @param cbnksel the cbnksel to set
+		 */
+		public void setCbnksel(String cbnksel) {
+			this.cbnksel = cbnksel;
+		}
+
+		/**
+		 * @return the bankaccdsc
+		 */
+		public String getBankaccdsc() {
+			return bankaccdsc;
+		}
+
+		/**
+		 * @param bankaccdsc the bankaccdsc to set
+		 */
+		public void setBankaccdsc(String bankaccdsc) {
+			this.bankaccdsc = bankaccdsc;
+		}
+
+		/**
+		 * @return the bankacount
+		 */
+		public String getBankacount() {
+			return bankacount;
+		}
+
+		/**
+		 * @param bankacount the bankacount to set
+		 */
+		public void setBankacount(String bankacount) {
+			this.bankacount = bankacount;
+		}
+
+		/**
+		 * @return the bankkey
+		 */
+		public String getBankkey() {
+			return bankkey;
+		}
+
+		/**
+		 * @param bankkey the bankkey to set
+		 */
+		public void setBankkey(String bankkey) {
+			this.bankkey = bankkey;
+		}
+
+		/**
+		 * @return the currcode
+		 */
+		public String getCurrcode() {
+			return currcode;
+		}
+
+		/**
+		 * @param currcode the currcode to set
+		 */
+		public void setCurrcode(String currcode) {
+			this.currcode = currcode;
+		}
+
+		/**
+		 * @return the datefrom
+		 */
+		public NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM getDatefrom() {
+			return datefrom;
+		}
+
+		/**
+		 * @param datefrom the datefrom to set
+		 */
+		public void setDatefrom(NBSCRTIREC.NBSCRTIBANKDETAILS.DATEFROM datefrom) {
+			this.datefrom = datefrom;
+		}
+
+		/**
+		 * @return the facthous
+		 */
+		public String getFacthous() {
+			return facthous;
+		}
+
+		/**
+		 * @param facthous the facthous to set
+		 */
+		public void setFacthous(String facthous) {
+			this.facthous = facthous;
+		}
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
@@ -5567,78 +5006,44 @@ public class NBSCRTIREC {
             protected BigInteger mm;
             @XmlElement(name = "DD", required = true)
             protected BigInteger dd;
+			/**
+			 * @return the ccyy
+			 */
+			public BigInteger getCcyy() {
+				return ccyy;
+			}
+			/**
+			 * @param ccyy the ccyy to set
+			 */
+			public void setCcyy(BigInteger ccyy) {
+				this.ccyy = ccyy;
+			}
+			/**
+			 * @return the mm
+			 */
+			public BigInteger getMm() {
+				return mm;
+			}
+			/**
+			 * @param mm the mm to set
+			 */
+			public void setMm(BigInteger mm) {
+				this.mm = mm;
+			}
+			/**
+			 * @return the dd
+			 */
+			public BigInteger getDd() {
+				return dd;
+			}
+			/**
+			 * @param dd the dd to set
+			 */
+			public void setDd(BigInteger dd) {
+				this.dd = dd;
+			}
 
-            /**
-             * Gets the value of the ccyy property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getCCYY() {
-                return ccyy;
-            }
-
-            /**
-             * Sets the value of the ccyy property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setCCYY(BigInteger value) {
-                this.ccyy = value;
-            }
-
-            /**
-             * Gets the value of the mm property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getMM() {
-                return mm;
-            }
-
-            /**
-             * Sets the value of the mm property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setMM(BigInteger value) {
-                this.mm = value;
-            }
-
-            /**
-             * Gets the value of the dd property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link BigInteger }
-             *     
-             */
-            public BigInteger getDD() {
-                return dd;
-            }
-
-            /**
-             * Sets the value of the dd property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link BigInteger }
-             *     
-             */
-            public void setDD(BigInteger value) {
-                this.dd = value;
-            }
+           
 
         }
 
@@ -7320,368 +6725,250 @@ public class NBSCRTIREC {
         @XmlElement(name = "SRCEBUS", required = true)
         protected String srcebus;
 
-        /**
-         * Gets the value of the contracthdrentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCONTRACTHDRENTID() {
-            return contracthdrentid;
-        }
-
-        /**
-         * Sets the value of the contracthdrentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCONTRACTHDRENTID(String value) {
-            this.contracthdrentid = value;
-        }
-
-        /**
-         * Gets the value of the chdrsel property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCHDRSEL() {
-            return chdrsel;
-        }
-
-        /**
-         * Sets the value of the chdrsel property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setChdrsel(String value) {
-            this.chdrsel = value;
-        }
-
-        /**
-         * Gets the value of the chdrtype property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getChdrtype() {
-            return chdrtype;
-        }
-
-        /**
-         * Sets the value of the chdrtype property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCHDRTYPE(String value) {
-            this.chdrtype = value;
-        }
-
-        /**
-         * Gets the value of the agntsel property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getAGNTSEL() {
-            return agntsel;
-        }
-
-        /**
-         * Sets the value of the agntsel property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setAGNTSEL(String value) {
-            this.agntsel = value;
-        }
-
-        /**
-         * Gets the value of the billcd property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD }
-         *     
-         */
-        public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD getBILLCD() {
-            return billcd;
-        }
-
-        /**
-         * Sets the value of the billcd property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD }
-         *     
-         */
-        public void setBILLCD(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD value) {
-            this.billcd = value;
-        }
-
-        /**
-         * Gets the value of the billcurr property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBILLCURR() {
-            return billcurr;
-        }
-
-        /**
-         * Sets the value of the billcurr property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBILLCURR(String value) {
-            this.billcurr = value;
-        }
-
-        /**
-         * Gets the value of the billfreq property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBILLFREQ() {
-            return billfreq;
-        }
-
-        /**
-         * Sets the value of the billfreq property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBILLFREQ(String value) {
-            this.billfreq = value;
-        }
-
-        /**
-         * Gets the value of the billcdind property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getBILLCDIND() {
-            return billcdind;
-        }
-
-        /**
-         * Sets the value of the billcdind property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setBILLCDIND(BigInteger value) {
-            this.billcdind = value;
-        }
-
-        /**
-         * Gets the value of the cntcurr property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCNTCURR() {
-            return cntcurr;
-        }
-
-        /**
-         * Sets the value of the cntcurr property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCNTCURR(String value) {
-            this.cntcurr = value;
-        }
-
-        /**
-         * Gets the value of the mop property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getMOP() {
-            return mop;
-        }
-
-        /**
-         * Sets the value of the mop property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setMOP(String value) {
-            this.mop = value;
-        }
-
-        /**
-         * Gets the value of the hpropdte property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getHPROPDTE() {
-            return hpropdte;
-        }
-
-        /**
-         * Sets the value of the hpropdte property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setHPROPDTE(BigInteger value) {
-            this.hpropdte = value;
-        }
-
-        /**
-         * Gets the value of the occdate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE }
-         *     
-         */
-        public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE getOCCDATE() {
-            return occdate;
-        }
-
-        /**
-         * Sets the value of the occdate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE }
-         *     
-         */
-        public void setOCCDATE(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE value) {
-            this.occdate = value;
-        }
-
-        /**
-         * Gets the value of the plansuff property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getPLANSUFF() {
-            return plansuff;
-        }
-
-        /**
-         * Sets the value of the plansuff property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setPLANSUFF(BigInteger value) {
-            this.plansuff = value;
-        }
-
-        /**
-         * Gets the value of the register property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getREGISTER() {
-            return register;
-        }
-
-        /**
-         * Sets the value of the register property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setREGISTER(String value) {
-            this.register = value;
-        }
-
-        /**
-         * Gets the value of the srcebus property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getSRCEBUS() {
-            return srcebus;
-        }
-
-        /**
-         * Sets the value of the srcebus property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setSRCEBUS(String value) {
-            this.srcebus = value;
-        }
+       
 
 
         /**
+		 * @return the contracthdrentid
+		 */
+		public String getContracthdrentid() {
+			return contracthdrentid;
+		}
+
+
+		/**
+		 * @param contracthdrentid the contracthdrentid to set
+		 */
+		public void setContracthdrentid(String contracthdrentid) {
+			this.contracthdrentid = contracthdrentid;
+		}
+
+
+		/**
+		 * @return the chdrsel
+		 */
+		public String getChdrsel() {
+			return chdrsel;
+		}
+
+
+		/**
+		 * @param chdrsel the chdrsel to set
+		 */
+		public void setChdrsel(String chdrsel) {
+			this.chdrsel = chdrsel;
+		}
+
+
+		/**
+		 * @return the chdrtype
+		 */
+		public String getChdrtype() {
+			return chdrtype;
+		}
+
+
+		/**
+		 * @param chdrtype the chdrtype to set
+		 */
+		public void setChdrtype(String chdrtype) {
+			this.chdrtype = chdrtype;
+		}
+
+
+		/**
+		 * @return the agntsel
+		 */
+		public String getAgntsel() {
+			return agntsel;
+		}
+
+
+		/**
+		 * @param agntsel the agntsel to set
+		 */
+		public void setAgntsel(String agntsel) {
+			this.agntsel = agntsel;
+		}
+
+
+		/**
+		 * @return the billcd
+		 */
+		public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD getBillcd() {
+			return billcd;
+		}
+
+
+		/**
+		 * @param billcd the billcd to set
+		 */
+		public void setBillcd(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.BILLCD billcd) {
+			this.billcd = billcd;
+		}
+
+
+		/**
+		 * @return the billcurr
+		 */
+		public String getBillcurr() {
+			return billcurr;
+		}
+
+
+		/**
+		 * @param billcurr the billcurr to set
+		 */
+		public void setBillcurr(String billcurr) {
+			this.billcurr = billcurr;
+		}
+
+
+		/**
+		 * @return the billfreq
+		 */
+		public String getBillfreq() {
+			return billfreq;
+		}
+
+
+		/**
+		 * @param billfreq the billfreq to set
+		 */
+		public void setBillfreq(String billfreq) {
+			this.billfreq = billfreq;
+		}
+
+
+		/**
+		 * @return the billcdind
+		 */
+		public BigInteger getBillcdind() {
+			return billcdind;
+		}
+
+
+		/**
+		 * @param billcdind the billcdind to set
+		 */
+		public void setBillcdind(BigInteger billcdind) {
+			this.billcdind = billcdind;
+		}
+
+
+		/**
+		 * @return the cntcurr
+		 */
+		public String getCntcurr() {
+			return cntcurr;
+		}
+
+
+		/**
+		 * @param cntcurr the cntcurr to set
+		 */
+		public void setCntcurr(String cntcurr) {
+			this.cntcurr = cntcurr;
+		}
+
+
+		/**
+		 * @return the mop
+		 */
+		public String getMop() {
+			return mop;
+		}
+
+
+		/**
+		 * @param mop the mop to set
+		 */
+		public void setMop(String mop) {
+			this.mop = mop;
+		}
+
+
+		/**
+		 * @return the hpropdte
+		 */
+		public BigInteger getHpropdte() {
+			return hpropdte;
+		}
+
+
+		/**
+		 * @param hpropdte the hpropdte to set
+		 */
+		public void setHpropdte(BigInteger hpropdte) {
+			this.hpropdte = hpropdte;
+		}
+
+
+		/**
+		 * @return the occdate
+		 */
+		public NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE getOccdate() {
+			return occdate;
+		}
+
+
+		/**
+		 * @param occdate the occdate to set
+		 */
+		public void setOccdate(NBSCRTIREC.NBSCRTICONTRACTHDRDETAILS.OCCDATE occdate) {
+			this.occdate = occdate;
+		}
+
+
+		/**
+		 * @return the plansuff
+		 */
+		public BigInteger getPlansuff() {
+			return plansuff;
+		}
+
+
+		/**
+		 * @param plansuff the plansuff to set
+		 */
+		public void setPlansuff(BigInteger plansuff) {
+			this.plansuff = plansuff;
+		}
+
+
+		/**
+		 * @return the register
+		 */
+		public String getRegister() {
+			return register;
+		}
+
+
+		/**
+		 * @param register the register to set
+		 */
+		public void setRegister(String register) {
+			this.register = register;
+		}
+
+
+		/**
+		 * @return the srcebus
+		 */
+		public String getSrcebus() {
+			return srcebus;
+		}
+
+
+		/**
+		 * @param srcebus the srcebus to set
+		 */
+		public void setSrcebus(String srcebus) {
+			this.srcebus = srcebus;
+		}
+
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
@@ -7878,7 +7165,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getCCYY() {
+            public BigInteger getCcyy() {
                 return ccyy;
             }
 
@@ -7890,7 +7177,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCcyy(BigInteger value) {
                 this.ccyy = value;
             }
 
@@ -7902,7 +7189,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getMM() {
+            public BigInteger getMm() {
                 return mm;
             }
 
@@ -7914,7 +7201,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMm(BigInteger value) {
                 this.mm = value;
             }
 
@@ -7926,7 +7213,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getDD() {
+            public BigInteger getDd() {
                 return dd;
             }
 
@@ -7938,7 +7225,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDd(BigInteger value) {
                 this.dd = value;
             }
 
@@ -8266,7 +7553,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCOVRMORTCLS() {
+        public String getCovrmortcls() {
             return covrmortcls;
         }
 
@@ -8278,7 +7565,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCOVRMORTCLS(String value) {
+        public void setCovrmortcls(String value) {
             this.covrmortcls = value;
         }
 
@@ -8434,7 +7721,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public BigInteger getCOVRSUMIN() {
+        public BigInteger getCovrsumin() {
             return covrsumin;
         }
 
@@ -8446,7 +7733,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public void setCOVRSUMIN(BigInteger value) {
+        public void setCovrsumin(BigInteger value) {
             this.covrsumin = value;
         }
 
@@ -8458,7 +7745,7 @@ public class NBSCRTIREC {
          *     {@link BigDecimal }
          *     
          */
-        public BigDecimal getCOVRINSTPRM() {
+        public BigDecimal getCovrinstprm() {
             return covrinstprm;
         }
 
@@ -8470,7 +7757,7 @@ public class NBSCRTIREC {
          *     {@link BigDecimal }
          *     
          */
-        public void setCOVRINSTPRM(BigDecimal value) {
+        public void setCovrinstprm(BigDecimal value) {
             this.covrinstprm = value;
         }
 
@@ -9012,6 +8299,30 @@ public class NBSCRTIREC {
         protected String despatchentid;
         @XmlElement(name = "DESPATCH_PARTY", required = true)
         protected String despatchparty;
+		/**
+		 * @return the despatchentid
+		 */
+		public String getDespatchentid() {
+			return despatchentid;
+		}
+		/**
+		 * @param despatchentid the despatchentid to set
+		 */
+		public void setDespatchentid(String despatchentid) {
+			this.despatchentid = despatchentid;
+		}
+		/**
+		 * @return the despatchparty
+		 */
+		public String getDespatchparty() {
+			return despatchparty;
+		}
+		/**
+		 * @param despatchparty the despatchparty to set
+		 */
+		public void setDespatchparty(String despatchparty) {
+			this.despatchparty = despatchparty;
+		}
 
         /**
          * Gets the value of the despatchentid property.
@@ -9021,46 +8332,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getDESPATCHENTID() {
-            return despatchentid;
-        }
-
-        /**
-         * Sets the value of the despatchentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDESPATCHENTID(String value) {
-            this.despatchentid = value;
-        }
-
-        /**
-         * Gets the value of the despatchparty property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDESPATCHPARTY() {
-            return despatchparty;
-        }
-
-        /**
-         * Sets the value of the despatchparty property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDESPATCHPARTY(String value) {
-            this.despatchparty = value;
-        }
-
+        
     }
 
 
@@ -9127,102 +8399,55 @@ public class NBSCRTIREC {
         protected String doctorparty;
         @XmlElement(name = "DOCTTYPE", required = true)
         protected String docttype;
+		/**
+		 * @return the doctorentid
+		 */
+		public String getDoctorentid() {
+			return doctorentid;
+		}
+		/**
+		 * @param doctorentid the doctorentid to set
+		 */
+		public void setDoctorentid(String doctorentid) {
+			this.doctorentid = doctorentid;
+		}
+		/**
+		 * @return the doctorparent
+		 */
+		public String getDoctorparent() {
+			return doctorparent;
+		}
+		/**
+		 * @param doctorparent the doctorparent to set
+		 */
+		public void setDoctorparent(String doctorparent) {
+			this.doctorparent = doctorparent;
+		}
+		/**
+		 * @return the doctorparty
+		 */
+		public String getDoctorparty() {
+			return doctorparty;
+		}
+		/**
+		 * @param doctorparty the doctorparty to set
+		 */
+		public void setDoctorparty(String doctorparty) {
+			this.doctorparty = doctorparty;
+		}
+		/**
+		 * @return the docttype
+		 */
+		public String getDocttype() {
+			return docttype;
+		}
+		/**
+		 * @param docttype the docttype to set
+		 */
+		public void setDocttype(String docttype) {
+			this.docttype = docttype;
+		}
 
-        /**
-         * Gets the value of the doctorentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDOCTORENTID() {
-            return doctorentid;
-        }
-
-        /**
-         * Sets the value of the doctorentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDOCTORENTID(String value) {
-            this.doctorentid = value;
-        }
-
-        /**
-         * Gets the value of the doctorparent property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDOCTORPARENT() {
-            return doctorparent;
-        }
-
-        /**
-         * Sets the value of the doctorparent property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDOCTORPARENT(String value) {
-            this.doctorparent = value;
-        }
-
-        /**
-         * Gets the value of the doctorparty property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDOCTORPARTY() {
-            return doctorparty;
-        }
-
-        /**
-         * Sets the value of the doctorparty property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDOCTORPARTY(String value) {
-            this.doctorparty = value;
-        }
-
-        /**
-         * Gets the value of the docttype property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getDOCTTYPE() {
-            return docttype;
-        }
-
-        /**
-         * Sets the value of the docttype property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setDOCTTYPE(String value) {
-            this.docttype = value;
-        }
 
     }
 
@@ -11404,7 +10629,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public BigInteger getANBAGE() {
+        public BigInteger getAnbage() {
             return anbage;
         }
 
@@ -11416,7 +10641,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public void setANBAGE(BigInteger value) {
+        public void setAnbage(BigInteger value) {
             this.anbage = value;
         }
 
@@ -11452,7 +10677,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getOCCUP() {
+        public String getOccup() {
             return occup;
         }
 
@@ -11464,7 +10689,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setOCCUP(String value) {
+        public void setOccup(String value) {
             this.occup = value;
         }
 
@@ -11476,7 +10701,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getRELATION() {
+        public String getRelation() {
             return relation;
         }
 
@@ -11488,7 +10713,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setRELATION(String value) {
+        public void setRelation(String value) {
             this.relation = value;
         }
 
@@ -11500,7 +10725,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getSELECTION() {
+        public String getSelection() {
             return selection;
         }
 
@@ -11512,7 +10737,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setSELECTION(String value) {
+        public void setSelection(String value) {
             this.selection = value;
         }
 
@@ -11524,7 +10749,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getSEX() {
+        public String getSex() {
             return sex;
         }
 
@@ -11536,7 +10761,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setSEX(String value) {
+        public void setSex(String value) {
             this.sex = value;
         }
 
@@ -11548,7 +10773,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getSMOKING() {
+        public String getSmoking() {
             return smoking;
         }
 
@@ -11560,7 +10785,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setSMOKING(String value) {
+        public void setSmoking(String value) {
             this.smoking = value;
         }
 
@@ -11572,7 +10797,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public BigInteger getHEIGHT() {
+        public BigInteger getHeight() {
             return height;
         }
 
@@ -11584,7 +10809,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public void setHEIGHT(BigInteger value) {
+        public void setHeight(BigInteger value) {
             this.height = value;
         }
 
@@ -11596,7 +10821,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public BigInteger getWEIGHT() {
+        public BigInteger getWeight() {
             return weight;
         }
 
@@ -11608,7 +10833,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public void setWEIGHT(BigInteger value) {
+        public void setWeight(BigInteger value) {
             this.weight = value;
         }
 
@@ -11678,7 +10903,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getCCYY() {
+            public BigInteger getCcyy() {
                 return ccyy;
             }
 
@@ -11690,7 +10915,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCcyy(BigInteger value) {
                 this.ccyy = value;
             }
 
@@ -11702,7 +10927,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getMM() {
+            public BigInteger getMm() {
                 return mm;
             }
 
@@ -11714,7 +10939,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMm(BigInteger value) {
                 this.mm = value;
             }
 
@@ -11726,7 +10951,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public BigInteger getDD() {
+            public BigInteger getDd() {
                 return dd;
             }
 
@@ -11738,7 +10963,7 @@ public class NBSCRTIREC {
              *     {@link BigInteger }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDd(BigInteger value) {
                 this.dd = value;
             }
 
@@ -11790,54 +11015,32 @@ public class NBSCRTIREC {
         protected String jointownerentid;
         @XmlElement(name = "JOINT_OWNER_PARTY", required = true)
         protected String jointownerparty;
+		/**
+		 * @return the jointownerentid
+		 */
+		public String getJointownerentid() {
+			return jointownerentid;
+		}
+		/**
+		 * @param jointownerentid the jointownerentid to set
+		 */
+		public void setJointownerentid(String jointownerentid) {
+			this.jointownerentid = jointownerentid;
+		}
+		/**
+		 * @return the jointownerparty
+		 */
+		public String getJointownerparty() {
+			return jointownerparty;
+		}
+		/**
+		 * @param jointownerparty the jointownerparty to set
+		 */
+		public void setJointownerparty(String jointownerparty) {
+			this.jointownerparty = jointownerparty;
+		}
 
-        /**
-         * Gets the value of the jointownerentid property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getJOINTOWNERENTID() {
-            return jointownerentid;
-        }
-
-        /**
-         * Sets the value of the jointownerentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setJOINTOWNERENTID(String value) {
-            this.jointownerentid = value;
-        }
-
-        /**
-         * Gets the value of the jointownerparty property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getJOINTOWNERPARTY() {
-            return jointownerparty;
-        }
-
-        /**
-         * Sets the value of the jointownerparty property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setJOINTOWNERPARTY(String value) {
-            this.jointownerparty = value;
-        }
+        
 
     }
 
@@ -12554,7 +11757,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getMANDATEENTID() {
+        public String getMandateentid() {
             return mandateentid;
         }
 
@@ -12566,7 +11769,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setMANDATEENTID(String value) {
+        public void setMandateentid(String value) {
             this.mandateentid = value;
         }
 
@@ -12578,7 +11781,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCLNTNUM() {
+        public String getClntnum() {
             return clntnum;
         }
 
@@ -12590,7 +11793,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCLNTNUM(String value) {
+        public void setClntnum(String value) {
             this.clntnum = value;
         }
 
@@ -12602,7 +11805,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getMANDREF() {
+        public String getMandref() {
             return mandref;
         }
 
@@ -12614,7 +11817,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setMANDREF(String value) {
+        public void setMandref(String value) {
             this.mandref = value;
         }
 
@@ -12626,7 +11829,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getBANKACCKEY() {
+        public String getBankacckey() {
             return bankacckey;
         }
 
@@ -12638,7 +11841,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setBANKACCKEY(String value) {
+        public void setBankacckey(String value) {
             this.bankacckey = value;
         }
 
@@ -12650,7 +11853,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getBANKKEY() {
+        public String getBankkey() {
             return bankkey;
         }
 
@@ -12662,7 +11865,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setBANKKEY(String value) {
+        public void setBankkey(String value) {
             this.bankkey = value;
         }
 
@@ -12674,7 +11877,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE }
          *     
          */
-        public NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE getEFFDATE() {
+        public NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE getEffdate() {
             return effdate;
         }
 
@@ -12686,7 +11889,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE }
          *     
          */
-        public void setEFFDATE(NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE value) {
+        public void setEffdate(NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE value) {
             this.effdate = value;
         }
 
@@ -12698,7 +11901,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getFACTHOUS() {
+        public String getFacthous() {
             return facthous;
         }
 
@@ -12710,7 +11913,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setFACTHOUS(String value) {
+        public void setFacthous(String value) {
             this.facthous = value;
         }
 
@@ -12722,7 +11925,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getMANDSTAT() {
+        public String getMandstat() {
             return mandstat;
         }
 
@@ -12734,7 +11937,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setMANDSTAT(String value) {
+        public void setMandstat(String value) {
             this.mandstat = value;
         }
 
@@ -12746,7 +11949,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public BigInteger getTIMESUSE() {
+        public BigInteger getTimesuse() {
             return timesuse;
         }
 
@@ -12758,7 +11961,7 @@ public class NBSCRTIREC {
          *     {@link BigInteger }
          *     
          */
-        public void setTIMESUSE(BigInteger value) {
+        public void setTimesuse(BigInteger value) {
             this.timesuse = value;
         }
 
@@ -12940,6 +12143,30 @@ public class NBSCRTIREC {
         protected String ownerentid;
         @XmlElement(name = "OWNER_PARTY", required = true)
         protected String ownerparty;
+		/**
+		 * @return the ownerentid
+		 */
+		public String getOwnerentid() {
+			return ownerentid;
+		}
+		/**
+		 * @param ownerentid the ownerentid to set
+		 */
+		public void setOwnerentid(String ownerentid) {
+			this.ownerentid = ownerentid;
+		}
+		/**
+		 * @return the ownerparty
+		 */
+		public String getOwnerparty() {
+			return ownerparty;
+		}
+		/**
+		 * @param ownerparty the ownerparty to set
+		 */
+		public void setOwnerparty(String ownerparty) {
+			this.ownerparty = ownerparty;
+		}
 
         /**
          * Gets the value of the ownerentid property.
@@ -12949,45 +12176,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getOWNERENTID() {
-            return ownerentid;
-        }
-
-        /**
-         * Sets the value of the ownerentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setOWNERENTID(String value) {
-            this.ownerentid = value;
-        }
-
-        /**
-         * Gets the value of the ownerparty property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getOWNERPARTY() {
-            return ownerparty;
-        }
-
-        /**
-         * Sets the value of the ownerparty property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setOWNERPARTY(String value) {
-            this.ownerparty = value;
-        }
+       
 
     }
 
@@ -13035,6 +12224,30 @@ public class NBSCRTIREC {
         protected String payerentid;
         @XmlElement(name = "PAYER_PARTY", required = true)
         protected String payerparty;
+		/**
+		 * @return the payerentid
+		 */
+		public String getPayerentid() {
+			return payerentid;
+		}
+		/**
+		 * @param payerentid the payerentid to set
+		 */
+		public void setPayerentid(String payerentid) {
+			this.payerentid = payerentid;
+		}
+		/**
+		 * @return the payerparty
+		 */
+		public String getPayerparty() {
+			return payerparty;
+		}
+		/**
+		 * @param payerparty the payerparty to set
+		 */
+		public void setPayerparty(String payerparty) {
+			this.payerparty = payerparty;
+		}
 
         /**
          * Gets the value of the payerentid property.
@@ -13044,45 +12257,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getPAYERENTID() {
-            return payerentid;
-        }
-
-        /**
-         * Sets the value of the payerentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setPAYERENTID(String value) {
-            this.payerentid = value;
-        }
-
-        /**
-         * Gets the value of the payerparty property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getPAYERPARTY() {
-            return payerparty;
-        }
-
-        /**
-         * Sets the value of the payerparty property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setPAYERPARTY(String value) {
-            this.payerparty = value;
-        }
+        
 
     }
 
@@ -13362,437 +12537,298 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getPREMIUMRCTENTID() {
-            return premiumrctentid;
-        }
-
-        /**
-         * Sets the value of the premiumrctentid property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setPREMIUMRCTENTID(String value) {
-            this.premiumrctentid = value;
-        }
-
-        /**
-         * Gets the value of the bankedflag property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKEDFLAG() {
-            return bankedflag;
-        }
-
-        /**
-         * Sets the value of the bankedflag property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKEDFLAG(String value) {
-            this.bankedflag = value;
-        }
-
-        /**
-         * Gets the value of the bankcode property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKCODE() {
-            return bankcode;
-        }
-
-        /**
-         * Sets the value of the bankcode property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKCODE(String value) {
-            this.bankcode = value;
-        }
-
-        /**
-         * Gets the value of the bankdesc01 property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKDESC01() {
-            return bankdesc01;
-        }
-
-        /**
-         * Sets the value of the bankdesc01 property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKDESC01(String value) {
-            this.bankdesc01 = value;
-        }
-
-        /**
-         * Gets the value of the bankdesc02 property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKDESC02() {
-            return bankdesc02;
-        }
-
-        /**
-         * Sets the value of the bankdesc02 property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKDESC02(String value) {
-            this.bankdesc02 = value;
-        }
-
-        /**
-         * Gets the value of the bankdesc03 property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKDESC03() {
-            return bankdesc03;
-        }
-
-        /**
-         * Sets the value of the bankdesc03 property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKDESC03(String value) {
-            this.bankdesc03 = value;
-        }
-
-        /**
-         * Gets the value of the bankkey property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getBANKKEY() {
-            return bankkey;
-        }
-
-        /**
-         * Sets the value of the bankkey property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setBANKKEY(String value) {
-            this.bankkey = value;
-        }
-
-        /**
-         * Gets the value of the cheqno property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getCHEQNO() {
-            return cheqno;
-        }
-
-        /**
-         * Sets the value of the cheqno property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setCHEQNO(String value) {
-            this.cheqno = value;
-        }
-
-        /**
-         * Gets the value of the docorigamt property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigDecimal }
-         *     
-         */
-        public BigDecimal getDOCORIGAMT() {
-            return docorigamt;
-        }
-
-        /**
-         * Sets the value of the docorigamt property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigDecimal }
-         *     
-         */
-        public void setDOCORIGAMT(BigDecimal value) {
-            this.docorigamt = value;
-        }
-
-        /**
-         * Gets the value of the origcurr property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getORIGCURR() {
-            return origcurr;
-        }
-
-        /**
-         * Sets the value of the origcurr property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setORIGCURR(String value) {
-            this.origcurr = value;
-        }
-
-        /**
-         * Gets the value of the paytype property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getPAYTYPE() {
-            return paytype;
-        }
-
-        /**
-         * Sets the value of the paytype property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setPAYTYPE(String value) {
-            this.paytype = value;
-        }
-
-        /**
-         * Gets the value of the rfcode property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getRFCODE() {
-            return rfcode;
-        }
-
-        /**
-         * Sets the value of the rfcode property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setRFCODE(String value) {
-            this.rfcode = value;
-        }
-
-        /**
-         * Gets the value of the rfnum property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getRFNUM() {
-            return rfnum;
-        }
-
-        /**
-         * Sets the value of the rfnum property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setRFNUM(String value) {
-            this.rfnum = value;
-        }
-
-        /**
-         * Gets the value of the scrate property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigDecimal }
-         *     
-         */
-        public BigDecimal getSCRATE() {
-            return scrate;
-        }
-
-        /**
-         * Sets the value of the scrate property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigDecimal }
-         *     
-         */
-        public void setSCRATE(BigDecimal value) {
-            this.scrate = value;
-        }
-
-        /**
-         * Gets the value of the trandatex property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX }
-         *     
-         */
-        public NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX getTRANDATEX() {
-            return trandatex;
-        }
-
-        /**
-         * Sets the value of the trandatex property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX }
-         *     
-         */
-        public void setTRANDATEX(NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX value) {
-            this.trandatex = value;
-        }
-
-        /**
-         * Gets the value of the sfl property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the sfl property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getSFL().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.SFL }
-         * 
-         * 
-         */
-        public List<NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.SFL> getSFL() {
-            if (sfl == null) {
-                sfl = new ArrayList<NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.SFL>();
-            }
-            return this.sfl;
-        }
-
-        /**
-         * Gets the value of the prtind property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getPRTIND() {
-            return prtind;
-        }
-
-        /**
-         * Sets the value of the prtind property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
-         */
-        public void setPRTIND(String value) {
-            this.prtind = value;
-        }
-
-        /**
-         * Gets the value of the dissec property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link BigInteger }
-         *     
-         */
-        public BigInteger getDISSEC() {
-            return dissec;
-        }
-
-        /**
-         * Sets the value of the dissec property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link BigInteger }
-         *     
-         */
-        public void setDISSEC(BigInteger value) {
-            this.dissec = value;
-        }
+        
 
 
         /**
+		 * @return the premiumrctentid
+		 */
+		public String getPremiumrctentid() {
+			return premiumrctentid;
+		}
+
+
+		/**
+		 * @param premiumrctentid the premiumrctentid to set
+		 */
+		public void setPremiumrctentid(String premiumrctentid) {
+			this.premiumrctentid = premiumrctentid;
+		}
+
+
+		/**
+		 * @return the bankedflag
+		 */
+		public String getBankedflag() {
+			return bankedflag;
+		}
+
+
+		/**
+		 * @param bankedflag the bankedflag to set
+		 */
+		public void setBankedflag(String bankedflag) {
+			this.bankedflag = bankedflag;
+		}
+
+
+		/**
+		 * @return the bankcode
+		 */
+		public String getBankcode() {
+			return bankcode;
+		}
+
+
+		/**
+		 * @param bankcode the bankcode to set
+		 */
+		public void setBankcode(String bankcode) {
+			this.bankcode = bankcode;
+		}
+
+
+		/**
+		 * @return the bankdesc01
+		 */
+		public String getBankdesc01() {
+			return bankdesc01;
+		}
+
+
+		/**
+		 * @param bankdesc01 the bankdesc01 to set
+		 */
+		public void setBankdesc01(String bankdesc01) {
+			this.bankdesc01 = bankdesc01;
+		}
+
+
+		/**
+		 * @return the bankdesc02
+		 */
+		public String getBankdesc02() {
+			return bankdesc02;
+		}
+
+
+		/**
+		 * @param bankdesc02 the bankdesc02 to set
+		 */
+		public void setBankdesc02(String bankdesc02) {
+			this.bankdesc02 = bankdesc02;
+		}
+
+
+		/**
+		 * @return the bankdesc03
+		 */
+		public String getBankdesc03() {
+			return bankdesc03;
+		}
+
+
+		/**
+		 * @param bankdesc03 the bankdesc03 to set
+		 */
+		public void setBankdesc03(String bankdesc03) {
+			this.bankdesc03 = bankdesc03;
+		}
+
+
+		/**
+		 * @return the bankkey
+		 */
+		public String getBankkey() {
+			return bankkey;
+		}
+
+
+		/**
+		 * @param bankkey the bankkey to set
+		 */
+		public void setBankkey(String bankkey) {
+			this.bankkey = bankkey;
+		}
+
+
+		/**
+		 * @return the cheqno
+		 */
+		public String getCheqno() {
+			return cheqno;
+		}
+
+
+		/**
+		 * @param cheqno the cheqno to set
+		 */
+		public void setCheqno(String cheqno) {
+			this.cheqno = cheqno;
+		}
+
+
+		/**
+		 * @return the docorigamt
+		 */
+		public BigDecimal getDocorigamt() {
+			return docorigamt;
+		}
+
+
+		/**
+		 * @param docorigamt the docorigamt to set
+		 */
+		public void setDocorigamt(BigDecimal docorigamt) {
+			this.docorigamt = docorigamt;
+		}
+
+
+		/**
+		 * @return the origcurr
+		 */
+		public String getOrigcurr() {
+			return origcurr;
+		}
+
+
+		/**
+		 * @param origcurr the origcurr to set
+		 */
+		public void setOrigcurr(String origcurr) {
+			this.origcurr = origcurr;
+		}
+
+
+		/**
+		 * @return the paytype
+		 */
+		public String getPaytype() {
+			return paytype;
+		}
+
+
+		/**
+		 * @param paytype the paytype to set
+		 */
+		public void setPaytype(String paytype) {
+			this.paytype = paytype;
+		}
+
+
+		/**
+		 * @return the rfcode
+		 */
+		public String getRfcode() {
+			return rfcode;
+		}
+
+
+		/**
+		 * @param rfcode the rfcode to set
+		 */
+		public void setRfcode(String rfcode) {
+			this.rfcode = rfcode;
+		}
+
+
+		/**
+		 * @return the rfnum
+		 */
+		public String getRfnum() {
+			return rfnum;
+		}
+
+
+		/**
+		 * @param rfnum the rfnum to set
+		 */
+		public void setRfnum(String rfnum) {
+			this.rfnum = rfnum;
+		}
+
+
+		/**
+		 * @return the scrate
+		 */
+		public BigDecimal getScrate() {
+			return scrate;
+		}
+
+
+		/**
+		 * @param scrate the scrate to set
+		 */
+		public void setScrate(BigDecimal scrate) {
+			this.scrate = scrate;
+		}
+
+
+		/**
+		 * @return the trandatex
+		 */
+		public NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX getTrandatex() {
+			return trandatex;
+		}
+
+
+		/**
+		 * @param trandatex the trandatex to set
+		 */
+		public void setTrandatex(NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.TRANDATEX trandatex) {
+			this.trandatex = trandatex;
+		}
+
+
+		/**
+		 * @return the sfl
+		 */
+		public List<NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.SFL> getSfl() {
+			return sfl;
+		}
+
+
+		/**
+		 * @param sfl the sfl to set
+		 */
+		public void setSfl(List<NBSCRTIREC.NBSCRTIPREMIUMRCTDETAILS.SFL> sfl) {
+			this.sfl = sfl;
+		}
+
+
+		/**
+		 * @return the prtind
+		 */
+		public String getPrtind() {
+			return prtind;
+		}
+
+
+		/**
+		 * @param prtind the prtind to set
+		 */
+		public void setPrtind(String prtind) {
+			this.prtind = prtind;
+		}
+
+
+		/**
+		 * @return the dissec
+		 */
+		public BigInteger getDissec() {
+			return dissec;
+		}
+
+
+		/**
+		 * @param dissec the dissec to set
+		 */
+		public void setDissec(BigInteger dissec) {
+			this.dissec = dissec;
+		}
+
+
+		/**
          * <p>Java class for anonymous complex type.
          * 
          * <p>The following schema fragment specifies the expected content contained within this class.
