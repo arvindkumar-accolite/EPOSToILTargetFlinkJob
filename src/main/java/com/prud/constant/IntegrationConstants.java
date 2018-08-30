@@ -15,7 +15,6 @@ public class IntegrationConstants {
 	public static final String URL_COUNTRY_NAME = "cxf:bean:serviceEndpoint?defaultOperationName=CountryName";
 	public static final String CUSTOM_CONVERTER_ID = "createClientIdValue";
 	public static final String IL_FIELD_CLTDOBX = "CLTDOBX";
-	public static final String EPOS_FIELD_DATE_OF_BIRTH = "dateOfBirth";
 	public static final String FOLDERNAME_XSL = "/xsl/";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_VALUE = "U";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_NAME = "COMPANY";

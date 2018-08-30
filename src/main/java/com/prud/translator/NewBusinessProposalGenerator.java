@@ -34,14 +34,15 @@ public class NewBusinessProposalGenerator {
 	static {
 		newBusinessProposalPropConfig = new Properties();
 		createClientPropConfig = new Properties();
-		InputStream input = null;
+		InputStream input1 = null;
+		InputStream input2 = null;
 		try {
-			input = new FileInputStream(Object.class.getResource("/policyproposal-to-newbusinessmapping.properties").getFile());
-			newBusinessProposalPropConfig.load(input);
-			input.close();
-			input = new FileInputStream(Object.class.getResource("/policyproposal-to-client-mapping.properties").getFile());
-			createClientPropConfig.load(input);
-			input.close();
+			input1 = new FileInputStream(Object.class.getResource("/policyproposal-to-newbusinessmapping.properties").getFile());
+			newBusinessProposalPropConfig.load(input1);
+			input1.close();
+			input2 = new FileInputStream(Object.class.getResource("/policyproposal-to-client-mapping.properties").getFile());
+			createClientPropConfig.load(input2);
+			input2.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -103,7 +104,7 @@ public class NewBusinessProposalGenerator {
 	public String buildCreateClientRequest(NewBusinessModel newBusinessModel) {
 		ClientDetails clientDetails = newBusinessModel.getClientDetails().get(0);
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
-				NBSCRTICLIENT.class, createClientMappingMap);
+				CLICRPIREC.class, createClientMappingMap);
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId("userId");
 		mspContext.setUserPassword("password");

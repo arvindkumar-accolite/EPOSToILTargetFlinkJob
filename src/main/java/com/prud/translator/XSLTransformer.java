@@ -17,7 +17,7 @@ import com.prud.constant.IntegrationConstants;
 public class XSLTransformer {
 	public String transform(String xslFileName, String source) {
 		String result = null;
-		String xslFile = getClass().getResource(IntegrationConstants.FOLDERNAME_XSL+xslFileName).getFile();
+		String xslFile = "./resources/"+xslFileName;
 		try (StringReader reader = new StringReader(source); 
 				StringWriter writer = new StringWriter()) {
 

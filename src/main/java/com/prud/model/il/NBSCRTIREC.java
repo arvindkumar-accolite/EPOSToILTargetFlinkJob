@@ -7364,7 +7364,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public void setCHDRSEL(String value) {
+        public void setChdrsel(String value) {
             this.chdrsel = value;
         }
 
@@ -7376,7 +7376,7 @@ public class NBSCRTIREC {
          *     {@link String }
          *     
          */
-        public String getCHDRTYPE() {
+        public String getChdrtype() {
             return chdrtype;
         }
 

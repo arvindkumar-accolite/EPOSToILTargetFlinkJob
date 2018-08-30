@@ -335,7 +335,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getADDRTYPE() {
+	public String getAddrtype() {
 		return addrtype;
 	}
 
@@ -346,7 +346,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setADDRTYPE(String value) {
+	public void setAddrtype(String value) {
 		this.addrtype = value;
 	}
 
@@ -356,7 +356,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getBIRTHP() {
+	public String getBirthp() {
 		return birthp;
 	}
 
@@ -367,7 +367,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setBIRTHP(String value) {
+	public void setBirthp(String value) {
 		this.birthp = value;
 	}
 
@@ -377,7 +377,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTADDR01() {
+	public String getCltaddr01() {
 		return cltaddr01;
 	}
 
@@ -388,7 +388,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTADDR01(String value) {
+	public void setCltaddr01(String value) {
 		this.cltaddr01 = value;
 	}
 
@@ -398,7 +398,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTADDR02() {
+	public String getCltaddr02() {
 		return cltaddr02;
 	}
 
@@ -409,7 +409,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTADDR02(String value) {
+	public void setCltaddr02(String value) {
 		this.cltaddr02 = value;
 	}
 
@@ -419,7 +419,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTADDR03() {
+	public String getCltaddr03() {
 		return cltaddr03;
 	}
 
@@ -430,7 +430,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTADDR03(String value) {
+	public void setCltaddr03(String value) {
 		this.cltaddr03 = value;
 	}
 
@@ -440,7 +440,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTADDR04() {
+	public String getCltaddr04() {
 		return cltaddr04;
 	}
 
@@ -451,7 +451,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTADDR04(String value) {
+	public void setCltaddr04(String value) {
 		this.cltaddr04 = value;
 	}
 
@@ -461,7 +461,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTADDR05() {
+	public String getCltaddr05() {
 		return cltaddr05;
 	}
 
@@ -472,7 +472,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTADDR05(String value) {
+	public void setCltaddr05(String value) {
 		this.cltaddr05 = value;
 	}
 
@@ -482,7 +482,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link CLICRPIREC.CLTDOBX }
 	 * 
 	 */
-	public CLICRPIREC.CLTDOBX getCLTDOBX() {
+	public CLICRPIREC.CLTDOBX getCltdobx() {
 		return cltdobx;
 	}
 
@@ -493,7 +493,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link CLICRPIREC.CLTDOBX }
 	 * 
 	 */
-	public void setCLTDOBX(CLICRPIREC.CLTDOBX value) {
+	public void setCltdobx(CLICRPIREC.CLTDOBX value) {
 		this.cltdobx = value;
 	}
 
@@ -503,7 +503,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTPCODE() {
+	public String getCltpcode() {
 		return cltpcode;
 	}
 
@@ -514,7 +514,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTPCODE(String value) {
+	public void setCltpcode(String value) {
 		this.cltpcode = value;
 	}
 
@@ -524,7 +524,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTPHONE01() {
+	public String getCltphone01() {
 		return cltphone01;
 	}
 
@@ -535,7 +535,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTPHONE01(String value) {
+	public void setCltphone01(String value) {
 		this.cltphone01 = value;
 	}
 
@@ -545,7 +545,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTPHONE02() {
+	public String getCltphone02() {
 		return cltphone02;
 	}
 
@@ -556,7 +556,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTPHONE02(String value) {
+	public void setCltphone02(String value) {
 		this.cltphone02 = value;
 	}
 
@@ -566,7 +566,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCLTSEX() {
+	public String getCltsex() {
 		return cltsex;
 	}
 
@@ -577,7 +577,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCLTSEX(String value) {
+	public void setCltsex(String value) {
 		this.cltsex = value;
 	}
 
@@ -587,7 +587,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getCTRYCODE() {
+	public String getCtrycode() {
 		return ctrycode;
 	}
 
@@ -598,7 +598,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setCTRYCODE(String value) {
+	public void setCtrycode(String value) {
 		this.ctrycode = value;
 	}
 
@@ -608,7 +608,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getDIRMAIL() {
+	public String getDirmail() {
 		return dirmail;
 	}
 
@@ -619,7 +619,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setDIRMAIL(String value) {
+	public void setDirmail(String value) {
 		this.dirmail = value;
 	}
 
@@ -629,7 +629,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getDOCNO() {
+	public String getDocno() {
 		return docno;
 	}
 
@@ -640,7 +640,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setDOCNO(String value) {
+	public void setDocno(String value) {
 		this.docno = value;
 	}
 
@@ -650,7 +650,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getLGIVNAME() {
+	public String getLgivname() {
 		return lgivname;
 	}
 
@@ -661,7 +661,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setLGIVNAME(String value) {
+	public void setLgivname(String value) {
 		this.lgivname = value;
 	}
 
@@ -671,7 +671,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getLSURNAME() {
+	public String getLsurname() {
 		return lsurname;
 	}
 
@@ -682,7 +682,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setLSURNAME(String value) {
+	public void setLsurname(String value) {
 		this.lsurname = value;
 	}
 
@@ -692,7 +692,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getMAILING() {
+	public String getMailing() {
 		return mailing;
 	}
 
@@ -703,7 +703,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setMAILING(String value) {
+	public void setMailing(String value) {
 		this.mailing = value;
 	}
 
@@ -713,7 +713,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getMARRYD() {
+	public String getMarryd() {
 		return marryd;
 	}
 
@@ -724,7 +724,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setMARRYD(String value) {
+	public void setMarryd(String value) {
 		this.marryd = value;
 	}
 
@@ -734,7 +734,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getNATLTY() {
+	public String getNatlty() {
 		return natlty;
 	}
 
@@ -745,7 +745,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setNATLTY(String value) {
+	public void setNatlty(String value) {
 		this.natlty = value;
 	}
 
@@ -755,7 +755,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getOCCPCODE() {
+	public String getOccpcode() {
 		return occpcode;
 	}
 
@@ -766,7 +766,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setOCCPCODE(String value) {
+	public void setOccpcode(String value) {
 		this.occpcode = value;
 	}
 
@@ -776,7 +776,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getSALUTL() {
+	public String getSalutl() {
 		return salutl;
 	}
 
@@ -787,7 +787,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setSALUTL(String value) {
+	public void setSalutl(String value) {
 		this.salutl = value;
 	}
 
@@ -797,7 +797,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getSECUITYNO() {
+	public String getSecuityno() {
 		return secuityno;
 	}
 
@@ -808,7 +808,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setSECUITYNO(String value) {
+	public void setSecuityno(String value) {
 		this.secuityno = value;
 	}
 
@@ -818,7 +818,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getSOE() {
+	public String getSoe() {
 		return soe;
 	}
 
@@ -829,7 +829,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setSOE(String value) {
+	public void setSoe(String value) {
 		this.soe = value;
 	}
 
@@ -839,7 +839,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getSTATCODE() {
+	public String getStatcode() {
 		return statcode;
 	}
 
@@ -850,7 +850,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setSTATCODE(String value) {
+	public void setStatcode(String value) {
 		this.statcode = value;
 	}
 
@@ -860,7 +860,7 @@ public class CLICRPIREC {
 	 * @return possible object is {@link String }
 	 * 
 	 */
-	public String getVIP() {
+	public String getVip() {
 		return vip;
 	}
 
@@ -871,7 +871,7 @@ public class CLICRPIREC {
 	 *            allowed object is {@link String }
 	 * 
 	 */
-	public void setVIP(String value) {
+	public void setVip(String value) {
 		this.vip = value;
 	}
 

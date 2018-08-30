@@ -34,7 +34,7 @@ public class OrikaModelMapperImpl implements ModelMapper {
 				classMapBilder.field(enrty.getKey(), enrty.getValue());
 			}
 		}
-		classMapBilder.fieldMap(IntegrationConstants.EPOS_FIELD_DATE_OF_BIRTH, IntegrationConstants.IL_FIELD_CLTDOBX)
+		classMapBilder.fieldMap("dateOfBirth", "cltdobx")
 				.converter(IntegrationConstants.CUSTOM_CONVERTER_ID).add().byDefault().register();
 		mapper = mapperFactory.getMapperFacade();
 		return mapper.map(source, targetClass);
