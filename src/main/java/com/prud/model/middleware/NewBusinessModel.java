@@ -1,6 +1,7 @@
 
 package com.prud.model.middleware;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -119,6 +120,9 @@ public class NewBusinessModel {
 
     @JsonProperty("clientDetails")
     public List<ClientDetails> getClientDetails() {
+    	if(null==clientDetails) {
+    		clientDetails = new ArrayList<>();
+    	}
         return clientDetails;
     }
 
@@ -139,6 +143,9 @@ public class NewBusinessModel {
 
     @JsonProperty("coverageDetails")
     public List<CoverageDetails> getCoverageDetails() {
+    	if(null==coverageDetails) {
+    		coverageDetails = new ArrayList<>();
+    	}
         return coverageDetails;
     }
 
@@ -179,6 +186,9 @@ public class NewBusinessModel {
 
     @JsonProperty("fundDetails")
     public List<FundDetails> getFundDetails() {
+    	if(null==fundDetails) {
+    		fundDetails = new ArrayList<>();
+    	}
         return fundDetails;
     }
 
@@ -199,6 +209,9 @@ public class NewBusinessModel {
 
     @JsonProperty("lifeDetails")
     public List<LifeDetails> getLifeDetails() {
+    	if(null==fundDetails) {
+    		fundDetails = new ArrayList<>();
+    	}
         return lifeDetails;
     }
 
