@@ -34,10 +34,8 @@ import com.prud.model.middleware.RiderDetails;
 import com.prud.model.middleware.SFLDetails;
 import com.prud.model.middleware.SpecialTermDetails;
 import com.prud.model.middleware.SpecialTerms;
-import com.prud.translator.JsonValueExtractor;
 
 public class NewBusinessPopulator {
-	private JsonValueExtractor extractor;
 	private NewBusinessJpathModel jpathModel;
 
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {

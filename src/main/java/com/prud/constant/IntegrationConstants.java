@@ -19,5 +19,6 @@ public class IntegrationConstants {
 	public static final String FOLDERNAME_XSL = "/xsl/";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_VALUE = "U";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_NAME = "COMPANY";
-	public static final String XSLT_FILE_NAME = "createclient.xsl";
+	public static final String NBS_XSLT_FILE_NAME = "newBusinessProposal.xsl";
+	public static final String CLI_XSLT_FILE_NAME = "createClient.xsl";
 }
