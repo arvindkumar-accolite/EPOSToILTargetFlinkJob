@@ -34,7 +34,6 @@ public class ILServiceImpl implements ILService {
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
 		System.out.println("Envelop " + createClientSoapEnvelop);
 		System.out.println(invokeILSoapService(newBusinessSoapEnvelop,NEW_BUSINESS_URL).toString());
-
 		return createClientSoapEnvelop;
 	}
 
@@ -92,7 +91,6 @@ public class ILServiceImpl implements ILService {
 	            stringBuilder.append(line);
 	            stringBuilder.append(ls);
 	        }
-
 	        return stringBuilder.toString();
 	    } finally {
 	        reader.close();

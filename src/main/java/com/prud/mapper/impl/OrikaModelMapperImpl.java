@@ -22,7 +22,7 @@ public class OrikaModelMapperImpl implements ModelMapper {
 	ConverterFactory converterFactory = mapperFactory.getConverterFactory();
 
 	public OrikaModelMapperImpl() {
-		converterFactory.registerConverter(IntegrationConstants.CUSTOM_CONVERTER_ID, new CreateClientCustomConverter());
+		converterFactory.registerConverter(IntegrationConstants.CUSTOM_CONVERTER_ID, new ClientDOBCustomConverter());
 	}
 
 	@SuppressWarnings("unchecked")
