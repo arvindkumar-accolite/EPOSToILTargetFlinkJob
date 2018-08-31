@@ -7,7 +7,6 @@ import java.math.BigInteger;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.prud.model.jpath.NewBusinessJpathModel;
 import com.prud.model.middleware.ApplyCashDetails;
 import com.prud.model.middleware.AssigneeDetails;
 import com.prud.model.middleware.Assignees;
@@ -36,7 +35,6 @@ import com.prud.model.middleware.SpecialTermDetails;
 import com.prud.model.middleware.SpecialTerms;
 
 public class NewBusinessPopulator {
-	private NewBusinessJpathModel jpathModel;
 
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {
 		NewBusinessPopulator nbspop = new NewBusinessPopulator();

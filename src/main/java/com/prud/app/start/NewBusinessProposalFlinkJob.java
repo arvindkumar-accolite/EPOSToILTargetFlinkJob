@@ -20,14 +20,14 @@ import com.prud.constant.IntegrationConstants;
 import com.prud.service.ILService;
 import com.prud.service.impl.ILServiceImpl;
 
-public class Start {
+public class NewBusinessProposalFlinkJob {
 	static Properties propConfig;
 
 	static {
 		propConfig = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream("./resources/flink-kafka-config.properties");
+			input = new FileInputStream(IntegrationConstants.FLINK_KAFKA_CONFIG_LOCATION);
 			propConfig.load(input);
 			input.close();
 		} catch (Exception e) {
@@ -47,14 +47,13 @@ public class Start {
 		FlinkKafkaConsumer010<String> flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
 				propConfig.getProperty(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
 		DataStream<String> messageStream = env.addSource(flinkKafkaConsumer);
-		ILService iLService = null;
+		ILService iLService = new ILServiceImpl();;
 		Iterator<String> myOutput = DataStreamUtils.collect(messageStream);
 		String json;
 		if (myOutput.hasNext()) {
 			System.out.println("inside iterator");
 			json = myOutput.next();
 			System.out.println(json);
-			iLService = new ILServiceImpl();
 			iLService.serviceRequest(json);
 		}
 

@@ -4,6 +4,7 @@ public class IntegrationConstants {
 	private IntegrationConstants() {
 
 	}
+	public static final String IL_TAG_CLNTNUM = "CLNTNUM";
 	public static final String BOOTSTRAP_SERVER = "bootstrap.servers";
 	public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
 	public static final String GROUP_ID = "group.id";
@@ -18,4 +19,7 @@ public class IntegrationConstants {
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_NAME = "COMPANY";
 	public static final String NBS_XSLT_FILE_NAME = "newBusinessProposal.xsl";
 	public static final String CLI_XSLT_FILE_NAME = "createClient.xsl";
+	public static final String FLINK_KAFKA_CONFIG_LOCATION = "./resources/flink-kafka-config.properties";
+	public static final String CLIENT_URL = "http://10.163.177.100:9081/FSUWebSrv/CLIService";
+	public static final String NEW_BUSINESS_URL = "http://10.163.177.100:9081/LiFEWebServices/NBSService";
 }

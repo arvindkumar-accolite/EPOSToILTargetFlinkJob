@@ -1,8 +1,6 @@
 package com.prud.service.impl;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -17,6 +15,7 @@ import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPMessage;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.prud.constant.IntegrationConstants;
 import com.prud.model.middleware.NewBusinessModel;
 import com.prud.model.middleware.OwnerDetails;
 import com.prud.service.ILService;
@@ -25,18 +24,16 @@ import com.sun.xml.messaging.saaj.soap.impl.ElementImpl;
 
 public class ILServiceImpl implements ILService {
 	private NewBusinessProposalGenerator newBusinessProposalGenerator = new NewBusinessProposalGenerator();
-	public static final String CLIENT_URL = "http://10.163.177.100:9081/FSUWebSrv/CLIService";
-	public static final String NEW_BUSINESS_URL = "";
 
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("Envelop " + createClientSoapEnvelop);
-		//String clientNumber = getClientNumberFromSoapBody(invokeILSoapService(createClientSoapEnvelop, CLIENT_URL));
-		setClientIdToNewBusinessObject(newBusinessModel, "123");
+		String clientNumber = getClientNumberFromSoapBody(invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL));
+		setClientIdToNewBusinessObject(newBusinessModel, clientNumber);
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
 		System.out.println(newBusinessSoapEnvelop);
-		//System.out.println(invokeILSoapService(newBusinessSoapEnvelop, NEW_BUSINESS_URL).toString());
+		System.out.println(invokeILSoapService(newBusinessSoapEnvelop, IntegrationConstants.NEW_BUSINESS_URL).toString());
 
 		return createClientSoapEnvelop;
 	}
@@ -99,7 +96,7 @@ public class ILServiceImpl implements ILService {
 				System.out.println();
 				// The listing and its ID
 				SOAPElement update = (SOAPElement) updates.next();
-				QName name = new QName("CLNTNUM");
+				QName name = new QName(IntegrationConstants.IL_TAG_CLNTNUM);
 				Iterator i = update.getChildElements(name);
 				while (i.hasNext()) {
 					ElementImpl clientNum = (ElementImpl) i.next();
@@ -115,7 +112,7 @@ public class ILServiceImpl implements ILService {
 	}
 
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			ILServiceImpl ilServiceImpl = new ILServiceImpl();
 			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
@@ -143,5 +140,5 @@ public class ILServiceImpl implements ILService {
 			reader.close();
 		}
 	}
-
+*/
 }
