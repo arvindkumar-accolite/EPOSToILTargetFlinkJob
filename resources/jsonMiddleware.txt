@@ -60,8 +60,8 @@
 		"marriedIndicator": "S",
 		"middleName01": "",
 		"middleName02": "",
-		"nationality": "35",
-		"occupationCode": "",
+		"nationality": "EAU",
+		"occupationCode": "ACCT",
 		"prefCom": "",
 		"salutaion": "Mr",
 		"securityNumber": "",
@@ -75,7 +75,7 @@
 	"contractDetails": {
 		"contractHDREntId": "",
 		"contractNumber": "",
-		"contractType": "elite",
+		"contractType": "EDU",
 		"agentNumber": "70014144",
 		"billingRenewalDate": "1978-08-06T00:00:00.000Z",
 		"billingCurrency": "UGX",
@@ -200,7 +200,7 @@
 		"sex": "M",
 		"smokingIndicator": "false",
 		"height": 170,
-		"weight": 70
+		"weight": 75
 	}],
 	"mandateDetails": {
 		"mandateId": "",

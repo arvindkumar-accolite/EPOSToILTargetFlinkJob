@@ -6,11 +6,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Iterator;
 
+import javax.xml.namespace.QName;
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.SOAPBody;
 import javax.xml.soap.SOAPConnection;
 import javax.xml.soap.SOAPConnectionFactory;
+import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPMessage;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,19 +21,19 @@ import com.prud.model.middleware.NewBusinessModel;
 import com.prud.model.middleware.OwnerDetails;
 import com.prud.service.ILService;
 import com.prud.translator.NewBusinessProposalGenerator;
+import com.sun.xml.messaging.saaj.soap.impl.ElementImpl;
 
 public class ILServiceImpl implements ILService {
 	private NewBusinessProposalGenerator newBusinessProposalGenerator = new NewBusinessProposalGenerator();
-	public static final String CLIENT_URL = "";
+	public static final String CLIENT_URL = "http://10.163.177.100:9081/FSUWebSrv/CLIService";
 	public static final String NEW_BUSINESS_URL = "";
 
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("Envelop " + createClientSoapEnvelop);
-		//String clientNumber = invokeILSoapService(createClientSoapEnvelop, CLIENT_URL).getAttribute("CLNTNUM");
-		setClientIdToNewBusinessObject(newBusinessModel, "123456");
-		//newBusinessModel.getClientDetails().get(0).setClientNumber("12");
+		//String clientNumber = getClientNumberFromSoapBody(invokeILSoapService(createClientSoapEnvelop, CLIENT_URL));
+		setClientIdToNewBusinessObject(newBusinessModel, "123");
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
 		System.out.println(newBusinessSoapEnvelop);
 		//System.out.println(invokeILSoapService(newBusinessSoapEnvelop, NEW_BUSINESS_URL).toString());
@@ -87,6 +90,30 @@ public class ILServiceImpl implements ILService {
 		}
 		return null;
 	}
+	private String getClientNumberFromSoapBody(SOAPBody soapBody) {
+		SOAPMessage response = null;
+		try {
+			Iterator updates = response.getSOAPBody().getChildElements();
+			System.out.println("'@@@@@@@@@@@" + updates.hashCode());
+			while (updates.hasNext()) {
+				System.out.println();
+				// The listing and its ID
+				SOAPElement update = (SOAPElement) updates.next();
+				QName name = new QName("CLNTNUM");
+				Iterator i = update.getChildElements(name);
+				while (i.hasNext()) {
+					ElementImpl clientNum = (ElementImpl) i.next();
+					return clientNum.getValue();
+				}
+			}
+			return null;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 
 	public static void main(String[] args) {
 		try {

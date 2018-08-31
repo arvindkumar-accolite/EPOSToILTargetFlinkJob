@@ -75,6 +75,13 @@ public class ClientDetailsCustomConvertor extends CustomConverter<List<ClientDet
 			nbsClient.setClientstatcode(clientDetails.getStatusCode());
 			nbsClient.setClientsurname(clientDetails.getSurName());
 			nbsClient.setClientvip(clientDetails.getVipIndicator());
+			nbsClient.setClientclntnum(clientDetails.getClientNumber());
+			nbsClient.setClientparty(clientDetails.getParty());
+			nbsClient.setCliententid(clientDetails.getEntId());
+			nbsClient.setClientbirthp(clientDetails.getBirthPlace());
+			nbsClient.setClientctrycode(clientDetails.getCountryCode());
+			nbsClient.setlientdirmail(clientDetails.getDirectMailIndicator());
+			
 			nbsClientList.add(nbsClient);
 		}
 		return nbsClientList;

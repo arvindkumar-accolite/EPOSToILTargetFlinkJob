@@ -11740,8 +11740,8 @@ public class NBSCRTIREC {
         protected String bankacckey;
         @XmlElement(name = "BANKKEY", required = true)
         protected String bankkey;
-        @XmlElement(name = "EFFDATE", required = true)
-        protected NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE effdate;
+        @XmlElement(name = "EFFDATEN264679", required = true)
+        protected NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATEN264679 effdate;
         @XmlElement(name = "FACTHOUS", required = true)
         protected String facthous;
         @XmlElement(name = "MANDSTAT", required = true)
@@ -11877,7 +11877,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE }
          *     
          */
-        public NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE getEffdate() {
+        public NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATEN264679 getEffdate() {
             return effdate;
         }
 
@@ -11889,7 +11889,7 @@ public class NBSCRTIREC {
          *     {@link NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE }
          *     
          */
-        public void setEffdate(NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATE value) {
+        public void setEffdate(NBSCRTIREC.NBSCRTIMANDATEDETAILS.EFFDATEN264679 value) {
             this.effdate = value;
         }
 
@@ -12014,7 +12014,7 @@ public class NBSCRTIREC {
             "mm",
             "dd"
         })
-        public static class EFFDATE {
+        public static class EFFDATEN264679 {
 
             @XmlElement(name = "CCYY", required = true)
             protected BigInteger ccyy;
