@@ -3,11 +3,6 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="xml" indent="yes"
 		omit-xml-declaration="yes"></xsl:output>
-	<xsl:template match="MM">
-		<MM>
-			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
-		</MM>
-	</xsl:template>
 	<xsl:template match="/">
 		<soapenv:Envelope
 			xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -24,6 +19,16 @@
 			<xsl:apply-templates />
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="MM">
+		<MM>
+			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
+		</MM>
+	</xsl:template>
+	<!-- <xsl:template match="NBSCRTI_CONTRACT_HDR_DETAILS/BILLCD/MM">
+		<MM>
+			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
+		</MM>
+	</xsl:template> -->
 	<xsl:template match="NBSCRTI_CONTRACT_HDR_DETAILS">
 		<xsl:copy-of select="." />
 		<DATIME>
