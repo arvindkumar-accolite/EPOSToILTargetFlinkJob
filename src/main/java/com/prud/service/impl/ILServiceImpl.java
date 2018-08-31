@@ -94,9 +94,8 @@ public class ILServiceImpl implements ILService {
 		return null;
 	}
 	private String getClientNumberFromSoapBody(SOAPBody soapBody) {
-		SOAPMessage response = null;
 		try {
-			Iterator updates = response.getSOAPBody().getChildElements();
+			Iterator updates = soapBody.getChildElements();
 			System.out.println("'@@@@@@@@@@@" + updates.hashCode());
 			while (updates.hasNext()) {
 				System.out.println();
