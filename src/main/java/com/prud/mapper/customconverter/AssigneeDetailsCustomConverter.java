@@ -1,4 +1,4 @@
-package com.prud.mapper.impl;
+package com.prud.mapper.customconverter;
 
 import java.math.BigInteger;
 import java.text.ParseException;
@@ -28,10 +28,10 @@ public class AssigneeDetailsCustomConverter
 		List<NBSCRTIASSIGNEEDETAILS> targetAssignee = new ArrayList<>();
 		for (AssigneeDetails assigneeDetails : source) {
 			NBSCRTIASSIGNEEDETAILS targetAssigneeDetails = new NBSCRTIASSIGNEEDETAILS();
-			targetAssigneeDetails.setASSIGNEEPARTY(assigneeDetails.getAssigneeParty());
-			targetAssigneeDetails.setREASONCD(assigneeDetails.getReasonCode());
-			targetAssigneeDetails.setCOMMFROM(convertCOMMFROMDate(assigneeDetails.getCommissionFromDate()));
-			targetAssigneeDetails.setCOMMTO(convertCOMMTODate(assigneeDetails.getCommissionToDate()));
+			targetAssigneeDetails.setAssigneeparty(assigneeDetails.getAssigneeParty());
+			targetAssigneeDetails.setReasoncd(assigneeDetails.getReasonCode());
+			targetAssigneeDetails.setCommfrom(convertCOMMFROMDate(assigneeDetails.getCommissionFromDate()));
+			targetAssigneeDetails.setCommto(convertCOMMTODate(assigneeDetails.getCommissionToDate()));
 			targetAssignee.add(targetAssigneeDetails);
 		}
 		return targetAssignee;
@@ -48,9 +48,9 @@ public class AssigneeDetailsCustomConverter
 		cal.setTime(date);
 
 		COMMFROM cltDOBX = new COMMFROM();
-		cltDOBX.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		cltDOBX.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		cltDOBX.setCcyy(BigInteger.valueOf(cal.get(Calendar.YEAR)));
+		cltDOBX.setMm(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
+		cltDOBX.setDd(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
 
@@ -65,9 +65,9 @@ public class AssigneeDetailsCustomConverter
 		cal.setTime(date);
 
 		COMMTO cltDOBX = new COMMTO();
-		cltDOBX.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		cltDOBX.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		cltDOBX.setCcyy(BigInteger.valueOf(cal.get(Calendar.YEAR)));
+		cltDOBX.setMm(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
+		cltDOBX.setDd(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
 

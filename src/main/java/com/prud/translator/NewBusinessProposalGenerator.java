@@ -39,10 +39,10 @@ public class NewBusinessProposalGenerator {
 		InputStream input1 = null;
 		InputStream input2 = null;
 		try {
-			input1 = new FileInputStream(Object.class.getResource("/policyproposal-to-newbusinessmapping.properties").getFile());
+			input1 = new FileInputStream("./resources/policyproposal-to-newbusinessmapping.properties");
 			newBusinessProposalPropConfig.load(input1);
 			input1.close();
-			input2 = new FileInputStream(Object.class.getResource("/policyproposal-to-client-mapping.properties").getFile());
+			input2 = new FileInputStream("./resources/policyproposal-to-client-mapping.properties");
 			createClientPropConfig.load(input2);
 			input2.close();
 		} catch (Exception e) {

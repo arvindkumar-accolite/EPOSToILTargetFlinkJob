@@ -31,7 +31,7 @@ public class ILServiceImpl implements ILService {
 
 		newBusinessModel.getClientDetails().get(0).setClientNumber("12");
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
-		System.out.println("Envelop " + createClientSoapEnvelop);
+		System.out.println("Envelop " + newBusinessSoapEnvelop);
 		//System.out.println(invokeILSoapService(newBusinessSoapEnvelop, NEW_BUSINESS_URL).toString());
 
 		return createClientSoapEnvelop;
@@ -75,7 +75,7 @@ public class ILServiceImpl implements ILService {
 	public static void main(String[] args) {
 		try {
 			ILServiceImpl ilServiceImpl = new ILServiceImpl();
-			ilServiceImpl.serviceRequest(readFile(Object.class.getResource("/jsonMiddleware.txt").getFile()));
+			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

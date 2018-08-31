@@ -1,4 +1,4 @@
-package com.prud.mapper.impl;
+package com.prud.mapper.customconverter;
 
 import java.math.BigInteger;
 import java.text.ParseException;
@@ -25,12 +25,10 @@ public class ClientDOBCustomConverter extends CustomConverter<String, CLTDOBX> {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
 
-		CLICRPIREC client = new CLICRPIREC();
 		CLTDOBX cltDOBX = new CLTDOBX();
 		cltDOBX.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
 		cltDOBX.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
 		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
-		client.setCltdobx(cltDOBX);
 		return cltDOBX;
 	}
 

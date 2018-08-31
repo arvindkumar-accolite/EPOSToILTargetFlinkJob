@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.prud.constant.IntegrationConstants;
 import com.prud.mapper.ModelMapper;
+import com.prud.mapper.customconverter.ClientDOBCustomConverter;
 
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;

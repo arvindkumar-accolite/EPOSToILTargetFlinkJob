@@ -22,7 +22,7 @@ public class Start {
 		propConfig = new Properties();
 		InputStream input = null;
 		try {
-			input = new FileInputStream(Object.class.getResource("/config.properties").getFile());
+			input = new FileInputStream(Object.class.getResource("./resources/config.properties").getFile());
 			propConfig.load(input);
 			input.close();
 		} catch (Exception e) {

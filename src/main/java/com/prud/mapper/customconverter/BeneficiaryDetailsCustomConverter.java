@@ -1,4 +1,4 @@
-package com.prud.mapper.impl;
+package com.prud.mapper.customconverter;
 
 import java.math.BigInteger;
 import java.text.ParseException;
@@ -26,12 +26,12 @@ public class BeneficiaryDetailsCustomConverter extends CustomConverter<List<Bene
 		List<NBSCRTIBENDETAILS> targetBeneficiary = new ArrayList<>();
 		for (BeneficiaryDetails beneficiaryDetails : source) {
 			NBSCRTIBENDETAILS targetBeneficiaryDetails = new NBSCRTIBENDETAILS();
-			targetBeneficiaryDetails.setBENEFICIARYPARTY(beneficiaryDetails.getBeneficiaryParty());
+			targetBeneficiaryDetails.setBeneficiaryparty(beneficiaryDetails.getBeneficiaryParty());
 			targetBeneficiaryDetails.setBnypc(beneficiaryDetails.getBeneficiaryPercentage());
-			targetBeneficiaryDetails.setBNYSEL(beneficiaryDetails.getBeneficiaryClientNumber());
-			targetBeneficiaryDetails.setBNYTYPE(beneficiaryDetails.getBeneficiaryType());
-			targetBeneficiaryDetails.setCLTRELN(beneficiaryDetails.getClientRelationship());
-			targetBeneficiaryDetails.setEFFDATE(convertEffDate(beneficiaryDetails.getEffectiveDate()));
+			targetBeneficiaryDetails.setBnysel(beneficiaryDetails.getBeneficiaryClientNumber());
+			targetBeneficiaryDetails.setBnytype(beneficiaryDetails.getBeneficiaryType());
+			targetBeneficiaryDetails.setCltreln(beneficiaryDetails.getClientRelationship());
+			targetBeneficiaryDetails.setEffdate(convertEffDate(beneficiaryDetails.getEffectiveDate()));
 			targetBeneficiary.add(targetBeneficiaryDetails);
 		}
 		return targetBeneficiary;

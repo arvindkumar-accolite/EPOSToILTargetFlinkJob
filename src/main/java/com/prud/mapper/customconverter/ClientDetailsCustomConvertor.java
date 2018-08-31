@@ -1,4 +1,4 @@
-package com.prud.mapper.impl;
+package com.prud.mapper.customconverter;
 
 import java.math.BigInteger;
 import java.text.ParseException;

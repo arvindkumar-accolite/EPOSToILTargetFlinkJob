@@ -1,4 +1,4 @@
-package com.prud.mapper.impl;
+package com.prud.mapper.customconverter;
 
 import java.math.BigInteger;
 import java.text.ParseException;
@@ -25,9 +25,9 @@ public class BankDetailsDateFromCustomConverter extends CustomConverter<String, 
 		cal.setTime(date);
 
 		DATEFROM dateFrom = new DATEFROM();
-		dateFrom.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		dateFrom.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		dateFrom.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		dateFrom.setCcyy(BigInteger.valueOf(cal.get(Calendar.YEAR)));
+		dateFrom.setMm(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
+		dateFrom.setDd(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return dateFrom;
 	}
 
