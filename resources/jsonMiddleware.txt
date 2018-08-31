@@ -7,8 +7,8 @@
 		"assigneeId": "",
 		"assigneeDetails": [{
 			"assigneeParty": "",
-			"commissionFromDate": 1,
-			"commissionToDate": 1,
+			"commissionFromDate": "1978-08-06T00:00:00.000Z",
+			"commissionToDate": "1978-08-06T00:00:00.000Z",
 			"reasonCode": ""
 		}]
 	},
@@ -19,7 +19,7 @@
 		"bankAccountKey": "",
 		"bankKey": "",
 		"currencyCode": "",
-		"datefrom": 1,
+		"datefrom": "1978-08-06T00:00:00.000Z",
 		"factoringHouse": ""
 	},
 	"beneficiary": {
@@ -30,7 +30,7 @@
 			"beneficiaryClientNumber": "",
 			"beneficiaryType": "",
 			"clientRelationship": "",
-			"effectiveDate": 1
+			"effectiveDate": "1978-08-06T00:00:00.000Z"
 		}]
 	},
 	"clientDetails": [{
@@ -46,10 +46,10 @@
 		"address04": "",
 		"dateOfBirth": "1978-08-06T00:00:00.000Z",
 		"postalCode": "7865",
-		"phone01": "",
+		"phone01": "9098786756",
 		"phone02": "",
 		"gender": "M",
-		"countryCode": "+256",
+		"countryCode": "UGD",
 		"directMailIndicator": "",
 		"documentNumber": "",
 		"email": "",
@@ -60,10 +60,10 @@
 		"marriedIndicator": "S",
 		"middleName01": "",
 		"middleName02": "",
-		"nationality": "",
+		"nationality": "35",
 		"occupationCode": "",
 		"prefCom": "",
-		"salutaion": "MR",
+		"salutaion": "Mr",
 		"securityNumber": "",
 		"sourceOfEvidence": "",
 		"statusCode": "",
@@ -77,15 +77,15 @@
 		"contractNumber": "",
 		"contractType": "elite",
 		"agentNumber": "70014144",
-		"billingRenewalDate": "2019-06-01",
+		"billingRenewalDate": "1978-08-06T00:00:00.000Z",
 		"billingCurrency": "UGX",
 		"billingfrequency": "5",
 		"billingRenewalIndicator": 0,
 		"contractCurrency": "UGX",
 		"methodOfPayment": "CA",
-		"proposalDate": 1,
+		"proposalDate": "1978-08-06T00:00:00.000Z",
 		"planSuffix": 1,
-		"register": "ZMA",
+		"register": "UGD",
 		"accountType": "AG",
 		"originalCommencementDate": "2018-08-06T14:42:39.712Z"
 	},
@@ -93,8 +93,8 @@
 		"coverageId": "",
 		"coverageParent": "",
 		"mortalityClass": "false",
-		"riskCessationDate": "2028-06-01",
-		"premiumCessationDate": "2028-06-01",
+		"riskCessationDate": "1978-08-06T00:00:00.000Z",
+		"premiumCessationDate": "1978-08-06T00:00:00.000Z",
 		"premiumCessationAge": 0,
 		"premiumCessationTerm": 10,
 		"riskCessationAge": 0,
@@ -103,7 +103,7 @@
 		"coverageOrRiderInstalmentAmount": 147894,
 		"coverageOrRiderTable": "SCP1",
 		"lumpSumContribution": 1,
-		"reserveUnitsAllocationDate": "0000-00-00",
+		"reserveUnitsAllocationDate": "1978-08-06T00:00:00.000Z",
 		"reserveUnitsIndicator": ""
 	}],
 	"dispatchDetails": {
@@ -121,7 +121,7 @@
 		"zDoctor": "",
 		"followUpsDetails": [{
 			"followUpCode": "",
-			"followUpDate": 1,
+			"followUpDate": "1978-08-06T00:00:00.000Z",
 			"followUpNumber": 1,
 			"followUpStatus": "",
 			"lifeNumber": 1,
@@ -199,8 +199,8 @@
 		"selection": "OTH",
 		"sex": "M",
 		"smokingIndicator": "false",
-		"height": 1.7,
-		"weight": 65.8
+		"height": 170,
+		"weight": 70
 	}],
 	"mandateDetails": {
 		"mandateId": "",
@@ -208,7 +208,7 @@
 		"mandateRefNumber": "",
 		"bankAccountKey": "",
 		"bankKey": "",
-		"effectiveDate": 0,
+		"effectiveDate": "1978-08-06T00:00:00.000Z",
 		"factoringHouse": "",
 		"mandateStatus": "",
 		"timesToUse": 0
@@ -236,7 +236,7 @@
 		"recievedFromCode": "",
 		"recievedFromNumber": "",
 		"currencyRate": 0,
-		"tranDate": 0,
+		"tranDate": "1978-08-06T00:00:00.000Z",
 		"protectIndicator": "",
 		"dissectionNumber": 0,
 		"sfldetails": [{

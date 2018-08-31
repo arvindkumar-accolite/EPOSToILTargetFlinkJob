@@ -15,6 +15,7 @@ import javax.xml.soap.SOAPMessage;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.prud.model.middleware.NewBusinessModel;
+import com.prud.model.middleware.OwnerDetails;
 import com.prud.service.ILService;
 import com.prud.translator.NewBusinessProposalGenerator;
 
@@ -28,13 +29,28 @@ public class ILServiceImpl implements ILService {
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("Envelop " + createClientSoapEnvelop);
 		//String clientNumber = invokeILSoapService(createClientSoapEnvelop, CLIENT_URL).getAttribute("CLNTNUM");
-
-		newBusinessModel.getClientDetails().get(0).setClientNumber("12");
+		setClientIdToNewBusinessObject(newBusinessModel, "123456");
+		//newBusinessModel.getClientDetails().get(0).setClientNumber("12");
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
-		System.out.println("Envelop " + newBusinessSoapEnvelop);
+		System.out.println(newBusinessSoapEnvelop);
 		//System.out.println(invokeILSoapService(newBusinessSoapEnvelop, NEW_BUSINESS_URL).toString());
 
 		return createClientSoapEnvelop;
+	}
+	private void setClientIdToNewBusinessObject(NewBusinessModel newBusinessModel, String clientNumber) {
+		newBusinessModel.getClientDetails().get(0).setClientNumber(clientNumber);
+		newBusinessModel.getClientDetails().get(0).setEntId(clientNumber);
+		newBusinessModel.getClientDetails().get(0).setParty(clientNumber);
+		newBusinessModel.getLifeDetails().get(0).setLifeId(clientNumber);
+		newBusinessModel.getLifeDetails().get(0).setLifeParty(clientNumber);
+		newBusinessModel.getCoverageDetails().get(0).setCoverageId(clientNumber);
+		newBusinessModel.getCoverageDetails().get(0).setCoverageParent(clientNumber);
+		newBusinessModel.getRiderDetails().get(0).setRiderId(clientNumber);
+		newBusinessModel.getRiderDetails().get(0).setRiderParent(clientNumber);
+		OwnerDetails ownerDetails = new OwnerDetails();
+		ownerDetails.setOwnerentId(clientNumber);
+		ownerDetails.setOwnerParty(clientNumber);
+		newBusinessModel.setOwnerDetails(ownerDetails);
 	}
 
 	private NewBusinessModel policyObjectPopulator(String json) {

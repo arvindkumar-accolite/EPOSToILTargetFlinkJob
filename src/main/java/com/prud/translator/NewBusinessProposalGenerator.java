@@ -17,7 +17,6 @@ import com.prud.mapper.impl.OrikaModelNewBusinessMapperImpl;
 import com.prud.model.il.CLICRPIREC;
 import com.prud.model.il.MSPContext;
 import com.prud.model.il.NBSCRTIREC;
-import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT;
 import com.prud.model.il.RequestParameter;
 import com.prud.model.il.RequestParameters;
 import com.prud.model.middleware.ClientDetails;
@@ -30,14 +29,18 @@ public class NewBusinessProposalGenerator {
 	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl(); 
 	private static Properties newBusinessProposalPropConfig;
 	private static Properties createClientPropConfig;
+	private static Properties ilPropConfig;
+	
 	private static Map<String, String> newBusinessProposalMappingMap = new HashMap<>();	
 	private static Map<String, String> createClientMappingMap = new HashMap<>();
 	
 	static {
+		ilPropConfig = new Properties();
 		newBusinessProposalPropConfig = new Properties();
 		createClientPropConfig = new Properties();
 		InputStream input1 = null;
 		InputStream input2 = null;
+		InputStream input3 = null;
 		try {
 			input1 = new FileInputStream("./resources/policyproposal-to-newbusinessmapping.properties");
 			newBusinessProposalPropConfig.load(input1);
@@ -45,6 +48,9 @@ public class NewBusinessProposalGenerator {
 			input2 = new FileInputStream("./resources/policyproposal-to-client-mapping.properties");
 			createClientPropConfig.load(input2);
 			input2.close();
+			input3 = new FileInputStream("./resources/il-config.properties");
+			ilPropConfig.load(input3);
+			input3.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -90,12 +96,12 @@ public class NewBusinessProposalGenerator {
 		NBSCRTIREC newBusinessCreate = (NBSCRTIREC) orikaModelNewBusinessMapperImpl.map(newBusinessModel,
 				NewBusinessModel.class, NBSCRTIREC.class, newBusinessProposalMappingMap);
 		MSPContext mspContext = new MSPContext();
-		mspContext.setUserId("userId");
-		mspContext.setUserPassword("password");
+		mspContext.setUserId(ilPropConfig.getProperty("newbusiness.userid"));
+		mspContext.setUserPassword(ilPropConfig.getProperty("newbusiness.password"));
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(IntegrationConstants.CLIENT_CREATE_REQUEST_PARAMETER_NAME);
-		reqPara.setValue(IntegrationConstants.CLIENT_CREATE_REQUEST_PARAMETER_VALUE);
+		reqPara.setName(ilPropConfig.getProperty("newbusiness.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("newbusiness.requestparam.value"));
 		reqParas.getRequestParameter().add(reqPara);
 		mspContext.setRequestParameters(reqParas);
 		newBusinessCreate.setMspContext(mspContext);
@@ -108,12 +114,12 @@ public class NewBusinessProposalGenerator {
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
 				CLICRPIREC.class, createClientMappingMap);
 		MSPContext mspContext = new MSPContext();
-		mspContext.setUserId("userId");
-		mspContext.setUserPassword("password");
+		mspContext.setUserId(ilPropConfig.getProperty("client.userid"));
+		mspContext.setUserPassword(ilPropConfig.getProperty("client.password"));
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(IntegrationConstants.CLIENT_CREATE_REQUEST_PARAMETER_NAME);
-		reqPara.setValue(IntegrationConstants.CLIENT_CREATE_REQUEST_PARAMETER_VALUE);
+		reqPara.setName(ilPropConfig.getProperty("client.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("client.requestparam.value"));
 		reqParas.getRequestParameter().add(reqPara);
 		mspContext.setRequestParameters(reqParas);
 		clientCreate.setMSPContext(mspContext);
