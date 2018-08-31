@@ -7,7 +7,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 import com.prud.constant.IntegrationConstants;
-import com.prud.model.il.CLICRPIREC;
 import com.prud.model.il.CLICRPIREC.CLTDOBX;
 
 import ma.glasnost.orika.CustomConverter;
@@ -31,5 +30,4 @@ public class ClientDOBCustomConverter extends CustomConverter<String, CLTDOBX> {
 		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
-
 }

@@ -14,7 +14,6 @@ import ma.glasnost.orika.metadata.Type;
 
 public class PreminumTransactionDateCustomConvertor extends CustomConverter<String, TRANDATEX> {
 
-	@Override
 	public TRANDATEX convert(String source, Type<? extends TRANDATEX> destinationType) {
 		Date date = null;
 		try {
