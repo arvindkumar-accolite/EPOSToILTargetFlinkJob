@@ -8,7 +8,7 @@ public class IntegrationConstants {
 	public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
 	public static final String GROUP_ID = "group.id";
 	public static final String NEW_BUSS_PROPOSAL_TOPIC_NAME = "newbusiness.proposal.topic.name";
-	
+	public static final String FORMAT_LENGTH_2 = "%02d";
 	public static final String CLTDOBX_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 	public static final String DATE_FORMAT_YYYYMMDD = "yyyyMMdd";
 	public static final String CUSTOM_CONVERTER_ID = "createClientIdValue";

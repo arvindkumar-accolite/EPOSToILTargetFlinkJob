@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -45,9 +44,9 @@ public class RiderDetailsCustomConverter extends CustomConverter<List<RiderDetai
 		cal.setTime(date);
 
 		COMMFROM cltDOBX = new COMMFROM();
-		cltDOBX.setCcyy(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		cltDOBX.setMm(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		cltDOBX.setDd(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		cltDOBX.setCcyy(String.valueOf(cal.get(Calendar.YEAR)));
+		cltDOBX.setMm(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		cltDOBX.setDd(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
 
@@ -62,9 +61,9 @@ public class RiderDetailsCustomConverter extends CustomConverter<List<RiderDetai
 		cal.setTime(date);
 
 		COMMTO cltDOBX = new COMMTO();
-		cltDOBX.setCcyy(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		cltDOBX.setMm(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		cltDOBX.setDd(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		cltDOBX.setCcyy(String.valueOf(cal.get(Calendar.YEAR)));
+		cltDOBX.setMm(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		cltDOBX.setDd(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
 

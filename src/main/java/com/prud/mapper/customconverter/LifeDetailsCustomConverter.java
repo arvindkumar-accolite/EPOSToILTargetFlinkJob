@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -53,9 +52,9 @@ public class LifeDetailsCustomConverter extends CustomConverter<List<LifeDetails
 		cal.setTime(date);
 
 		DOB dob = new DOB();
-		dob.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		dob.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		dob.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		dob.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		dob.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		dob.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return dob;
 	}
 }

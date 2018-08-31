@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,9 +58,9 @@ public class CoverageDetailsCustomConverter extends CustomConverter<List<Coverag
 		cal.setTime(date);
 
 		COVRPCESDTE prmCesDate = new COVRPCESDTE();
-		prmCesDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		prmCesDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		prmCesDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		prmCesDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		prmCesDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		prmCesDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return prmCesDate;
 	}
 
@@ -76,9 +75,9 @@ public class CoverageDetailsCustomConverter extends CustomConverter<List<Coverag
 		cal.setTime(date);
 
 		COVRRCESDTE riskCessDate = new COVRRCESDTE();
-		riskCessDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		riskCessDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		riskCessDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		riskCessDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		riskCessDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		riskCessDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return riskCessDate;
 	}
 
@@ -93,9 +92,9 @@ public class CoverageDetailsCustomConverter extends CustomConverter<List<Coverag
 		cal.setTime(date);
 
 		COVRRUNDTE covDate = new COVRRUNDTE();
-		covDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		covDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		covDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		covDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		covDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		covDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return covDate;
 	}
 

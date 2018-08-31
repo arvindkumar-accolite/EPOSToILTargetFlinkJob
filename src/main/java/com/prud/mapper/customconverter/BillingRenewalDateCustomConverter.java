@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,9 +25,9 @@ public class BillingRenewalDateCustomConverter extends CustomConverter<String, B
 		cal.setTime(date);
 
 		BILLCD bRenDate = new BILLCD();
-		bRenDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		bRenDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		bRenDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		bRenDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		bRenDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2,cal.get(Calendar.MONTH) + 1));
+		bRenDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return bRenDate;
 	}
 

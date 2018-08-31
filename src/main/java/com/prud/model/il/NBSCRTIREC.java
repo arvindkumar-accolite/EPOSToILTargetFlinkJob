@@ -3339,45 +3339,45 @@ public class NBSCRTIREC {
             public static class COMMFROM {
 
                 @XmlElement(name = "CCYY", required = true)
-                protected BigInteger ccyy;
+                protected String ccyy;
                 @XmlElement(name = "MM", required = true)
-                protected BigInteger mm;
+                protected String mm;
                 @XmlElement(name = "DD", required = true)
-                protected BigInteger dd;
+                protected String dd;
 				/**
 				 * @return the ccyy
 				 */
-				public BigInteger getCcyy() {
+				public String getCcyy() {
 					return ccyy;
 				}
 				/**
 				 * @param ccyy the ccyy to set
 				 */
-				public void setCcyy(BigInteger ccyy) {
+				public void setCcyy(String ccyy) {
 					this.ccyy = ccyy;
 				}
 				/**
 				 * @return the mm
 				 */
-				public BigInteger getMm() {
+				public String getMm() {
 					return mm;
 				}
 				/**
 				 * @param mm the mm to set
 				 */
-				public void setMm(BigInteger mm) {
+				public void setMm(String mm) {
 					this.mm = mm;
 				}
 				/**
 				 * @return the dd
 				 */
-				public BigInteger getDd() {
+				public String getDd() {
 					return dd;
 				}
 				/**
 				 * @param dd the dd to set
 				 */
-				public void setDd(BigInteger dd) {
+				public void setDd(String dd) {
 					this.dd = dd;
 				}
 
@@ -3436,45 +3436,45 @@ public class NBSCRTIREC {
             public static class COMMTO {
 
                 @XmlElement(name = "CCYY", required = true)
-                protected BigInteger ccyy;
+                protected String ccyy;
                 @XmlElement(name = "MM", required = true)
-                protected BigInteger mm;
+                protected String mm;
                 @XmlElement(name = "DD", required = true)
-                protected BigInteger dd;
+                protected String dd;
 				/**
 				 * @return the ccyy
 				 */
-				public BigInteger getCcyy() {
+				public String getCcyy() {
 					return ccyy;
 				}
 				/**
 				 * @param ccyy the ccyy to set
 				 */
-				public void setCcyy(BigInteger ccyy) {
+				public void setCcyy(String ccyy) {
 					this.ccyy = ccyy;
 				}
 				/**
 				 * @return the mm
 				 */
-				public BigInteger getMm() {
+				public String getMm() {
 					return mm;
 				}
 				/**
 				 * @param mm the mm to set
 				 */
-				public void setMm(BigInteger mm) {
+				public void setMm(String mm) {
 					this.mm = mm;
 				}
 				/**
 				 * @return the dd
 				 */
-				public BigInteger getDd() {
+				public String getDd() {
 					return dd;
 				}
 				/**
 				 * @param dd the dd to set
 				 */
-				public void setDd(BigInteger dd) {
+				public void setDd(String dd) {
 					this.dd = dd;
 				}
 
@@ -3897,21 +3897,21 @@ public class NBSCRTIREC {
             public static class EFFDATE {
 
                 @XmlElement(name = "CCYY", required = true)
-                protected BigInteger ccyy;
+                protected String ccyy;
                 @XmlElement(name = "MM", required = true)
-                protected BigInteger mm;
+                protected String mm;
                 @XmlElement(name = "DD", required = true)
-                protected BigInteger dd;
+                protected String dd;
 
                 /**
                  * Gets the value of the ccyy property.
                  * 
                  * @return
                  *     possible object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public BigInteger getCCYY() {
+                public String getCCYY() {
                     return ccyy;
                 }
 
@@ -3920,10 +3920,10 @@ public class NBSCRTIREC {
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public void setCCYY(BigInteger value) {
+                public void setCCYY(String value) {
                     this.ccyy = value;
                 }
 
@@ -3932,10 +3932,10 @@ public class NBSCRTIREC {
                  * 
                  * @return
                  *     possible object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public BigInteger getMM() {
+                public String getMM() {
                     return mm;
                 }
 
@@ -3944,10 +3944,10 @@ public class NBSCRTIREC {
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public void setMM(BigInteger value) {
+                public void setMM(String value) {
                     this.mm = value;
                 }
 
@@ -3956,10 +3956,10 @@ public class NBSCRTIREC {
                  * 
                  * @return
                  *     possible object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public BigInteger getDD() {
+                public String getDD() {
                     return dd;
                 }
 
@@ -3968,10 +3968,10 @@ public class NBSCRTIREC {
                  * 
                  * @param value
                  *     allowed object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
-                public void setDD(BigInteger value) {
+                public void setDD(String value) {
                     this.dd = value;
                 }
 
@@ -4565,45 +4565,45 @@ public class NBSCRTIREC {
             public static class FUPDT {
 
                 @XmlElement(name = "CCYY", required = true)
-                protected BigInteger ccyy;
+                protected String ccyy;
                 @XmlElement(name = "MM", required = true)
-                protected BigInteger mm;
+                protected String mm;
                 @XmlElement(name = "DD", required = true)
-                protected BigInteger dd;
+                protected String dd;
 				/**
 				 * @return the ccyy
 				 */
-				public BigInteger getCcyy() {
+				public String getCcyy() {
 					return ccyy;
 				}
 				/**
 				 * @param ccyy the ccyy to set
 				 */
-				public void setCcyy(BigInteger ccyy) {
+				public void setCcyy(String ccyy) {
 					this.ccyy = ccyy;
 				}
 				/**
 				 * @return the mm
 				 */
-				public BigInteger getMm() {
+				public String getMm() {
 					return mm;
 				}
 				/**
 				 * @param mm the mm to set
 				 */
-				public void setMm(BigInteger mm) {
+				public void setMm(String mm) {
 					this.mm = mm;
 				}
 				/**
 				 * @return the dd
 				 */
-				public BigInteger getDd() {
+				public String getDd() {
 					return dd;
 				}
 				/**
 				 * @param dd the dd to set
 				 */
-				public void setDd(BigInteger dd) {
+				public void setDd(String dd) {
 					this.dd = dd;
 				}
 
@@ -4612,7 +4612,7 @@ public class NBSCRTIREC {
                  * 
                  * @return
                  *     possible object is
-                 *     {@link BigInteger }
+                 *     {@link String }
                  *     
                  */
                 
@@ -5001,45 +5001,45 @@ public class NBSCRTIREC {
         public static class DATEFROM {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 			/**
 			 * @return the ccyy
 			 */
-			public BigInteger getCcyy() {
+			public String getCcyy() {
 				return ccyy;
 			}
 			/**
 			 * @param ccyy the ccyy to set
 			 */
-			public void setCcyy(BigInteger ccyy) {
+			public void setCcyy(String ccyy) {
 				this.ccyy = ccyy;
 			}
 			/**
 			 * @return the mm
 			 */
-			public BigInteger getMm() {
+			public String getMm() {
 				return mm;
 			}
 			/**
 			 * @param mm the mm to set
 			 */
-			public void setMm(BigInteger mm) {
+			public void setMm(String mm) {
 				this.mm = mm;
 			}
 			/**
 			 * @return the dd
 			 */
-			public BigInteger getDd() {
+			public String getDd() {
 				return dd;
 			}
 			/**
 			 * @param dd the dd to set
 			 */
-			public void setDd(BigInteger dd) {
+			public void setDd(String dd) {
 				this.dd = dd;
 			}
 
@@ -6411,21 +6411,21 @@ public class NBSCRTIREC {
         public static class CLIENTCLTDOBX {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -6434,10 +6434,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -6446,10 +6446,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -6458,10 +6458,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -6470,10 +6470,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -6482,10 +6482,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -7019,21 +7019,21 @@ public class NBSCRTIREC {
         public static class BILLCD {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -7042,10 +7042,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -7054,10 +7054,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -7066,10 +7066,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -7078,10 +7078,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -7090,10 +7090,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -7151,21 +7151,21 @@ public class NBSCRTIREC {
         public static class OCCDATE {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCcyy() {
+            public String getCcyy() {
                 return ccyy;
             }
 
@@ -7174,10 +7174,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCcyy(BigInteger value) {
+            public void setCcyy(String value) {
                 this.ccyy = value;
             }
 
@@ -7186,10 +7186,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMm() {
+            public String getMm() {
                 return mm;
             }
 
@@ -7198,10 +7198,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMm(BigInteger value) {
+            public void setMm(String value) {
                 this.mm = value;
             }
 
@@ -7210,10 +7210,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDd() {
+            public String getDd() {
                 return dd;
             }
 
@@ -7222,10 +7222,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDd(BigInteger value) {
+            public void setDd(String value) {
                 this.dd = value;
             }
 
@@ -7909,21 +7909,21 @@ public class NBSCRTIREC {
         public static class COVRPCESDTE {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -7932,10 +7932,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -7944,10 +7944,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -7956,10 +7956,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -7968,10 +7968,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -7980,10 +7980,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -8041,21 +8041,21 @@ public class NBSCRTIREC {
         public static class COVRRCESDTE {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -8064,10 +8064,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -8076,10 +8076,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -8088,10 +8088,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -8100,10 +8100,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -8112,10 +8112,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -8173,21 +8173,21 @@ public class NBSCRTIREC {
         public static class COVRRUNDTE {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -8196,10 +8196,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -8208,10 +8208,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -8220,10 +8220,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -8232,10 +8232,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -8244,10 +8244,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -10889,21 +10889,21 @@ public class NBSCRTIREC {
         public static class DOB {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCcyy() {
+            public String getCcyy() {
                 return ccyy;
             }
 
@@ -10912,10 +10912,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCcyy(BigInteger value) {
+            public void setCcyy(String value) {
                 this.ccyy = value;
             }
 
@@ -10924,10 +10924,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMm() {
+            public String getMm() {
                 return mm;
             }
 
@@ -10936,10 +10936,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMm(BigInteger value) {
+            public void setMm(String value) {
                 this.mm = value;
             }
 
@@ -10948,10 +10948,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDd() {
+            public String getDd() {
                 return dd;
             }
 
@@ -10960,10 +10960,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDd(BigInteger value) {
+            public void setDd(String value) {
                 this.dd = value;
             }
 
@@ -11525,21 +11525,21 @@ public class NBSCRTIREC {
         public static class DOB {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -11548,10 +11548,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -11560,10 +11560,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -11572,10 +11572,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -11584,10 +11584,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -11596,10 +11596,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -12017,21 +12017,21 @@ public class NBSCRTIREC {
         public static class EFFDATEN264679 {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -12040,10 +12040,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -12052,10 +12052,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -12064,10 +12064,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -12076,10 +12076,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -12088,10 +12088,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 
@@ -13043,21 +13043,21 @@ public class NBSCRTIREC {
         public static class TRANDATEX {
 
             @XmlElement(name = "CCYY", required = true)
-            protected BigInteger ccyy;
+            protected String ccyy;
             @XmlElement(name = "MM", required = true)
-            protected BigInteger mm;
+            protected String mm;
             @XmlElement(name = "DD", required = true)
-            protected BigInteger dd;
+            protected String dd;
 
             /**
              * Gets the value of the ccyy property.
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getCCYY() {
+            public String getCCYY() {
                 return ccyy;
             }
 
@@ -13066,10 +13066,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setCCYY(BigInteger value) {
+            public void setCCYY(String value) {
                 this.ccyy = value;
             }
 
@@ -13078,10 +13078,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getMM() {
+            public String getMM() {
                 return mm;
             }
 
@@ -13090,10 +13090,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setMM(BigInteger value) {
+            public void setMM(String value) {
                 this.mm = value;
             }
 
@@ -13102,10 +13102,10 @@ public class NBSCRTIREC {
              * 
              * @return
              *     possible object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public BigInteger getDD() {
+            public String getDD() {
                 return dd;
             }
 
@@ -13114,10 +13114,10 @@ public class NBSCRTIREC {
              * 
              * @param value
              *     allowed object is
-             *     {@link BigInteger }
+             *     {@link String }
              *     
              */
-            public void setDD(BigInteger value) {
+            public void setDD(String value) {
                 this.dd = value;
             }
 

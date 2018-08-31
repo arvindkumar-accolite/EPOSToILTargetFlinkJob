@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,9 +24,9 @@ public class PreminumTransactionDateCustomConvertor extends CustomConverter<Stri
 		cal.setTime(date);
 
 		TRANDATEX tranDate = new TRANDATEX();
-		tranDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		tranDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		tranDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		tranDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		tranDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		tranDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return tranDate;
 	}
 

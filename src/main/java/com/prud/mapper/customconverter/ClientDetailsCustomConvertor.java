@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.prud.constant.IntegrationConstants;
-import com.prud.model.il.CLICRPIREC.CLTDOBX;
 import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT;
 import com.prud.model.il.NBSCRTIREC.NBSCRTICLIENT.CLIENTCLTDOBX;
 import com.prud.model.middleware.ClientDetails;
@@ -30,9 +28,9 @@ public class ClientDetailsCustomConvertor extends CustomConverter<List<ClientDet
 		cal.setTime(date);
 
 		CLIENTCLTDOBX cltDOBX = new CLIENTCLTDOBX();
-		cltDOBX.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		cltDOBX.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		cltDOBX.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		cltDOBX.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		cltDOBX.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		cltDOBX.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return cltDOBX;
 	}
 

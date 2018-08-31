@@ -1,6 +1,5 @@
 package com.prud.mapper.customconverter;
 
-import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,9 +24,9 @@ public class MandatoryEffectiveDateCustomConvertor extends CustomConverter<Strin
 		cal.setTime(date);
 
 		EFFDATEN264679 effDate = new EFFDATEN264679();
-		effDate.setCCYY(BigInteger.valueOf(cal.get(Calendar.YEAR)));
-		effDate.setMM(BigInteger.valueOf(cal.get(Calendar.MONTH) + 1));
-		effDate.setDD(BigInteger.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		effDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		effDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
+		effDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return effDate;
 	}
 
