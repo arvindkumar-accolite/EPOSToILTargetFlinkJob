@@ -3,8 +3,6 @@ package com.prud.mapper.customconverter;
 import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import com.prud.constant.IntegrationConstants;
 
@@ -15,15 +13,15 @@ public class ProposalDateCustomConvertor extends CustomConverter<String, BigInte
 
 	@Override
 	public BigInteger convert(String source, Type<? extends BigInteger> destinationType) {
-		Date date = null;
+		String date = null;
+		SimpleDateFormat sdf = null;
 		try {
-			date = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT).parse(source);
+			sdf = new SimpleDateFormat(IntegrationConstants.DATE_FORMAT_YYYYMMDD);
+			date = sdf.format(sdf.parse(source));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);		
-		return BigInteger.valueOf(cal.getTimeInMillis());
+		return new BigInteger(date);
 	}
 
 }

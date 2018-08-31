@@ -10,6 +10,7 @@ public class IntegrationConstants {
 	public static final String NEW_BUSS_PROPOSAL_TOPIC_NAME = "newbusiness.proposal.topic.name";
 	
 	public static final String CLTDOBX_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+	public static final String DATE_FORMAT_YYYYMMDD = "yyyyMMdd";
 	public static final String CUSTOM_CONVERTER_ID = "createClientIdValue";
 	public static final String IL_FIELD_CLTDOBX = "CLTDOBX";
 	public static final String FOLDERNAME_XSL = "/xsl/";
