@@ -2,6 +2,7 @@
 package com.prud.model.middleware;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,7 @@ public class PremiumRCTDetails {
 	@JsonProperty("protectIndicator")
 	private String protectIndicator;
 	@JsonProperty("dissectionNumber")
-	private BigDecimal dissectionNumber;
+	private BigInteger dissectionNumber;
 	@JsonProperty("sfldetails")
 	private List<SFLDetails> sfldetails = null;
 
@@ -213,12 +214,12 @@ public class PremiumRCTDetails {
 	}
 
 	@JsonProperty("dissectionNumber")
-	public BigDecimal getDissectionNumber() {
+	public BigInteger getDissectionNumber() {
 		return dissectionNumber;
 	}
 
 	@JsonProperty("dissectionNumber")
-	public void setDissectionNumber(BigDecimal dissectionNumber) {
+	public void setDissectionNumber(BigInteger dissectionNumber) {
 		this.dissectionNumber = dissectionNumber;
 	}
 

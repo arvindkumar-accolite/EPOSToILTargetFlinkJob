@@ -31,7 +31,7 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 	ConverterFactory converterFactory = mapperFactory.getConverterFactory();
 
 	public OrikaModelNewBusinessMapperImpl() {
-		/*converterFactory.registerConverter("assigneeCC", new AssigneeDetailsCustomConverter());
+		converterFactory.registerConverter("assigneeCC", new AssigneeDetailsCustomConverter());
 		converterFactory.registerConverter("beneficiaryCC", new BeneficiaryDetailsCustomConverter());
 		converterFactory.registerConverter("clientDetailsCC", new ClientDetailsCustomConvertor());
 		converterFactory.registerConverter("coverageDetailsCC", new CoverageDetailsCustomConverter());
@@ -41,7 +41,7 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 		converterFactory.registerConverter("billingRenewalDateCC", new BillingRenewalDateCustomConverter());
 		converterFactory.registerConverter("mandatoryEffectiveCC", new MandatoryEffectiveDateCustomConvertor());
 		converterFactory.registerConverter("preminumTransactionCC", new PreminumTransactionDateCustomConvertor());
-	*/}
+	}
 
 	@SuppressWarnings("unchecked")
 
@@ -52,7 +52,7 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 				classMapBilder.field(enrty.getKey(), enrty.getValue());
 			}
 		}
-	     /*classMapBilder.fieldMap("assignees.assigneeDetails", "assignees.nbscrtiassigneedetails").converter("assigneeCC").add()
+	     classMapBilder.fieldMap("assignees.assigneeDetails", "assignees.nbscrtiassigneedetails").converter("assigneeCC").add()
 		.fieldMap("beneficiary.beneficiaryDetails", "beneficiary.nbscrtibendetails").converter("beneficiaryCC").add()
 		.fieldMap("clientDetails", "nbscrticlient").converter("clientDetailsCC").add()
 		.fieldMap("coverageDetails", "nbscrticoveragedetails").converter("coverageDetailsCC").add()
@@ -60,8 +60,8 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 		.fieldMap("bankDetails.datefrom", "nbscrtibankdetails.datefrom").converter("bankDetailsDateFromCC").add()
 		.fieldMap("contractDetails.billingRenewalDate", "nbscrticontracthdrdetails.billcd").converter("billingRenewalDateCC").add()
 		.fieldMap("mandateDetails.effectiveDate", "nbscrtimandatedetails.effdate").converter("mandatoryEffectiveCC").add()
-		.fieldMap("premiumRCTDetails.tranDate", "nbscrtipremiumrctdetails.trandatex").converter("preminumTransactionCC").add()*/
-		classMapBilder.byDefault().register();
+		.fieldMap("premiumRCTDetails.tranDate", "nbscrtipremiumrctdetails.trandatex").converter("preminumTransactionCC").add()
+		.byDefault().register();
 		mapper = mapperFactory.getMapperFacade();
 		return mapper.map(source, targetClass);
 	}

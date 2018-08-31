@@ -372,7 +372,7 @@ public class NewBusinessPopulator {
 		premiumRCTDetails.setBankKey("");
 		premiumRCTDetails.setCheqNumber("");
 		premiumRCTDetails.setCurrencyRate(new BigDecimal("0"));
-		premiumRCTDetails.setDissectionNumber(new BigDecimal("0"));
+		premiumRCTDetails.setDissectionNumber(new BigInteger("0"));
 		premiumRCTDetails.setDocumentAmount(new BigDecimal("0"));
 		premiumRCTDetails.setOriginalCurrency("");
 		premiumRCTDetails.setPaymentType("");
