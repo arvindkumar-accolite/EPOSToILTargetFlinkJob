@@ -28,11 +28,17 @@ public class ILServiceImpl implements ILService {
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
-		System.out.println("Envelop " + createClientSoapEnvelop);
-		String clientNumber = getClientNumberFromSoapBody(invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL));
+		System.out.println("=========Create Client Soap Envelop=========");
+		System.out.println(createClientSoapEnvelop);
+		SOAPBody clientResponseSoapBody=invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL);
+		System.out.println("=========Create Client Response=========");
+		System.out.println(clientResponseSoapBody.toString());
+		String clientNumber = getClientNumberFromSoapBody(clientResponseSoapBody);
 		setClientIdToNewBusinessObject(newBusinessModel, clientNumber);
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
+		System.out.println("=========NewBusinessProposal Soap Envelop=========");
 		System.out.println(newBusinessSoapEnvelop);
+		System.out.println("=========NewBusinessProposal Response=========");
 		System.out.println(invokeILSoapService(newBusinessSoapEnvelop, IntegrationConstants.NEW_BUSINESS_URL).toString());
 
 		return createClientSoapEnvelop;
