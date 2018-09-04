@@ -26,14 +26,16 @@ public class NewBusinessProposalGenerator {
 
 	private XSLTransformer xslTransformer = new XSLTransformer();
 	private OrikaModelClientMapperImpl orikaModelConverter = new OrikaModelClientMapperImpl();
-	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl(); 
+	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl();
 	private static Properties newBusinessProposalPropConfig;
 	private static Properties createClientPropConfig;
 	private static Properties ilPropConfig;
-	
-	private static Map<String, String> newBusinessProposalMappingMap = new HashMap<>();	
+
+	private static Map<String, String> newBusinessProposalMappingMap = new HashMap<>();
 	private static Map<String, String> createClientMappingMap = new HashMap<>();
-	
+	private boolean isZambia = false;
+	private boolean isUganda = false;
+
 	static {
 		ilPropConfig = new Properties();
 		newBusinessProposalPropConfig = new Properties();
@@ -74,7 +76,7 @@ public class NewBusinessProposalGenerator {
 		return sw.toString();
 
 	}
-	
+
 	private String jaxbClientToXML(CLICRPIREC nbsILModel) {
 		StringWriter sw = null;
 		try {
@@ -98,17 +100,20 @@ public class NewBusinessProposalGenerator {
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId(ilPropConfig.getProperty("newbusiness.userid"));
 		mspContext.setUserPassword(ilPropConfig.getProperty("newbusiness.password"));
-		RequestParameters reqParas = new RequestParameters();
-		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("newbusiness.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("newbusiness.requestparam.value"));
-		reqParas.getRequestParameter().add(reqPara);
+		RequestParameters reqParas = null;
+		if (isZambia) {
+			reqParas = setNbsRequestParaForZambia();
+
+		} else if (isUganda) {
+			reqParas = setNbsRequestParaForUganda();
+
+		}
 		mspContext.setRequestParameters(reqParas);
 		newBusinessCreate.setMspContext(mspContext);
 		String body = jaxbNewBusinessToXML(newBusinessCreate);
 		return generateNBSSoapEnvelop(body);
 	}
-	
+
 	public String buildCreateClientRequest(NewBusinessModel newBusinessModel) {
 		ClientDetails clientDetails = newBusinessModel.getClientDetails().get(0);
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
@@ -116,30 +121,86 @@ public class NewBusinessProposalGenerator {
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId(ilPropConfig.getProperty("client.userid"));
 		mspContext.setUserPassword(ilPropConfig.getProperty("client.password"));
-		RequestParameters reqParas = new RequestParameters();
-		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("client.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("client.requestparam.value"));
-		reqParas.getRequestParameter().add(reqPara);
+		RequestParameters reqParas = null;
+		if (null != clientDetails) {
+			if (null != clientDetails.getCountryCode() && clientDetails.getCountryCode().equalsIgnoreCase("Z")) {
+				reqParas = setClientRequestParaForZambia();
+				System.out.println("=================Zambia Properties" + clientDetails.getCountryCode());
+				isZambia = true;
+
+			} else if (null != clientDetails.getCountryCode()
+					&& clientDetails.getCountryCode().equalsIgnoreCase("UGD")) {
+				reqParas = setClientRequestParaForUganda();
+				System.out.println("=================Uganda Properties" + clientDetails.getCountryCode());
+				isUganda = true;
+			}
+		}
+
 		mspContext.setRequestParameters(reqParas);
 		clientCreate.setMSPContext(mspContext);
 		String body = jaxbClientToXML(clientCreate);
 		return generateCLISoapEnvelop(body);
 	}
 
+	private RequestParameters setClientRequestParaForZambia() {
+		RequestParameters reqParas = new RequestParameters();
+		RequestParameter reqPara = new RequestParameter();
+		reqPara.setName(ilPropConfig.getProperty("zambia.client.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("zambia.client.requestparam.value"));
+		RequestParameter reqPara1 = new RequestParameter();
+		reqPara1.setName(ilPropConfig.getProperty("zambia.newbusiness.requestparam.name"));
+		reqPara1.setValue(ilPropConfig.getProperty("zambia.newbusiness.requestparam.value"));
+		reqParas.getRequestParameter().add(reqPara);
+		reqParas.getRequestParameter().add(reqPara1);
+		return reqParas;
+	}
+
+	private RequestParameters setClientRequestParaForUganda() {
+		RequestParameters reqParas = new RequestParameters();
+		RequestParameter reqPara = new RequestParameter();
+		reqPara.setName(ilPropConfig.getProperty("uganda.client.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("uganda.client.requestparam.value"));
+		RequestParameter reqPara1 = new RequestParameter();
+		reqPara1.setName(ilPropConfig.getProperty("uganda.newbusiness.requestparam.name"));
+		reqPara1.setValue(ilPropConfig.getProperty("uganda.newbusiness.requestparam.value"));
+		reqParas.getRequestParameter().add(reqPara);
+		reqParas.getRequestParameter().add(reqPara1);
+		return reqParas;
+	}
+
+	private RequestParameters setNbsRequestParaForZambia() {
+		RequestParameters reqParas = new RequestParameters();
+		RequestParameter reqPara = new RequestParameter();
+		reqPara.setName(ilPropConfig.getProperty("zambia.newbusiness.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("zambia.newbusiness.requestparam.value"));
+		reqParas.getRequestParameter().add(reqPara);
+		return reqParas;
+	}
+
+	private RequestParameters setNbsRequestParaForUganda() {
+		RequestParameters reqParas = new RequestParameters();
+		RequestParameter reqPara = new RequestParameter();
+		reqPara.setName(ilPropConfig.getProperty("uganda.newbusiness.requestparam.name"));
+		reqPara.setValue(ilPropConfig.getProperty("uganda.newbusiness.requestparam.value"));
+		reqParas.getRequestParameter().add(reqPara);
+		return reqParas;
+	}
+
 	private String generateNBSSoapEnvelop(String body) {
 		return xslTransformer.transform(IntegrationConstants.NBS_XSLT_FILE_NAME, body);
 	}
+
 	private String generateCLISoapEnvelop(String body) {
 		return xslTransformer.transform(IntegrationConstants.CLI_XSLT_FILE_NAME, body);
 	}
-	
-	private static void convertNewBusinessPropertyToMap(){
-		for (final String name: newBusinessProposalPropConfig.stringPropertyNames())
+
+	private static void convertNewBusinessPropertyToMap() {
+		for (final String name : newBusinessProposalPropConfig.stringPropertyNames())
 			newBusinessProposalMappingMap.put(name, newBusinessProposalPropConfig.getProperty(name));
 	}
-	private static void convertClientPropertyToMap(){
-		for (final String name: createClientPropConfig.stringPropertyNames())
+
+	private static void convertClientPropertyToMap() {
+		for (final String name : createClientPropConfig.stringPropertyNames())
 			createClientMappingMap.put(name, createClientPropConfig.getProperty(name));
 	}
 }

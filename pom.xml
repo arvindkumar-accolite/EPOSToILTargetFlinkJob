@@ -9,7 +9,46 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>maven-release</name>
+			<url>https://artifactory.intranet.asia:443/artifactory/maven-release</url>
+		</repository>
+		<repository>
+			<snapshots />
+			<id>snapshots</id>
+			<name>maven-release</name>
+			<url>https://artifactory.intranet.asia:443/artifactory/maven-release</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>maven-release</name>
+			<url>https://artifactory.intranet.asia:443/artifactory/maven-release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<snapshots />
+			<id>snapshots</id>
+			<name>maven-release</name>
+			<url>https://artifactory.intranet.asia:443/artifactory/maven-release</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<dependencies>
+		<dependency>
+			<groupId>com.sun.xml.messaging.saaj</groupId>
+			<artifactId>saaj-impl</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+
 		<!-- flink dependencies -->
 		<dependency>
 			<groupId>junit</groupId>

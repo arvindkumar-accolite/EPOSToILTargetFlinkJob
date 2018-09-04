@@ -29,20 +29,28 @@ public class ILServiceImpl implements ILService {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("=========Create Client Soap Envelop=========");
-		System.out.println(createClientSoapEnvelop);
-		SOAPBody clientResponseSoapBody=invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL);
-		System.out.println("=========Create Client Response=========");
-		System.out.println(clientResponseSoapBody.toString());
+//		System.out.println(createClientSoapEnvelop);
+//		System.out.println("=========Create Client Response=========");
+		SOAPBody clientResponseSoapBody = invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL);
+//		System.out.println("=========Create Client Response=========");
+//		System.out.println(clientResponseSoapBody.toString());
 		String clientNumber = getClientNumberFromSoapBody(clientResponseSoapBody);
+		System.out.println("=========Cleint Number :" + clientNumber);
 		setClientIdToNewBusinessObject(newBusinessModel, clientNumber);
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
 		System.out.println("=========NewBusinessProposal Soap Envelop=========");
-		System.out.println(newBusinessSoapEnvelop);
-		System.out.println("=========NewBusinessProposal Response=========");
-		System.out.println(invokeILSoapService(newBusinessSoapEnvelop, IntegrationConstants.NEW_BUSINESS_URL).toString());
+//		System.out.println(newBusinessSoapEnvelop);
+		SOAPBody nbsResponseSoapBody = invokeILSoapService(newBusinessSoapEnvelop,
+				IntegrationConstants.NEW_BUSINESS_URL);
+//		System.out.println(nbsResponseSoapBody.toString());
 
-		return createClientSoapEnvelop;
+		String nbsContractNum = getNBSContractNummberFromSoapBody(nbsResponseSoapBody);
+		System.out.println("=========NewBusinessProposal Contract Number=========");
+		System.out.println(nbsContractNum);
+
+		return nbsContractNum == null ? "" : nbsContractNum;
 	}
+
 	private void setClientIdToNewBusinessObject(NewBusinessModel newBusinessModel, String clientNumber) {
 		newBusinessModel.getClientDetails().get(0).setClientNumber(clientNumber);
 		newBusinessModel.getClientDetails().get(0).setEntId(clientNumber);
@@ -83,7 +91,7 @@ public class ILServiceImpl implements ILService {
 			System.out.println();
 			URL endpoint = new URL(url);
 			response = connection.call(request, endpoint);
-			System.out.println("\n Soap Response:\n");
+			System.out.println("\n Soap Response=========:\n");
 			response.writeTo(System.out);
 			System.out.println();
 			return response.getSOAPBody();
@@ -93,7 +101,9 @@ public class ILServiceImpl implements ILService {
 		}
 		return null;
 	}
+
 	private String getClientNumberFromSoapBody(SOAPBody soapBody) {
+		SOAPMessage response = null;
 		try {
 			Iterator updates = soapBody.getChildElements();
 			System.out.println("'@@@@@@@@@@@" + updates.hashCode());
@@ -116,34 +126,47 @@ public class ILServiceImpl implements ILService {
 		return null;
 	}
 
-
-	/*public static void main(String[] args) {
+	private String getNBSContractNummberFromSoapBody(SOAPBody soapBody) {
+		SOAPMessage response = null;
 		try {
-			ILServiceImpl ilServiceImpl = new ILServiceImpl();
-			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
-		} catch (IOException e) {
+			Iterator updates = soapBody.getChildElements();
+//			System.out.println("'@@@@@@@@@@@" + updates.hashCode());
+			while (updates.hasNext()) {
+				System.out.println();
+				// The listing and its ID
+				SOAPElement update = (SOAPElement) updates.next();
+				QName name = new QName(IntegrationConstants.IL_TAG_CHDRSEL);
+				Iterator i = update.getChildElements(name);
+				while (i.hasNext()) {
+					ElementImpl nbsContractNum = (ElementImpl) i.next();
+					return nbsContractNum.getValue();
+				}
+			}
+			return null;
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		return null;
 	}
 
-	private static String readFile(String file) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(file));
-		String line = null;
-		StringBuilder stringBuilder = new StringBuilder();
-		String ls = System.getProperty("line.separator");
-
-		try {
-			while ((line = reader.readLine()) != null) {
-				stringBuilder.append(line);
-				stringBuilder.append(ls);
-			}
-
-			return stringBuilder.toString();
-		} finally {
-			reader.close();
-		}
-	}
-*/
+	/*
+	 * public static void main(String[] args) { try { ILServiceImpl ilServiceImpl =
+	 * new ILServiceImpl();
+	 * ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt")); }
+	 * catch (IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); }
+	 * 
+	 * }
+	 * 
+	 * private static String readFile(String file) throws IOException {
+	 * BufferedReader reader = new BufferedReader(new FileReader(file)); String line
+	 * = null; StringBuilder stringBuilder = new StringBuilder(); String ls =
+	 * System.getProperty("line.separator");
+	 * 
+	 * try { while ((line = reader.readLine()) != null) {
+	 * stringBuilder.append(line); stringBuilder.append(ls); }
+	 * 
+	 * return stringBuilder.toString(); } finally { reader.close(); } }
+	 */
 }

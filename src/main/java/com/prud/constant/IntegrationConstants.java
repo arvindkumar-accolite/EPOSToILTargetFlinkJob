@@ -5,6 +5,7 @@ public class IntegrationConstants {
 
 	}
 	public static final String IL_TAG_CLNTNUM = "CLNTNUM";
+	public static final String IL_TAG_CHDRSEL = "CHDRSEL";
 	public static final String BOOTSTRAP_SERVER = "bootstrap.servers";
 	public static final String ZOOKEEPER_CONNECT = "zookeeper.connect";
 	public static final String GROUP_ID = "group.id";

@@ -1,20 +1,19 @@
 package com.prud.app.start;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
 import java.util.Properties;
 
-import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.streaming.api.datastream.DataStream;
-import org.apache.flink.streaming.api.datastream.DataStreamUtils;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
+import org.apache.flink.util.Collector;
 
 import com.prud.constant.IntegrationConstants;
 import com.prud.service.ILService;
@@ -40,22 +39,37 @@ public class NewBusinessProposalFlinkJob {
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 		env.setParallelism(1);
 		Properties prop = new Properties();
-		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER, propConfig.getProperty(IntegrationConstants.BOOTSTRAP_SERVER));
-		prop.setProperty(IntegrationConstants.ZOOKEEPER_CONNECT, propConfig.getProperty(IntegrationConstants.ZOOKEEPER_CONNECT));
+		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER,
+				propConfig.getProperty(IntegrationConstants.BOOTSTRAP_SERVER));
+		prop.setProperty(IntegrationConstants.ZOOKEEPER_CONNECT,
+				propConfig.getProperty(IntegrationConstants.ZOOKEEPER_CONNECT));
 		prop.setProperty(IntegrationConstants.GROUP_ID, propConfig.getProperty(IntegrationConstants.GROUP_ID));
 
 		FlinkKafkaConsumer010<String> flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
-				propConfig.getProperty(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
+				propConfig.getProperty(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(),
+				prop);
 		DataStream<String> messageStream = env.addSource(flinkKafkaConsumer);
-		ILService iLService = new ILServiceImpl();;
-		Iterator<String> myOutput = DataStreamUtils.collect(messageStream);
-		String json;
-		if (myOutput.hasNext()) {
-			System.out.println("inside iterator");
-			json = myOutput.next();
-			System.out.println(json);
-			iLService.serviceRequest(json);
-		}
+		messageStream.flatMap(new FlatMapFunction<String, String>() {
+
+			@Override
+			public void flatMap(String value, Collector<String> out) throws Exception {
+				ILService iLService = new ILServiceImpl();
+
+				out.collect(iLService.serviceRequest(value));
+
+			}
+		}).addSink(new PrintSinkFunction<>());
+
+//		ILService iLService = new ILServiceImpl();
+//		;
+//		Iterator<String> myOutput = DataStreamUtils.collect(messageStream);
+//		String json;
+//		if (myOutput.hasNext()) {
+//			System.out.println("inside iterator");
+//			json = myOutput.next();
+//			System.out.println(json);
+//			iLService.serviceRequest(json);
+//		}
 
 		env.execute();
 		// messageStream.map(new MapFunction<String, String>() {
