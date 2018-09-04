@@ -2,7 +2,6 @@
 package com.prud.model.middleware;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
