@@ -17,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "address02",
     "address03",
     "address04",
+    "address05",
     "dateOfBirth",
     "postalCode",
     "phone01",
@@ -67,6 +68,8 @@ public class ClientDetails {
     private String address03;
     @JsonProperty("address04")
     private String address04;
+    @JsonProperty("address05")
+    private String address05;
     @JsonProperty("dateOfBirth")
     private String dateOfBirth;
     @JsonProperty("postalCode")
@@ -220,6 +223,16 @@ public class ClientDetails {
     @JsonProperty("address04")
     public void setAddress04(String address04) {
         this.address04 = address04;
+    }
+    
+    @JsonProperty("address05")
+    public String getAddress05() {
+        return address05;
+    }
+
+    @JsonProperty("address05")
+    public void setAddress05(String address05) {
+        this.address05 = address05;
     }
 
     @JsonProperty("dateOfBirth")

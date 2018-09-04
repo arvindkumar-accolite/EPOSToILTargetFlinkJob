@@ -1,6 +1,8 @@
 package com.prud.service.impl;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -29,20 +31,20 @@ public class ILServiceImpl implements ILService {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
 		System.out.println("=========Create Client Soap Envelop=========");
-//		System.out.println(createClientSoapEnvelop);
-//		System.out.println("=========Create Client Response=========");
+		// System.out.println(createClientSoapEnvelop);
+		// System.out.println("=========Create Client Response=========");
 		SOAPBody clientResponseSoapBody = invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL);
-//		System.out.println("=========Create Client Response=========");
-//		System.out.println(clientResponseSoapBody.toString());
+		// System.out.println("=========Create Client Response=========");
+		// System.out.println(clientResponseSoapBody.toString());
 		String clientNumber = getClientNumberFromSoapBody(clientResponseSoapBody);
 		System.out.println("=========Cleint Number :" + clientNumber);
 		setClientIdToNewBusinessObject(newBusinessModel, clientNumber);
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
 		System.out.println("=========NewBusinessProposal Soap Envelop=========");
-//		System.out.println(newBusinessSoapEnvelop);
+		// System.out.println(newBusinessSoapEnvelop);
 		SOAPBody nbsResponseSoapBody = invokeILSoapService(newBusinessSoapEnvelop,
 				IntegrationConstants.NEW_BUSINESS_URL);
-//		System.out.println(nbsResponseSoapBody.toString());
+		// System.out.println(nbsResponseSoapBody.toString());
 
 		String nbsContractNum = getNBSContractNummberFromSoapBody(nbsResponseSoapBody);
 		System.out.println("=========NewBusinessProposal Contract Number=========");
@@ -130,7 +132,7 @@ public class ILServiceImpl implements ILService {
 		SOAPMessage response = null;
 		try {
 			Iterator updates = soapBody.getChildElements();
-//			System.out.println("'@@@@@@@@@@@" + updates.hashCode());
+			// System.out.println("'@@@@@@@@@@@" + updates.hashCode());
 			while (updates.hasNext()) {
 				System.out.println();
 				// The listing and its ID
@@ -150,23 +152,32 @@ public class ILServiceImpl implements ILService {
 		return null;
 	}
 
-	/*
-	 * public static void main(String[] args) { try { ILServiceImpl ilServiceImpl =
-	 * new ILServiceImpl();
-	 * ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt")); }
-	 * catch (IOException e) { // TODO Auto-generated catch block
-	 * e.printStackTrace(); }
-	 * 
-	 * }
-	 * 
-	 * private static String readFile(String file) throws IOException {
-	 * BufferedReader reader = new BufferedReader(new FileReader(file)); String line
-	 * = null; StringBuilder stringBuilder = new StringBuilder(); String ls =
-	 * System.getProperty("line.separator");
-	 * 
-	 * try { while ((line = reader.readLine()) != null) {
-	 * stringBuilder.append(line); stringBuilder.append(ls); }
-	 * 
-	 * return stringBuilder.toString(); } finally { reader.close(); } }
-	 */
+	public static void main(String[] args) {
+		try {
+			ILServiceImpl ilServiceImpl = new ILServiceImpl();
+			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
+		} catch (IOException e) { // TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	private static String readFile(String file) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		String line = null;
+		StringBuilder stringBuilder = new StringBuilder();
+		String ls = System.getProperty("line.separator");
+
+		try {
+			while ((line = reader.readLine()) != null) {
+				stringBuilder.append(line);
+				stringBuilder.append(ls);
+			}
+
+			return stringBuilder.toString();
+		} finally {
+			reader.close();
+		}
+	}
+
 }

@@ -24,12 +24,4 @@
 			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
 		</MM>
 	</xsl:template>
-	<xsl:template match="CLTADDR04">
-		<xsl:copy-of select="." />
-		<CLTADDR05></CLTADDR05>
-	</xsl:template>
-	<xsl:template match="CLTPHONE01">
-		<xsl:copy-of select="." />
-		<CLTPHONE02></CLTPHONE02>
-	</xsl:template>
 </xsl:stylesheet>
