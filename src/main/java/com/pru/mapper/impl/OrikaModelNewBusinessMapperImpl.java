@@ -14,6 +14,7 @@ import com.pru.mapper.customconverter.MandatoryEffectiveDateCustomConvertor;
 import com.pru.mapper.customconverter.OriginalCommencementDateCustomConvertor;
 import com.pru.mapper.customconverter.PreminumTransactionDateCustomConvertor;
 import com.pru.mapper.customconverter.ProposalDateCustomConvertor;
+import com.pru.mapper.customconverter.QuestionDetailsCustomConverter;
 import com.pru.mapper.customconverter.RiderDetailsCustomConverter;
 
 import ma.glasnost.orika.MapperFacade;
@@ -39,6 +40,7 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 		converterFactory.registerConverter("coverageDetailsCC", new CoverageDetailsCustomConverter());
 		converterFactory.registerConverter("lifeDetailsCC", new LifeDetailsCustomConverter());
 		converterFactory.registerConverter("riderDetailsCC", new RiderDetailsCustomConverter());
+		converterFactory.registerConverter("questionDetailsCC", new QuestionDetailsCustomConverter());
 
 		converterFactory.registerConverter("bankDetailsDateFromCC", new BankDetailsDateFromCustomConverter());
 		converterFactory.registerConverter("billingRenewalDateCC", new BillingRenewalDateCustomConverter());
@@ -63,6 +65,7 @@ public class OrikaModelNewBusinessMapperImpl implements ModelMapper {
 			.fieldMap("coverageDetails", "nbscrticoveragedetails").converter("coverageDetailsCC").add()
 			.fieldMap("lifeDetails", "nbscrtilives").converter("lifeDetailsCC").add()
 			.fieldMap("riderDetails", "nbscrtiriderdetails").converter("riderDetailsCC").add()
+			.fieldMap("questionDetails", "nbscrtiquestion").converter("questionDetailsCC").add()
 			.fieldMap("bankDetails.datefrom", "nbscrtibankdetails.datefrom").converter("bankDetailsDateFromCC").add()
 			.fieldMap("contractDetails.billingRenewalDate", "nbscrticontracthdrdetails.billcd").converter("billingRenewalDateCC").add()
 			.fieldMap("mandateDetails.effectiveDate", "nbscrtimandatedetails.effdate").converter("mandatoryEffectiveDateCC").add()

@@ -28,6 +28,12 @@ public class RiderDetailsCustomConverter extends CustomConverter<List<RiderDetai
 			NBSCRTIRIDERDETAILS targetRiderDetails = new NBSCRTIRIDERDETAILS();
 			targetRiderDetails.setRIDERENTID(riderDetails.getRiderId());
 			targetRiderDetails.setRIDERPARENT(riderDetails.getRiderParent());
+			targetRiderDetails.setCOVRCRTABLE(riderDetails.getCoverageOrRiderTable());
+			targetRiderDetails.setCOVRINSTPRM(riderDetails.getCoverageOrRiderInstalmentAmount());
+			targetRiderDetails.setCOVRMORTCLS(riderDetails.getMortalityClass());
+			targetRiderDetails.setCOVRPCESSAGE(riderDetails.getPremiumCessationAge());
+			targetRiderDetails.setCOVRPCESSTRM(riderDetails.getPremiumCessationTerm());
+			targetRiderDetails.setCOVRSUMIN(riderDetails.getSumInsured());
 			targetRiders.add(targetRiderDetails);
 		}
 		return targetRiders;

@@ -56,7 +56,7 @@
 			<WEIGHT>60</WEIGHT>
 		</NBSCRTI_JOINT_LIVES>
 	</xsl:template>
-	<xsl:template match="RIDER_PARENT">
+	<!-- <xsl:template match="RIDER_PARENT">
 		<xsl:copy-of select="." />
 		<COVR_MORTCLS></COVR_MORTCLS>
 		<COVR_PCESSAGE>00</COVR_PCESSAGE>
@@ -66,7 +66,7 @@
 		<COVR_SUMIN>0</COVR_SUMIN>
 		<COVR_INSTPRM>0</COVR_INSTPRM>
 		<COVR_CRTABLE></COVR_CRTABLE>
-	</xsl:template>
+	</xsl:template> -->
 	<xsl:template match="FOLLOW_UPS_ENTID">
 		<xsl:copy-of select="." />
 		<ZDOCTOR />
@@ -168,11 +168,11 @@
 	</xsl:template>
 	<xsl:template match="NBSCRTI_APPLY_CASH">
 		<xsl:copy-of select="." />
-		<NBSCRTI_QUESTION>
+		<!-- <NBSCRTI_QUESTION>
 			<QUESTION_ENTID />
 			<QUESTION_PARENT />
 			<ANSWER />
-		</NBSCRTI_QUESTION>
+		</NBSCRTI_QUESTION> -->
 		<NBSCRTI_DOCTOR>
 			<DOCTOR_ENTID />
 			<DOCTOR_PARENT />
