@@ -24,7 +24,7 @@ import com.pru.model.middleware.NewBusinessModel;
 
 public class NewBusinessProposalGenerator {
 
-	private XSLTransformer xslTransformer = new XSLTransformer();
+	private XSLTransformer xslTransformer;
 	private OrikaModelClientMapperImpl orikaModelConverter = new OrikaModelClientMapperImpl();
 	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl();
 	private static Properties newBusinessProposalPropConfig;
@@ -35,8 +35,12 @@ public class NewBusinessProposalGenerator {
 	private static Map<String, String> createClientMappingMap = new HashMap<>();
 	private boolean isZambia = false;
 	private boolean isUganda = false;
-
-	static {
+	
+	public NewBusinessProposalGenerator(String path) {
+		xslTransformer = new XSLTransformer(path);
+		loadProperties(path);
+	}
+	private static void loadProperties(String path) {
 		ilPropConfig = new Properties();
 		newBusinessProposalPropConfig = new Properties();
 		createClientPropConfig = new Properties();
@@ -44,13 +48,13 @@ public class NewBusinessProposalGenerator {
 		InputStream input2 = null;
 		InputStream input3 = null;
 		try {
-			input1 = new FileInputStream("./resources/policyproposal-to-newbusinessmapping.properties");
+			input1 = new FileInputStream(path+"\\resources\\policyproposal-to-newbusinessmapping.properties");
 			newBusinessProposalPropConfig.load(input1);
 			input1.close();
-			input2 = new FileInputStream("./resources/policyproposal-to-client-mapping.properties");
+			input2 = new FileInputStream(path+"\\resources\\policyproposal-to-client-mapping.properties");
 			createClientPropConfig.load(input2);
 			input2.close();
-			input3 = new FileInputStream("./resources/il-config.properties");
+			input3 = new FileInputStream(path+"\\resources\\il-config.properties");
 			ilPropConfig.load(input3);
 			input3.close();
 		} catch (Exception e) {

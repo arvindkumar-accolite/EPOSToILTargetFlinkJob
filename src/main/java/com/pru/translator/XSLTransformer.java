@@ -11,15 +11,17 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-import com.pru.constant.IntegrationConstants;
-
-
 public class XSLTransformer {
+	private String path;
+
+	public XSLTransformer(String path) {
+		this.path = path;
+	}
+
 	public String transform(String xslFileName, String source) {
 		String result = null;
-		String xslFile = "./resources/"+xslFileName;
-		try (StringReader reader = new StringReader(source); 
-				StringWriter writer = new StringWriter()) {
+		String xslFile = path+"\\resources\\" + xslFileName;
+		try (StringReader reader = new StringReader(source); StringWriter writer = new StringWriter()) {
 
 			StreamSource xslCode = new StreamSource(new File(xslFile));
 			StreamSource input = new StreamSource(reader);

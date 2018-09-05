@@ -1,7 +1,6 @@
 package com.pru.app.start;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
@@ -9,6 +8,7 @@ import org.apache.flink.api.common.serialization.DeserializationSchema;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
+import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
@@ -20,65 +20,40 @@ import com.pru.service.ILService;
 import com.pru.service.impl.ILServiceImpl;
 
 public class NewBusinessProposalFlinkJob {
-	static Properties propConfig;
-
-	static {
-		propConfig = new Properties();
-		InputStream input = null;
-		try {
-			input = new FileInputStream(IntegrationConstants.FLINK_KAFKA_CONFIG_LOCATION);
-			propConfig.load(input);
-			input.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	static ParameterTool propConfig;
+    static String path;
+	private static void loadProperties(String[] args) {
+        try {
+            final ParameterTool params = ParameterTool.fromArgs(args);
+            path = params.get("path");
+            propConfig = ParameterTool.fromPropertiesFile(path+IntegrationConstants.FLINK_KAFKA_CONFIG_LOCATION);
+        } catch (IOException e) {
+            System.err.println("No path specified. Please give path to property file'");
+            return;
+        }
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("kafka reader");
+		System.out.println("kafka reader started");
+		loadProperties(args);
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 		env.setParallelism(1);
 		Properties prop = new Properties();
-		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER,
-				propConfig.getProperty(IntegrationConstants.BOOTSTRAP_SERVER));
+		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER, propConfig.get(IntegrationConstants.BOOTSTRAP_SERVER));
 		prop.setProperty(IntegrationConstants.ZOOKEEPER_CONNECT,
-				propConfig.getProperty(IntegrationConstants.ZOOKEEPER_CONNECT));
-		prop.setProperty(IntegrationConstants.GROUP_ID, propConfig.getProperty(IntegrationConstants.GROUP_ID));
-
+				propConfig.get(IntegrationConstants.ZOOKEEPER_CONNECT));
+		prop.setProperty(IntegrationConstants.GROUP_ID, propConfig.get(IntegrationConstants.GROUP_ID));
 		FlinkKafkaConsumer010<String> flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
-				propConfig.getProperty(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(),
-				prop);
+				propConfig.get(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
 		DataStream<String> messageStream = env.addSource(flinkKafkaConsumer);
 		messageStream.flatMap(new FlatMapFunction<String, String>() {
-
 			@Override
 			public void flatMap(String value, Collector<String> out) throws Exception {
-				ILService iLService = new ILServiceImpl();
-
+				ILService iLService = new ILServiceImpl(path);
 				out.collect(iLService.serviceRequest(value));
-
 			}
 		}).addSink(new PrintSinkFunction<>());
-
-//		ILService iLService = new ILServiceImpl();
-//		;
-//		Iterator<String> myOutput = DataStreamUtils.collect(messageStream);
-//		String json;
-//		if (myOutput.hasNext()) {
-//			System.out.println("inside iterator");
-//			json = myOutput.next();
-//			System.out.println(json);
-//			iLService.serviceRequest(json);
-//		}
-
 		env.execute();
-		// messageStream.map(new MapFunction<String, String>() {
-		// @Override
-		// public String map(String value) throws Exception {
-		// // TODO Auto-generated method stub
-		// return null;
-		// }
-		// });
 	}
 
 	public static class SimpleStringSchema implements DeserializationSchema<String>, SerializationSchema<String> {

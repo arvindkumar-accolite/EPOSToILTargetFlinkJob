@@ -1,8 +1,6 @@
 package com.pru.service.impl;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -25,8 +23,12 @@ import com.pru.translator.NewBusinessProposalGenerator;
 import com.sun.xml.messaging.saaj.soap.impl.ElementImpl;
 
 public class ILServiceImpl implements ILService {
-	private NewBusinessProposalGenerator newBusinessProposalGenerator = new NewBusinessProposalGenerator();
+	
+	private NewBusinessProposalGenerator newBusinessProposalGenerator;
 
+	public ILServiceImpl(String path){
+		newBusinessProposalGenerator = new NewBusinessProposalGenerator(path);
+	}
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
@@ -152,7 +154,7 @@ public class ILServiceImpl implements ILService {
 		return null;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			ILServiceImpl ilServiceImpl = new ILServiceImpl();
 			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
@@ -179,5 +181,5 @@ public class ILServiceImpl implements ILService {
 			reader.close();
 		}
 	}
-
+*/
 }

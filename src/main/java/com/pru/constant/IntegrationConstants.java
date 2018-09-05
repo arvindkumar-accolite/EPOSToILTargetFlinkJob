@@ -20,7 +20,7 @@ public class IntegrationConstants {
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_NAME = "COMPANY";
 	public static final String NBS_XSLT_FILE_NAME = "newBusinessProposal.xsl";
 	public static final String CLI_XSLT_FILE_NAME = "createClient.xsl";
-	public static final String FLINK_KAFKA_CONFIG_LOCATION = "./resources/flink-kafka-config.properties";
+	public static final String FLINK_KAFKA_CONFIG_LOCATION = "\\resources\\flink-kafka-config.properties";
 	public static final String CLIENT_URL = "http://10.163.177.100:9081/FSUWebSrv/CLIService";
 	public static final String NEW_BUSINESS_URL = "http://10.163.177.100:9081/LiFEWebServices/NBSService";
 }
