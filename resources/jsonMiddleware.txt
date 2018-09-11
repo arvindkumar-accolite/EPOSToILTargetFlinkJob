@@ -64,7 +64,7 @@
 		"nationality": "EAU",
 		"occupationCode": "ACCT",
 		"prefCom": "",
-		"salutaion": "Mr",
+		"salutation": "Mr",
 		"securityNumber": "",
 		"sourceOfEvidence": "",
 		"statusCode": "",

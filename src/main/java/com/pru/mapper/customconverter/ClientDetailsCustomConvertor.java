@@ -67,7 +67,7 @@ public class ClientDetailsCustomConvertor extends CustomConverter<List<ClientDet
 			nbsClient.setClientnatlty(clientDetails.getNationality());
 			nbsClient.setClientoccpcode(clientDetails.getOccupationCode());
 			nbsClient.setClientprefcom(clientDetails.getPrefCom());
-			nbsClient.setClientsalutl(clientDetails.getSalutaion());
+			nbsClient.setClientsalutl(clientDetails.getSalutation());
 			nbsClient.setClientsecuityno(clientDetails.getSecurityNumber());
 			nbsClient.setClientsoe(clientDetails.getSourceOfEvidence());
 			nbsClient.setClientstatcode(clientDetails.getStatusCode());

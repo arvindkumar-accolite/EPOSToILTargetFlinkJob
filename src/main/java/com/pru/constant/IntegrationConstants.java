@@ -4,6 +4,7 @@ public class IntegrationConstants {
 	private IntegrationConstants() {
 
 	}
+	public static final String RESOURCE_PATH = "path";
 	public static final String IL_TAG_CLNTNUM = "CLNTNUM";
 	public static final String IL_TAG_CHDRSEL = "CHDRSEL";
 	public static final String BOOTSTRAP_SERVER = "bootstrap.servers";
@@ -18,9 +19,16 @@ public class IntegrationConstants {
 	public static final String FOLDERNAME_XSL = "/xsl/";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_VALUE = "U";
 	public static final String CLIENT_CREATE_REQUEST_PARAMETER_NAME = "COMPANY";
-	public static final String NBS_XSLT_FILE_NAME = "newBusinessProposal.xsl";
-	public static final String CLI_XSLT_FILE_NAME = "createClient.xsl";
-	public static final String FLINK_KAFKA_CONFIG_LOCATION = "\\resources\\flink-kafka-config.properties";
+	public static final String NBS_XSLT_FILE_NAME = "\\resources\\newbusiness-mapper\\newBusinessProposal.xsl";
+	public static final String CLI_XSLT_FILE_NAME = "\\resources\\client-mapper\\createClient.xsl";
+	public static final String FLINK_KAFKA_CONFIG_LOCATION = "\\resources\\flink-config\\flink-kafka-config.properties";
 	public static final String CLIENT_URL = "http://10.163.177.100:9081/FSUWebSrv/CLIService";
 	public static final String NEW_BUSINESS_URL = "http://10.163.177.100:9081/LiFEWebServices/NBSService";
+
+	public static final String IL_CONFIG_PROP_LOCATION = "\\resources\\il-config\\il-config.properties";
+	public static final String PROPOSAL_TO_CLIENT_PROP_LOCATION = "\\resources\\client-mapper\\proposal-to-client-mapping.properties";
+	public static final String PROPOSAL_TO_NEWBIZMAPPING_PROP_LOCATION = "\\resources\\newbusiness-mapper\\proposal-to-newbusiness-mapping.properties";
+
+	public static final String PROPOSAL_TO_CLIENT_CUSTOM_PROP_LOCATION = "\\resources\\client-mapper\\proposal-to-client-custom-mapping.properties";
+	public static final String PROPOSAL_TO_NEWBIZMAPPING_CUSTOM_PROP_LOCATION = "\\resources\\newbusiness-mapper\\proposal-to-newbusiness-custom-mapping.properties";
 }

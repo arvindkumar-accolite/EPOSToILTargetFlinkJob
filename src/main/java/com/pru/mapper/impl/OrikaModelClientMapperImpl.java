@@ -2,6 +2,10 @@ package com.pru.mapper.impl;
 
 import java.util.Map;
 
+import org.apache.flink.api.java.utils.ParameterTool;
+
+import com.pru.config.PropertyLoader;
+import com.pru.constant.ClientMapperConstants;
 import com.pru.constant.IntegrationConstants;
 import com.pru.mapper.ModelMapper;
 import com.pru.mapper.customconverter.ClientDOBCustomConverter;
@@ -17,12 +21,13 @@ import ma.glasnost.orika.metadata.ClassMapBuilder;
  *            // * //
  */
 public class OrikaModelClientMapperImpl implements ModelMapper {
-
 	private MapperFacade mapper;
+	private ParameterTool clientParameters;
 	MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
 	ConverterFactory converterFactory = mapperFactory.getConverterFactory();
 
 	public OrikaModelClientMapperImpl() {
+		clientParameters = PropertyLoader.getCreateClientCustomPropConfig();
 		converterFactory.registerConverter(IntegrationConstants.CUSTOM_CONVERTER_ID, new ClientDOBCustomConverter());
 	}
 
@@ -35,7 +40,9 @@ public class OrikaModelClientMapperImpl implements ModelMapper {
 				classMapBilder.field(enrty.getKey(), enrty.getValue());
 			}
 		}
-		classMapBilder.fieldMap("dateOfBirth", "cltdobx")
+		classMapBilder
+				.fieldMap(clientParameters.get(ClientMapperConstants.DATE_OF_BIRTH_SRC_PATH),
+						clientParameters.get(ClientMapperConstants.CLTDOBX_TRG_PATH))
 				.converter(IntegrationConstants.CUSTOM_CONVERTER_ID).add().byDefault().register();
 		mapper = mapperFactory.getMapperFacade();
 		return mapper.map(source, targetClass);

@@ -1,16 +1,17 @@
 package com.pru.translator;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import org.apache.flink.api.java.utils.ParameterTool;
+
+import com.pru.config.PropertyLoader;
+import com.pru.constant.ILConfigConstants;
 import com.pru.constant.IntegrationConstants;
 import com.pru.mapper.impl.OrikaModelClientMapperImpl;
 import com.pru.mapper.impl.OrikaModelNewBusinessMapperImpl;
@@ -27,39 +28,19 @@ public class NewBusinessProposalGenerator {
 	private XSLTransformer xslTransformer;
 	private OrikaModelClientMapperImpl orikaModelConverter = new OrikaModelClientMapperImpl();
 	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl();
-	private static Properties newBusinessProposalPropConfig;
-	private static Properties createClientPropConfig;
-	private static Properties ilPropConfig;
-
 	private static Map<String, String> newBusinessProposalMappingMap = new HashMap<>();
 	private static Map<String, String> createClientMappingMap = new HashMap<>();
 	private boolean isZambia = false;
 	private boolean isUganda = false;
-	
-	public NewBusinessProposalGenerator(String path) {
-		xslTransformer = new XSLTransformer(path);
-		loadProperties(path);
+	private ParameterTool ilPropConfig;
+
+	public NewBusinessProposalGenerator() {
+		ilPropConfig = PropertyLoader.getIlPropConfig();
+		xslTransformer = new XSLTransformer();
+		loadMaps();
 	}
-	private static void loadProperties(String path) {
-		ilPropConfig = new Properties();
-		newBusinessProposalPropConfig = new Properties();
-		createClientPropConfig = new Properties();
-		InputStream input1 = null;
-		InputStream input2 = null;
-		InputStream input3 = null;
-		try {
-			input1 = new FileInputStream(path+"\\resources\\policyproposal-to-newbusinessmapping.properties");
-			newBusinessProposalPropConfig.load(input1);
-			input1.close();
-			input2 = new FileInputStream(path+"\\resources\\policyproposal-to-client-mapping.properties");
-			createClientPropConfig.load(input2);
-			input2.close();
-			input3 = new FileInputStream(path+"\\resources\\il-config.properties");
-			ilPropConfig.load(input3);
-			input3.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+
+	private static void loadMaps() {
 		convertNewBusinessPropertyToMap();
 		convertClientPropertyToMap();
 	}
@@ -102,8 +83,8 @@ public class NewBusinessProposalGenerator {
 		NBSCRTIREC newBusinessCreate = (NBSCRTIREC) orikaModelNewBusinessMapperImpl.map(newBusinessModel,
 				NewBusinessModel.class, NBSCRTIREC.class, newBusinessProposalMappingMap);
 		MSPContext mspContext = new MSPContext();
-		mspContext.setUserId(ilPropConfig.getProperty("newbusiness.userid"));
-		mspContext.setUserPassword(ilPropConfig.getProperty("newbusiness.password"));
+		mspContext.setUserId(ilPropConfig.get(ILConfigConstants.NEWBUSINESS_USERID));
+		mspContext.setUserPassword(ilPropConfig.get(ILConfigConstants.NEWBUSINESS_PASSWORD));
 		RequestParameters reqParas = null;
 		if (isZambia) {
 			reqParas = setNbsRequestParaForZambia();
@@ -123,17 +104,17 @@ public class NewBusinessProposalGenerator {
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
 				CLICRPIREC.class, createClientMappingMap);
 		MSPContext mspContext = new MSPContext();
-		mspContext.setUserId(ilPropConfig.getProperty("client.userid"));
-		mspContext.setUserPassword(ilPropConfig.getProperty("client.password"));
+		mspContext.setUserId(ilPropConfig.get(ILConfigConstants.CLIENT_USERID));
+		mspContext.setUserPassword(ilPropConfig.get(ILConfigConstants.CLIENT_PASSWORD));
 		RequestParameters reqParas = null;
 		if (null != clientDetails) {
-			if (null != clientDetails.getCountryCode() && clientDetails.getCountryCode().equalsIgnoreCase("Z")) {
+			if (null != clientDetails.getCountryCode() && clientDetails.getCountryCode().equalsIgnoreCase(ILConfigConstants.COUNTRY_CODE_ZAMBIA)) {
 				reqParas = setClientRequestParaForZambia();
 				System.out.println("=================Zambia Properties" + clientDetails.getCountryCode());
 				isZambia = true;
 
 			} else if (null != clientDetails.getCountryCode()
-					&& clientDetails.getCountryCode().equalsIgnoreCase("UGD")) {
+					&& clientDetails.getCountryCode().equalsIgnoreCase(ILConfigConstants.COUNTRY_CODE_UGANDA)) {
 				reqParas = setClientRequestParaForUganda();
 				System.out.println("=================Uganda Properties" + clientDetails.getCountryCode());
 				isUganda = true;
@@ -149,11 +130,11 @@ public class NewBusinessProposalGenerator {
 	private RequestParameters setClientRequestParaForZambia() {
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("zambia.client.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("zambia.client.requestparam.value"));
+		reqPara.setName(ilPropConfig.get(ILConfigConstants.ZMB_CLIENT_REQPRM_NAME));
+		reqPara.setValue(ilPropConfig.get(ILConfigConstants.ZMB_CLIENT_REQPRM_VALUE));
 		RequestParameter reqPara1 = new RequestParameter();
-		reqPara1.setName(ilPropConfig.getProperty("zambia.newbusiness.requestparam.name"));
-		reqPara1.setValue(ilPropConfig.getProperty("zambia.newbusiness.requestparam.value"));
+		reqPara1.setName(ilPropConfig.get(ILConfigConstants.ZMB_NEWBIZ_REQPRM_NAME));
+		reqPara1.setValue(ilPropConfig.get(ILConfigConstants.ZMB_NEWBIZ_REQPRM_VALUE));
 		reqParas.getRequestParameter().add(reqPara);
 		reqParas.getRequestParameter().add(reqPara1);
 		return reqParas;
@@ -162,11 +143,11 @@ public class NewBusinessProposalGenerator {
 	private RequestParameters setClientRequestParaForUganda() {
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("uganda.client.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("uganda.client.requestparam.value"));
+		reqPara.setName(ilPropConfig.get(ILConfigConstants.UGD_CLIENT_REQPRM_NAME));
+		reqPara.setValue(ilPropConfig.get(ILConfigConstants.UGD_CLIENT_REQPRM_VALUE));
 		RequestParameter reqPara1 = new RequestParameter();
-		reqPara1.setName(ilPropConfig.getProperty("uganda.newbusiness.requestparam.name"));
-		reqPara1.setValue(ilPropConfig.getProperty("uganda.newbusiness.requestparam.value"));
+		reqPara1.setName(ilPropConfig.get(ILConfigConstants.UGD_NEWBIZ_REQPRM_NAME));
+		reqPara1.setValue(ilPropConfig.get(ILConfigConstants.UGD_NEWBIZ_REQPRM_VALUE));
 		reqParas.getRequestParameter().add(reqPara);
 		reqParas.getRequestParameter().add(reqPara1);
 		return reqParas;
@@ -175,8 +156,8 @@ public class NewBusinessProposalGenerator {
 	private RequestParameters setNbsRequestParaForZambia() {
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("zambia.newbusiness.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("zambia.newbusiness.requestparam.value"));
+		reqPara.setName(ilPropConfig.get(ILConfigConstants.ZMB_NEWBIZ_REQPRM_NAME));
+		reqPara.setValue(ilPropConfig.get(ILConfigConstants.ZMB_NEWBIZ_REQPRM_VALUE));
 		reqParas.getRequestParameter().add(reqPara);
 		return reqParas;
 	}
@@ -184,8 +165,8 @@ public class NewBusinessProposalGenerator {
 	private RequestParameters setNbsRequestParaForUganda() {
 		RequestParameters reqParas = new RequestParameters();
 		RequestParameter reqPara = new RequestParameter();
-		reqPara.setName(ilPropConfig.getProperty("uganda.newbusiness.requestparam.name"));
-		reqPara.setValue(ilPropConfig.getProperty("uganda.newbusiness.requestparam.value"));
+		reqPara.setName(ilPropConfig.get(ILConfigConstants.UGD_NEWBIZ_REQPRM_NAME));
+		reqPara.setValue(ilPropConfig.get(ILConfigConstants.UGD_NEWBIZ_REQPRM_VALUE));
 		reqParas.getRequestParameter().add(reqPara);
 		return reqParas;
 	}
@@ -199,12 +180,10 @@ public class NewBusinessProposalGenerator {
 	}
 
 	private static void convertNewBusinessPropertyToMap() {
-		for (final String name : newBusinessProposalPropConfig.stringPropertyNames())
-			newBusinessProposalMappingMap.put(name, newBusinessProposalPropConfig.getProperty(name));
+		newBusinessProposalMappingMap= PropertyLoader.getNewBizProposalPropConfig().toMap();
 	}
 
 	private static void convertClientPropertyToMap() {
-		for (final String name : createClientPropConfig.stringPropertyNames())
-			createClientMappingMap.put(name, createClientPropConfig.getProperty(name));
+		createClientMappingMap = PropertyLoader.getCreateClientPropConfig().toMap();
 	}
 }

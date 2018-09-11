@@ -108,8 +108,8 @@ public class ClientDetails {
     private String occupationCode;
     @JsonProperty("prefCom")
     private String prefCom;
-    @JsonProperty("salutaion")
-    private String salutaion;
+    @JsonProperty("salutation")
+    private String salutation;
     @JsonProperty("securityNumber")
     private String securityNumber;
     @JsonProperty("sourceOfEvidence")
@@ -425,14 +425,14 @@ public class ClientDetails {
         this.prefCom = prefCom;
     }
 
-    @JsonProperty("salutaion")
-    public String getSalutaion() {
-        return salutaion;
+    @JsonProperty("salutation")
+    public String getSalutation() {
+        return salutation;
     }
 
-    @JsonProperty("salutaion")
-    public void setSalutaion(String salutaion) {
-        this.salutaion = salutaion;
+    @JsonProperty("salutation")
+    public void setSalutation(String salutation) {
+        this.salutation = salutation;
     }
 
     @JsonProperty("securityNumber")

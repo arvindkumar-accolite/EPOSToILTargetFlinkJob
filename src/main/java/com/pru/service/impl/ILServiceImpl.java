@@ -26,8 +26,8 @@ public class ILServiceImpl implements ILService {
 	
 	private NewBusinessProposalGenerator newBusinessProposalGenerator;
 
-	public ILServiceImpl(String path){
-		newBusinessProposalGenerator = new NewBusinessProposalGenerator(path);
+	public ILServiceImpl(){
+		newBusinessProposalGenerator = new NewBusinessProposalGenerator();
 	}
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);

@@ -1,6 +1,5 @@
 package com.pru.app.start;
 
-import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
@@ -15,41 +14,40 @@ import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 import org.apache.flink.util.Collector;
 
+import com.pru.config.PropertyLoader;
 import com.pru.constant.IntegrationConstants;
 import com.pru.service.ILService;
 import com.pru.service.impl.ILServiceImpl;
 
 public class NewBusinessProposalFlinkJob {
-	static ParameterTool propConfig;
-    static String path;
-	private static void loadProperties(String[] args) {
-        try {
-            final ParameterTool params = ParameterTool.fromArgs(args);
-            path = params.get("path");
-            propConfig = ParameterTool.fromPropertiesFile(path+IntegrationConstants.FLINK_KAFKA_CONFIG_LOCATION);
-        } catch (IOException e) {
-            System.err.println("No path specified. Please give path to property file'");
-            return;
-        }
+	static ParameterTool flinkPropConfig;
+	static String path;
+
+	private static void loadPath(String[] args) {
+		final ParameterTool params = ParameterTool.fromArgs(args);
+		path = params.get(IntegrationConstants.RESOURCE_PATH);
 	}
 
 	public static void main(String[] args) throws Exception {
 		System.out.println("kafka reader started");
-		loadProperties(args);
+		loadPath(args);
+		new PropertyLoader(path);
+		flinkPropConfig = PropertyLoader.getNewBizProposalFlinkPropConfig();
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 		env.setParallelism(1);
 		Properties prop = new Properties();
-		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER, propConfig.get(IntegrationConstants.BOOTSTRAP_SERVER));
+		prop.setProperty(IntegrationConstants.BOOTSTRAP_SERVER,
+				flinkPropConfig.get(IntegrationConstants.BOOTSTRAP_SERVER));
 		prop.setProperty(IntegrationConstants.ZOOKEEPER_CONNECT,
-				propConfig.get(IntegrationConstants.ZOOKEEPER_CONNECT));
-		prop.setProperty(IntegrationConstants.GROUP_ID, propConfig.get(IntegrationConstants.GROUP_ID));
+				flinkPropConfig.get(IntegrationConstants.ZOOKEEPER_CONNECT));
+		prop.setProperty(IntegrationConstants.GROUP_ID, flinkPropConfig.get(IntegrationConstants.GROUP_ID));
 		FlinkKafkaConsumer010<String> flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
-				propConfig.get(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
+				flinkPropConfig.get(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
 		DataStream<String> messageStream = env.addSource(flinkKafkaConsumer);
 		messageStream.flatMap(new FlatMapFunction<String, String>() {
 			@Override
 			public void flatMap(String value, Collector<String> out) throws Exception {
-				ILService iLService = new ILServiceImpl(path);
+				ILService iLService = new ILServiceImpl();
 				out.collect(iLService.serviceRequest(value));
 			}
 		}).addSink(new PrintSinkFunction<>());

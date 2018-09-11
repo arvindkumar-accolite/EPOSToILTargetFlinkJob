@@ -11,16 +11,18 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import com.pru.config.PropertyLoader;
+
 public class XSLTransformer {
 	private String path;
 
-	public XSLTransformer(String path) {
-		this.path = path;
+	public XSLTransformer() {
+		this.path = PropertyLoader.getBasePath();
 	}
 
 	public String transform(String xslFileName, String source) {
 		String result = null;
-		String xslFile = path+"\\resources\\" + xslFileName;
+		String xslFile = path+xslFileName;
 		try (StringReader reader = new StringReader(source); StringWriter writer = new StringWriter()) {
 
 			StreamSource xslCode = new StreamSource(new File(xslFile));
