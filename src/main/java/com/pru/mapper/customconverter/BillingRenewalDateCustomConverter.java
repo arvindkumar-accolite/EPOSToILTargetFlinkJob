@@ -30,9 +30,4 @@ public class BillingRenewalDateCustomConverter extends CustomConverter<String, B
 		bRenDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return bRenDate;
 	}
-
-	public static void main(String[] args) {
-		BillingRenewalDateCustomConverter v = new BillingRenewalDateCustomConverter();
-		v.convert("9999-99-99T00:00:00.000Z", null);
-	}
 }
