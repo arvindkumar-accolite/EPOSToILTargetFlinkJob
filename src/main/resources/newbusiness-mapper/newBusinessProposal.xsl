@@ -38,9 +38,9 @@
 			<JOINT_LIFE_PARTY />
 			<ANBAGE>00</ANBAGE>
 			<DOBN262675>
-				<CCYY>1990</CCYY>
-				<MM>01</MM>
-				<DD>01</DD>
+				<CCYY>9999</CCYY>
+				<MM>99</MM>
+				<DD>99</DD>
 			</DOBN262675>
 			<OCCUP />
 			<RELATION />
@@ -68,9 +68,9 @@
 		<NBSCRTI_FUPS>
 			<FUPCDE />
 			<FUPDT>
-				<CCYY>1992</CCYY>
-				<MM>01</MM>
-				<DD>01</DD>
+				<CCYY>9999</CCYY>
+				<MM>99</MM>
+				<DD>99</DD>
 			</FUPDT>
 			<FUPNO>0</FUPNO>
 			<FUPSTS />

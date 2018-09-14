@@ -1,6 +1,8 @@
 package com.pru.service.impl;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -14,11 +16,12 @@ import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPMessage;
 
+import org.apache.flink.api.java.utils.ParameterTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pru.app.start.NewBusinessProposalFlinkJob;
+import com.pru.config.PropertyLoader;
 import com.pru.constant.IntegrationConstants;
 import com.pru.model.middleware.NewBusinessModel;
 import com.pru.model.middleware.OwnerDetails;
@@ -30,9 +33,10 @@ public class ILServiceImpl implements ILService {
 	private final static Logger logger = LoggerFactory.getLogger(ILServiceImpl.class);
 	private NewBusinessProposalGenerator newBusinessProposalGenerator;
 
-	public ILServiceImpl(){
+	public ILServiceImpl() {
 		newBusinessProposalGenerator = new NewBusinessProposalGenerator();
 	}
+
 	public String serviceRequest(String json) {
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
@@ -158,14 +162,25 @@ public class ILServiceImpl implements ILService {
 		return null;
 	}
 
-	/*public static void main(String[] args) {
+	static String path = null;
+
+	public static void main(String[] args) {
 		try {
+			logger.info("NewBusinessProposalFlinkJob started reading Kafka..");
+			loadPath(args);
+			new PropertyLoader(path);
 			ILServiceImpl ilServiceImpl = new ILServiceImpl();
-			ilServiceImpl.serviceRequest(readFile("./resources/jsonMiddleware.txt"));
+			ilServiceImpl.serviceRequest(readFile("./src/main/resources/jsonMiddleware.txt"));
 		} catch (IOException e) { // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+	}
+
+	private static void loadPath(String[] args) {
+		final ParameterTool params = ParameterTool.fromArgs(args);
+		path = params.get(IntegrationConstants.RESOURCE_PATH);
+		logger.info("resources base path :: {}", path);
 	}
 
 	private static String readFile(String file) throws IOException {
@@ -185,5 +200,4 @@ public class ILServiceImpl implements ILService {
 			reader.close();
 		}
 	}
-*/
 }

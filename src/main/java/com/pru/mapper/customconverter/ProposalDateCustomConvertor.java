@@ -15,13 +15,14 @@ public class ProposalDateCustomConvertor extends CustomConverter<String, BigInte
 	public BigInteger convert(String source, Type<? extends BigInteger> destinationType) {
 		String date = null;
 		SimpleDateFormat sdf = null;
+		SimpleDateFormat sdf1 = null;
 		try {
 			sdf = new SimpleDateFormat(IntegrationConstants.DATE_FORMAT_YYYYMMDD);
-			date = sdf.format(sdf.parse(source));
+			sdf1 = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT);
+			date = sdf.format(sdf1.parse(source));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return new BigInteger(date);
 	}
-
 }
