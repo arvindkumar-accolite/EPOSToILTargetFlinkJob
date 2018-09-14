@@ -11,9 +11,13 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.pru.config.PropertyLoader;
 
 public class XSLTransformer {
+	private final static Logger logger = LoggerFactory.getLogger(XSLTransformer.class);
 	private String path;
 
 	public XSLTransformer() {

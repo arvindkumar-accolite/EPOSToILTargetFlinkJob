@@ -24,11 +24,6 @@
 			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
 		</MM>
 	</xsl:template>
-	<!-- <xsl:template match="NBSCRTI_CONTRACT_HDR_DETAILS/BILLCD/MM">
-		<MM>
-			<xsl:value-of select="format-number(.,'00')"></xsl:value-of>
-		</MM>
-	</xsl:template> -->
 	<xsl:template match="NBSCRTI_CONTRACT_HDR_DETAILS">
 		<xsl:copy-of select="." />
 		<DATIME>

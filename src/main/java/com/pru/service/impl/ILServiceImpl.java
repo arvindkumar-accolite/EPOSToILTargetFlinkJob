@@ -14,7 +14,11 @@ import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pru.app.start.NewBusinessProposalFlinkJob;
 import com.pru.constant.IntegrationConstants;
 import com.pru.model.middleware.NewBusinessModel;
 import com.pru.model.middleware.OwnerDetails;
@@ -23,7 +27,7 @@ import com.pru.translator.NewBusinessProposalGenerator;
 import com.sun.xml.messaging.saaj.soap.impl.ElementImpl;
 
 public class ILServiceImpl implements ILService {
-	
+	private final static Logger logger = LoggerFactory.getLogger(ILServiceImpl.class);
 	private NewBusinessProposalGenerator newBusinessProposalGenerator;
 
 	public ILServiceImpl(){

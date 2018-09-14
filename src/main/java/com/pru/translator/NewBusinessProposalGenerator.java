@@ -9,7 +9,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 import org.apache.flink.api.java.utils.ParameterTool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.pru.app.start.NewBusinessProposalFlinkJob;
 import com.pru.config.PropertyLoader;
 import com.pru.constant.ILConfigConstants;
 import com.pru.constant.IntegrationConstants;
@@ -24,7 +27,7 @@ import com.pru.model.middleware.ClientDetails;
 import com.pru.model.middleware.NewBusinessModel;
 
 public class NewBusinessProposalGenerator {
-
+	private final static Logger logger = LoggerFactory.getLogger(NewBusinessProposalGenerator.class);
 	private XSLTransformer xslTransformer;
 	private OrikaModelClientMapperImpl orikaModelConverter = new OrikaModelClientMapperImpl();
 	private OrikaModelNewBusinessMapperImpl orikaModelNewBusinessMapperImpl = new OrikaModelNewBusinessMapperImpl();

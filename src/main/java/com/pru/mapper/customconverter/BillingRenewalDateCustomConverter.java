@@ -26,9 +26,13 @@ public class BillingRenewalDateCustomConverter extends CustomConverter<String, B
 
 		BILLCD bRenDate = new BILLCD();
 		bRenDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
-		bRenDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2,cal.get(Calendar.MONTH) + 1));
+		bRenDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
 		bRenDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
 		return bRenDate;
 	}
 
+	public static void main(String[] args) {
+		BillingRenewalDateCustomConverter v = new BillingRenewalDateCustomConverter();
+		v.convert("9999-99-99T00:00:00.000Z", null);
+	}
 }

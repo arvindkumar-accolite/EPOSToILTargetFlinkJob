@@ -3,10 +3,15 @@ package com.pru.config;
 import java.io.IOException;
 
 import org.apache.flink.api.java.utils.ParameterTool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import com.pru.app.start.NewBusinessProposalFlinkJob;
 import com.pru.constant.IntegrationConstants;
 
 public class PropertyLoader {
+	private final static Logger logger = LoggerFactory.getLogger(PropertyLoader.class);
+	
 	private static ParameterTool newBizProposalPropConfig;
 	private static ParameterTool createClientPropConfig;
 	private static ParameterTool ilPropConfig;

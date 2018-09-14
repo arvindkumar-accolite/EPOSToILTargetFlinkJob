@@ -13,6 +13,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 import org.apache.flink.util.Collector;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.pru.config.PropertyLoader;
 import com.pru.constant.IntegrationConstants;
@@ -20,16 +22,18 @@ import com.pru.service.ILService;
 import com.pru.service.impl.ILServiceImpl;
 
 public class NewBusinessProposalFlinkJob {
+	private final static Logger logger = LoggerFactory.getLogger(NewBusinessProposalFlinkJob.class);
 	static ParameterTool flinkPropConfig;
 	static String path;
 
 	private static void loadPath(String[] args) {
 		final ParameterTool params = ParameterTool.fromArgs(args);
 		path = params.get(IntegrationConstants.RESOURCE_PATH);
+		logger.info("resources base path :: {}",path);
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("kafka reader started");
+		logger.info("NewBusinessProposalFlinkJob started reading Kafka..");
 		loadPath(args);
 		new PropertyLoader(path);
 		flinkPropConfig = PropertyLoader.getNewBizProposalFlinkPropConfig();
