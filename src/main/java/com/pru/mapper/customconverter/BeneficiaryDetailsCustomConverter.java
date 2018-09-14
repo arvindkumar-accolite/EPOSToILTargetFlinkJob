@@ -1,13 +1,8 @@
 package com.pru.mapper.customconverter;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import com.pru.constant.IntegrationConstants;
 import com.pru.model.il.NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS;
 import com.pru.model.il.NBSCRTIREC.BENEFICIARY.NBSCRTIBENDETAILS.EFFDATE;
 import com.pru.model.middleware.BeneficiaryDetails;
@@ -37,7 +32,7 @@ public class BeneficiaryDetailsCustomConverter extends CustomConverter<List<Bene
 	}
 
 	public EFFDATE convertEffDate(String source) {
-		Date date = null;
+		/*Date date = null;
 		try {
 			date = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT).parse(source);
 		} catch (ParseException e) {
@@ -45,11 +40,14 @@ public class BeneficiaryDetailsCustomConverter extends CustomConverter<List<Bene
 		}
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-
+*/
 		EFFDATE effDate = new EFFDATE();
-		effDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		/*effDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
 		effDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2,cal.get(Calendar.MONTH) + 1));
-		effDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		effDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));*/
+		effDate.setCCYY("9999");
+		effDate.setMM("99");
+		effDate.setDD("99");
 		return effDate;
 	}
 

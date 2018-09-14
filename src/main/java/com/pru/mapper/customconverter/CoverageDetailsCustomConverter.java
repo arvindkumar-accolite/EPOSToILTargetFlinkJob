@@ -1,13 +1,8 @@
 package com.pru.mapper.customconverter;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import com.pru.constant.IntegrationConstants;
 import com.pru.model.il.NBSCRTIREC.NBSCRTICOVERAGEDETAILS;
 import com.pru.model.il.NBSCRTIREC.NBSCRTICOVERAGEDETAILS.COVRPCESDTE;
 import com.pru.model.il.NBSCRTIREC.NBSCRTICOVERAGEDETAILS.COVRRCESDTE;
@@ -48,53 +43,65 @@ public class CoverageDetailsCustomConverter extends CustomConverter<List<Coverag
 	}
 
 	public COVRPCESDTE convertCOVRPCESDate(String source) {
-		Date date = null;
+		/*Date date = null;
 		try {
 			date = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT).parse(source);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
+		cal.setTime(date);*/
 
 		COVRPCESDTE prmCesDate = new COVRPCESDTE();
-		prmCesDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		/*prmCesDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
 		prmCesDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
 		prmCesDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		*/
+		prmCesDate.setCCYY("9999");
+		prmCesDate.setMM("99");
+		prmCesDate.setDD("99");
 		return prmCesDate;
 	}
 
 	public COVRRCESDTE convertRiskCessDate(String source) {
-		Date date = null;
+		/*Date date = null;
 		try {
 			date = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT).parse(source);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
+		cal.setTime(date);*/
 
 		COVRRCESDTE riskCessDate = new COVRRCESDTE();
-		riskCessDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		/*riskCessDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
 		riskCessDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
 		riskCessDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		*/
+		riskCessDate.setCCYY("9999");
+		riskCessDate.setMM("99");
+		riskCessDate.setDD("99");
 		return riskCessDate;
 	}
 
 	public COVRRUNDTE convertCOVRRUNDate(String source) {
-		Date date = null;
+		/*Date date = null;
 		try {
 			date = new SimpleDateFormat(IntegrationConstants.CLTDOBX_FORMAT).parse(source);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
+		cal.setTime(date);*/
 
 		COVRRUNDTE covDate = new COVRRUNDTE();
-		covDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
+		/*covDate.setCCYY(String.valueOf(cal.get(Calendar.YEAR)));
 		covDate.setMM(String.format(IntegrationConstants.FORMAT_LENGTH_2, cal.get(Calendar.MONTH) + 1));
 		covDate.setDD(String.valueOf(cal.get(Calendar.DAY_OF_MONTH)));
+		*/
+		covDate.setCCYY("9999");
+		covDate.setMM("99");
+		covDate.setDD("99");
 		return covDate;
 	}
 
