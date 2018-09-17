@@ -6,7 +6,6 @@ import org.apache.flink.api.java.utils.ParameterTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.pru.app.start.NewBusinessProposalFlinkJob;
 import com.pru.constant.IntegrationConstants;
 
 public class PropertyLoader {
@@ -26,6 +25,7 @@ public class PropertyLoader {
 	}
 
 	private void loadProperties(String path) {
+		logger.info("PropertyLoader start");
 		try {
 			newBizProposalFlinkPropConfig = ParameterTool
 					.fromPropertiesFile(path + IntegrationConstants.FLINK_KAFKA_CONFIG_LOCATION);
@@ -39,9 +39,9 @@ public class PropertyLoader {
 			newBizProposalCustomPropConfig = ParameterTool
 					.fromPropertiesFile(path + IntegrationConstants.PROPOSAL_TO_NEWBIZMAPPING_CUSTOM_PROP_LOCATION);
 		} catch (IOException e) {
-			System.err.println("No path specified. Please give path to property file'");
-			e.printStackTrace();
+			logger.error("Error while loading property in PropertyLoader :: {}",e);
 		}
+		logger.info("PropertyLoader end");
 	}
 
 	/**

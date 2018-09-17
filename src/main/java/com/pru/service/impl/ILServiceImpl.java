@@ -1,8 +1,7 @@
 package com.pru.service.impl;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.FileReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -16,12 +15,10 @@ import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPMessage;
 
-import org.apache.flink.api.java.utils.ParameterTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pru.config.PropertyLoader;
 import com.pru.constant.IntegrationConstants;
 import com.pru.model.middleware.NewBusinessModel;
 import com.pru.model.middleware.OwnerDetails;
@@ -38,28 +35,21 @@ public class ILServiceImpl implements ILService {
 	}
 
 	public String serviceRequest(String json) {
+		logger.info("serviceRequest() start");
 		NewBusinessModel newBusinessModel = policyObjectPopulator(json);
 		String createClientSoapEnvelop = newBusinessProposalGenerator.buildCreateClientRequest(newBusinessModel);
-		System.out.println("=========Create Client Soap Envelop=========");
-		// System.out.println(createClientSoapEnvelop);
-		// System.out.println("=========Create Client Response=========");
+		logger.info("=========Create Client Soap Envelop=========");
 		SOAPBody clientResponseSoapBody = invokeILSoapService(createClientSoapEnvelop, IntegrationConstants.CLIENT_URL);
-		// System.out.println("=========Create Client Response=========");
-		// System.out.println(clientResponseSoapBody.toString());
 		String clientNumber = getClientNumberFromSoapBody(clientResponseSoapBody);
-		System.out.println("=========Cleint Number :" + clientNumber);
+		logger.info("=====Cleint Number :: [{}]",clientNumber);
 		setClientIdToNewBusinessObject(newBusinessModel, clientNumber);
 		String newBusinessSoapEnvelop = newBusinessProposalGenerator.buildNewBusinessProposalRequest(newBusinessModel);
-		System.out.println("=========NewBusinessProposal Soap Envelop=========");
-		// System.out.println(newBusinessSoapEnvelop);
+		logger.info("=========NewBusinessProposal Soap Envelop=========");
 		SOAPBody nbsResponseSoapBody = invokeILSoapService(newBusinessSoapEnvelop,
 				IntegrationConstants.NEW_BUSINESS_URL);
-		// System.out.println(nbsResponseSoapBody.toString());
-
 		String nbsContractNum = getNBSContractNummberFromSoapBody(nbsResponseSoapBody);
-		System.out.println("=========NewBusinessProposal Contract Number=========");
-		System.out.println(nbsContractNum);
-
+		logger.info("=====NewBusinessProposal Contract Number :: [{}]", nbsContractNum);
+		logger.info("serviceRequest() end before return");
 		return nbsContractNum == null ? "" : nbsContractNum;
 	}
 
@@ -80,37 +70,44 @@ public class ILServiceImpl implements ILService {
 	}
 
 	private NewBusinessModel policyObjectPopulator(String json) {
+		logger.info("policyObjectPopulator() start");
 		ObjectMapper mapper = new ObjectMapper();
 		NewBusinessModel newBusinessModel = null;
-		System.out.println();
 		try {
 			newBusinessModel = mapper.readValue(json, NewBusinessModel.class);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("error while policyObjectPopulator() :: {}",e);
 		}
+		logger.info("policyObjectPopulator() end before return");
 		return newBusinessModel;
 	}
 
 	private SOAPBody invokeILSoapService(String soapEnvelop, String url) {
+		logger.info("invokeILSoapService() start");
 		SOAPMessage response = null;
 		try {
 			SOAPConnectionFactory sfc = SOAPConnectionFactory.newInstance();
 			SOAPConnection connection = sfc.createConnection();
 			InputStream is = new ByteArrayInputStream(soapEnvelop.getBytes());
 			SOAPMessage request = MessageFactory.newInstance().createMessage(null, is);
-			System.out.println("\n Soap Request:\n");
-			request.writeTo(System.out);
-			System.out.println();
+			logger.info("\n Soap Request:\n");
+			ByteArrayOutputStream bout = new ByteArrayOutputStream();   
+			request.writeTo(bout);
+			logger.info(bout.toString("UTF-8"));
+			bout.close();
 			URL endpoint = new URL(url);
 			response = connection.call(request, endpoint);
-			System.out.println("\n Soap Response=========:\n");
-			response.writeTo(System.out);
-			System.out.println();
+			logger.info("\n Soap Response=========:\n");
+			bout = new ByteArrayOutputStream();
+			response.writeTo(bout);
+			logger.info(bout.toString("UTF-8"));
+			bout.close();
+			logger.info("invokeILSoapService() end before return");
 			return response.getSOAPBody();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("error while invokeILSoapService() :: {} ", e);
 		}
+		logger.info("invokeILSoapService() end");
 		return null;
 	}
 
@@ -160,44 +157,5 @@ public class ILServiceImpl implements ILService {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	static String path = null;
-
-	public static void main(String[] args) {
-		try {
-			logger.info("NewBusinessProposalFlinkJob started reading Kafka..");
-			loadPath(args);
-			new PropertyLoader(path);
-			ILServiceImpl ilServiceImpl = new ILServiceImpl();
-			ilServiceImpl.serviceRequest(readFile("./src/main/resources/jsonMiddleware.txt"));
-		} catch (IOException e) { // TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	private static void loadPath(String[] args) {
-		final ParameterTool params = ParameterTool.fromArgs(args);
-		path = params.get(IntegrationConstants.RESOURCE_PATH);
-		logger.info("resources base path :: {}", path);
-	}
-
-	private static String readFile(String file) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(file));
-		String line = null;
-		StringBuilder stringBuilder = new StringBuilder();
-		String ls = System.getProperty("line.separator");
-
-		try {
-			while ((line = reader.readLine()) != null) {
-				stringBuilder.append(line);
-				stringBuilder.append(ls);
-			}
-
-			return stringBuilder.toString();
-		} finally {
-			reader.close();
-		}
 	}
 }

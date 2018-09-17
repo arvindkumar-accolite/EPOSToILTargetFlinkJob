@@ -43,9 +43,11 @@ public class NewBusinessProposalGenerator {
 		loadMaps();
 	}
 
-	private static void loadMaps() {
+	private void loadMaps() {
+		logger.info("loadMaps() start");
 		convertNewBusinessPropertyToMap();
 		convertClientPropertyToMap();
+		logger.info("loadMaps() end");
 	}
 
 	private String jaxbNewBusinessToXML(NBSCRTIREC nbsILModel) {
@@ -56,7 +58,7 @@ public class NewBusinessProposalGenerator {
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			sw = new StringWriter();
 			m.marshal(nbsILModel, sw);
-			System.out.println(sw.toString());
+			logger.info(sw.toString());
 
 		} catch (JAXBException e) {
 			e.printStackTrace();
@@ -73,7 +75,7 @@ public class NewBusinessProposalGenerator {
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			sw = new StringWriter();
 			m.marshal(nbsILModel, sw);
-			System.out.println(sw.toString());
+			logger.info(sw.toString());
 
 		} catch (JAXBException e) {
 			e.printStackTrace();
@@ -83,8 +85,10 @@ public class NewBusinessProposalGenerator {
 	}
 
 	public String buildNewBusinessProposalRequest(NewBusinessModel newBusinessModel) {
+		logger.info("buildNewBusinessProposalRequest() :: start");
 		NBSCRTIREC newBusinessCreate = (NBSCRTIREC) orikaModelNewBusinessMapperImpl.map(newBusinessModel,
 				NewBusinessModel.class, NBSCRTIREC.class, newBusinessProposalMappingMap);
+		logger.debug("newBusinessCreate IL Object created :: {}",newBusinessCreate);
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId(ilPropConfig.get(ILConfigConstants.NEWBUSINESS_USERID));
 		mspContext.setUserPassword(ilPropConfig.get(ILConfigConstants.NEWBUSINESS_PASSWORD));
@@ -99,13 +103,16 @@ public class NewBusinessProposalGenerator {
 		mspContext.setRequestParameters(reqParas);
 		newBusinessCreate.setMspContext(mspContext);
 		String body = jaxbNewBusinessToXML(newBusinessCreate);
+		logger.info("buildNewBusinessProposalRequest() :: end");
 		return generateNBSSoapEnvelop(body);
 	}
 
 	public String buildCreateClientRequest(NewBusinessModel newBusinessModel) {
+		logger.info("buildCreateClientRequest() :: start");
 		ClientDetails clientDetails = newBusinessModel.getClientDetails().get(0);
 		CLICRPIREC clientCreate = (CLICRPIREC) orikaModelConverter.map(clientDetails, ClientDetails.class,
 				CLICRPIREC.class, createClientMappingMap);
+		logger.debug("clientCreate IL Object created :: {}",clientCreate);
 		MSPContext mspContext = new MSPContext();
 		mspContext.setUserId(ilPropConfig.get(ILConfigConstants.CLIENT_USERID));
 		mspContext.setUserPassword(ilPropConfig.get(ILConfigConstants.CLIENT_PASSWORD));
@@ -113,13 +120,13 @@ public class NewBusinessProposalGenerator {
 		if (null != clientDetails) {
 			if (null != clientDetails.getCountryCode() && clientDetails.getCountryCode().equalsIgnoreCase(ILConfigConstants.COUNTRY_CODE_ZAMBIA)) {
 				reqParas = setClientRequestParaForZambia();
-				System.out.println("=================Zambia Properties" + clientDetails.getCountryCode());
+				logger.info("=================Zambia Properties" + clientDetails.getCountryCode());
 				isZambia = true;
 
 			} else if (null != clientDetails.getCountryCode()
 					&& clientDetails.getCountryCode().equalsIgnoreCase(ILConfigConstants.COUNTRY_CODE_UGANDA)) {
 				reqParas = setClientRequestParaForUganda();
-				System.out.println("=================Uganda Properties" + clientDetails.getCountryCode());
+				logger.info("=================Uganda Properties" + clientDetails.getCountryCode());
 				isUganda = true;
 			}
 		}
@@ -127,6 +134,7 @@ public class NewBusinessProposalGenerator {
 		mspContext.setRequestParameters(reqParas);
 		clientCreate.setMSPContext(mspContext);
 		String body = jaxbClientToXML(clientCreate);
+		logger.info("buildCreateClientRequest() :: end");
 		return generateCLISoapEnvelop(body);
 	}
 

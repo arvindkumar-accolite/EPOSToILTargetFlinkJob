@@ -43,11 +43,11 @@
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.sun.xml.messaging.saaj</groupId>
 			<artifactId>saaj-impl</artifactId>
 			<version>1.4.0</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

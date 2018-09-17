@@ -27,13 +27,15 @@ public class NewBusinessProposalFlinkJob {
 	static String path;
 
 	private static void loadPath(String[] args) {
+		logger.info("loadPath() start");
 		final ParameterTool params = ParameterTool.fromArgs(args);
 		path = params.get(IntegrationConstants.RESOURCE_PATH);
-		logger.info("resources base path :: {}",path);
+		logger.debug("resources base path :: {}",path);
+		logger.info("loadPath() end");
 	}
 
 	public static void main(String[] args) throws Exception {
-		logger.info("NewBusinessProposalFlinkJob started reading Kafka..");
+		logger.info("NewBusinessProposalFlinkJob main() start");
 		loadPath(args);
 		new PropertyLoader(path);
 		flinkPropConfig = PropertyLoader.getNewBizProposalFlinkPropConfig();
@@ -45,17 +47,21 @@ public class NewBusinessProposalFlinkJob {
 		prop.setProperty(IntegrationConstants.ZOOKEEPER_CONNECT,
 				flinkPropConfig.get(IntegrationConstants.ZOOKEEPER_CONNECT));
 		prop.setProperty(IntegrationConstants.GROUP_ID, flinkPropConfig.get(IntegrationConstants.GROUP_ID));
+		logger.debug("kafka property set successful");
 		FlinkKafkaConsumer010<String> flinkKafkaConsumer = new FlinkKafkaConsumer010<>(
 				flinkPropConfig.get(IntegrationConstants.NEW_BUSS_PROPOSAL_TOPIC_NAME), new SimpleStringSchema(), prop);
 		DataStream<String> messageStream = env.addSource(flinkKafkaConsumer);
+		logger.debug("messageStream coming from kafka consumer");
 		messageStream.flatMap(new FlatMapFunction<String, String>() {
 			@Override
 			public void flatMap(String value, Collector<String> out) throws Exception {
+				logger.debug("message from kafka :: {}",value);
 				ILService iLService = new ILServiceImpl();
 				out.collect(iLService.serviceRequest(value));
 			}
 		}).addSink(new PrintSinkFunction<>());
 		env.execute();
+		logger.info("NewBusinessProposalFlinkJob main() end");
 	}
 
 	public static class SimpleStringSchema implements DeserializationSchema<String>, SerializationSchema<String> {
